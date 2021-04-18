@@ -3,11 +3,11 @@
   <title>摩尔的世界</title>
   
   <subtitle>负重前行的路上充满荆棘愿遵循内心</subtitle>
-  <link href="https://github.com/moleWorld/moleWorld.github.io/atom.xml" rel="self"/>
+  <link href="https://github.com/moleWorld/moleWorld.github.io/main/atom.xml" rel="self"/>
   
-  <link href="https://github.com/moleWorld/moleWorld.github.io/"/>
+  <link href="https://github.com/moleWorld/moleWorld.github.io/main/"/>
   <updated>2021-04-18T04:52:56.682Z</updated>
-  <id>https://github.com/moleWorld/moleWorld.github.io/</id>
+  <id>https://github.com/moleWorld/moleWorld.github.io/main/</id>
   
   <author>
     <name>摩尔</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>docker基础</title>
-    <link href="https://github.com/moleWorld/moleWorld.github.io/2021/04/18/docker-ji-chu/"/>
-    <id>https://github.com/moleWorld/moleWorld.github.io/2021/04/18/docker-ji-chu/</id>
+    <link href="https://github.com/moleWorld/moleWorld.github.io/main/2021/04/18/docker-ji-chu/"/>
+    <id>https://github.com/moleWorld/moleWorld.github.io/main/2021/04/18/docker-ji-chu/</id>
     <published>2021-04-18T04:49:37.000Z</published>
     <updated>2021-04-18T04:52:56.682Z</updated>
     
@@ -34,10 +34,10 @@
     
     
     
-    <category term="java" scheme="https://github.com/moleWorld/moleWorld.github.io/categories/java/"/>
+    <category term="java" scheme="https://github.com/moleWorld/moleWorld.github.io/main/categories/java/"/>
     
     
-    <category term="学习、博客" scheme="https://github.com/moleWorld/moleWorld.github.io/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E5%8D%9A%E5%AE%A2/"/>
+    <category term="学习、博客" scheme="https://github.com/moleWorld/moleWorld.github.io/main/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   

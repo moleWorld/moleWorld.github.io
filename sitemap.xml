@@ -81,13 +81,6 @@
 
   
   <url>
-    <loc>https://gitee.com/wlk1314/myblog/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2021-04-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://gitee.com/wlk1314/myblog/tag/1/</loc>
     <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
@@ -103,6 +96,13 @@
   
   <url>
     <loc>https://gitee.com/wlk1314/myblog/tag/3/</loc>
+    <lastmod>2021-04-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gitee.com/wlk1314/myblog/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2021-04-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

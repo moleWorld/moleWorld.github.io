@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="摩尔的世界">
+    <meta name="keywords" content="标签: 学习、swagger, 摩尔的世界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>摩尔的世界</title>
+    <title>标签: 学习、swagger | 摩尔的世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -416,56 +416,9 @@
 
 </header>
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -502,201 +455,99 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#articles" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
 
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81docker/" title="学习、docker: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="学习、docker" style="background-color: #F9EBEA;">学习、docker
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tag/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/" title="基础学习: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="基础学习" style="background-color: #F5EEF8;">基础学习
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81swagger/" title="学习、swagger: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="学习、swagger" style="background-color: #D5F5E3;">学习、swagger
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E6%A1%86%E6%9E%B6/" title="学习、框架: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="学习、框架" style="background-color: #E8F8F5;">学习、框架
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E5%8F%8D%E5%B0%84/" title="学习、反射: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="学习、反射" style="background-color: #FEF9E7;">学习、反射
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E7%AE%97%E6%B3%95/" title="学习、算法: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="学习、算法" style="background-color: #F8F9F9;">学习、算法
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E6%B3%A8%E8%A7%A3/" title="学习、注解: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="学习、注解" style="background-color: #82E0AA;">学习、注解
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
-    
+</div>
 
     
 
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/20/chang-yong-pai-xu-suan-fa/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="常用排序算法">
-                            
-                            <span class="card-title">常用排序算法</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1、选择排序选择排序就是每趟排序从中找出最小的一个放在最前面，直至最后排序完成。
-通俗的讲：假设有N条数据，首先第一趟排序从1-N中找出最小的一个，然后把1的数据的和最小的数据进行交换，第二趟则从2-N中找出最小的一个，再让2与最小的数据进
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                摩尔
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E7%AE%97%E6%B3%95/">
-                            <span class="chip bg-color">学习、算法</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-tags="学习、swagger" data-aos="fade-up">
                 <div class="card">
                     <a href="/2021/04/20/swagger-zong-jie/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             
                             <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="swagger总结">
@@ -704,15 +555,7 @@
                             <span class="card-title">swagger总结</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Swagger简介swagger即是一个接口文档生成工具，也是一个接口调用工具，主要目的是解决前后端的即时交互问题。swagger的配置：
-ApiInfo   文档的简介
-enable    是否启动swagger   以便保证生产环境不启
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
@@ -725,295 +568,11 @@ enable    是否启动swagger   以便保证生产环境不启
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81swagger/">
-                            <span class="chip bg-color">学习、swagger</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/20/fan-she-ji-chu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="反射基础">
-                            
-                            <span class="card-title">反射基础</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-正常方式: 引入包名、类名_————————&gt;new对象————————&gt;取得实例化对象
-12345678910111213package com.annotation.example.demo.controller;impo
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                摩尔
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E5%8F%8D%E5%B0%84/">
-                            <span class="chip bg-color">学习、反射</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/20/quan-ju-bu-huo-ri-zhi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="全局捕获日志">
-                            
-                            <span class="card-title">全局捕获日志</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                问题：记录所有方法运行时间用来判断哪些方法的书写不规范导致运行时间过长，如果超过规定的秒数(2000ms)则存储到日志表，以便后续优化。一、引入常用jar包
-12345678910111213141516171819202122232425
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                摩尔
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E6%A1%86%E6%9E%B6/">
-                            <span class="chip bg-color">学习、框架</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/20/zi-ding-yi-zhu-jie/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="自定义注解">
-                            
-                            <span class="card-title">自定义注解</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                @Target ：用于描述注解的使用范围@Retention： 表示需在该级别保存注释信息，用于描述生命周期，常用的有（SOURCE&lt;CLASS&lt;RUNTIME）@Document : 说明该注解被包含在javadoc中@inh
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                摩尔
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E6%B3%A8%E8%A7%A3/">
-                            <span class="chip bg-color">学习、注解</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/20/yong-xin-xiang-mu-jia-gou-da-jian/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="永鑫项目架构搭建">
-                            
-                            <span class="card-title">永鑫项目架构搭建</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                一、项目搭建目的由于永城收付管理系统速率过慢，代码冗余，因此需一步一步的把永城收付管理系统的永鑫模块单独独立出来。
-二、框架设计
-框架：Springboot微服务为基础，shiro做为权限框架，layui前端框架，模板引擎是thymleaf
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E6%A1%86%E6%9E%B6/">
-                            <span class="chip bg-color">学习、框架</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/18/linux-ji-chu-ming-ling/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="linux基础命令">
-                            
-                            <span class="card-title">linux基础命令</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1234查看版本信息uname -r查看系统版本cat /etc/os-release
-
-
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                摩尔
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tag/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
-                            <span class="chip bg-color">基础学习</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/04/18/docker-ji-chu/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="docker基础">
-                            
-                            <span class="card-title">docker基础</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                docker的默认工作路径是      /var/lib/dockerdocker的基础是镜像与容器docker的官网地址：https://docs.docker.com/Docker的基本命令：123docker version    	
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-18
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81docker/">
-                            <span class="chip bg-color">学习、docker</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
         </div>
     </article>
-
 </main>
 
 

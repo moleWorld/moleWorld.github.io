@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="docker基础, 摩尔的世界">
+    <meta name="keywords" content="反射基础, 摩尔的世界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>docker基础 | 摩尔的世界</title>
+    <title>反射基础 | 摩尔的世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">docker基础</h1>
+                    <h1 class="description center-align post-title">反射基础</h1>
                 </div>
             </div>
         </div>
@@ -541,23 +541,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81docker/">
-                                <span class="chip bg-color">学习、docker</span>
+                            <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E5%8F%8D%E5%B0%84/">
+                                <span class="chip bg-color">学习、反射</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/java/" class="post-category">
-                                java
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -566,7 +557,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-18
+                    2021-04-20
                 </div>
                 
 
@@ -587,33 +578,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h6 id="docker的默认工作路径是-var-lib-docker"><a href="#docker的默认工作路径是-var-lib-docker" class="headerlink" title="docker的默认工作路径是      /var/lib/docker"></a>docker的默认工作路径是      /var/lib/docker</h6><h6 id="docker的基础是镜像与容器"><a href="#docker的基础是镜像与容器" class="headerlink" title="docker的基础是镜像与容器"></a>docker的基础是镜像与容器</h6><h6 id="docker的官网地址：https-docs-docker-com"><a href="#docker的官网地址：https-docs-docker-com" class="headerlink" title="docker的官网地址：https://docs.docker.com/"></a>docker的官网地址：<a target="_blank" rel="noopener" href="https://docs.docker.com/">https://docs.docker.com/</a></h6><h4 id="Docker的基本命令："><a href="#Docker的基本命令：" class="headerlink" title="Docker的基本命令："></a>Docker的基本命令：</h4><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker version    	#查看docker的基本信息</span><br><span class="line">docker info 		#显示docker的系统信息，包括镜像和容器镜像</span><br><span class="line">docker 命令 --help 		#docker命令帮助查询</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="Docker的镜像常用命令："><a href="#Docker的镜像常用命令：" class="headerlink" title="Docker的镜像常用命令："></a>Docker的镜像常用命令：</h4><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker images -a		#查看所有镜像信息</span><br><span class="line">docker images -q 		#查看所有镜像id</span><br><span class="line">docker images -filter ......   #过滤信息</span><br></pre></td></tr></tbody></table></figure>
-
-<h4 id="docker搜索镜像："><a href="#docker搜索镜像：" class="headerlink" title="docker搜索镜像："></a>docker搜索镜像：</h4><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker search 服务名称  </span><br><span class="line">例如：docker search java </span><br><span class="line">	 docker search mysql</span><br><span class="line">docker search mysql --filter=stars=200   #查询星数在200以上</span><br></pre></td></tr></tbody></table></figure>
+                <blockquote>
+<h6 id="正常方式-引入包名、类名-————————-gt-new对象————————-gt-取得实例化对象"><a href="#正常方式-引入包名、类名-————————-gt-new对象————————-gt-取得实例化对象" class="headerlink" title="正常方式: 引入包名、类名_————————>new对象————————>取得实例化对象"></a>正常方式: 引入包名、类名_————————&gt;new对象————————&gt;取得实例化对象</h6></blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.annotation.example.demo.controller;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.annotation.example.demo.entity.Student; <span class="comment">//引入类名</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reflection</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>{</span><br><span class="line">        Student student = <span class="keyword">new</span> Student();  <span class="comment">//new对象</span></span><br><span class="line">        student.getAddress();	 <span class="comment">//获取对象信息</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 
 
-<h4 id="拉取镜像："><a href="#拉取镜像：" class="headerlink" title="拉取镜像："></a>拉取镜像：</h4><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull (镜像名称)：（镜像版本）   #例如  docker pull mysql:5.7   </span><br><span class="line">docker pull (镜像名称)				#拉取最新版本的镜像信息</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<h6 id="反射方式：-实例化对象—————————-gt-getClass-方法—————————-gt-获取完整的包类信息"><a href="#反射方式：-实例化对象—————————-gt-getClass-方法—————————-gt-获取完整的包类信息" class="headerlink" title="反射方式：  实例化对象—————————>getClass()方法—————————>获取完整的包类信息"></a>反射方式：  实例化对象—————————&gt;getClass()方法—————————&gt;获取完整的包类信息</h6></blockquote>
+<blockquote>
+<h6 id="全路径信息—————————-gt-forName-方法—————————-gt-获取完整的包类信息"><a href="#全路径信息—————————-gt-forName-方法—————————-gt-获取完整的包类信息" class="headerlink" title="全路径信息—————————>forName()方法—————————>获取完整的包类信息"></a>全路径信息—————————&gt;forName()方法—————————&gt;获取完整的包类信息</h6></blockquote>
+<blockquote>
+<h6 id="类名————————————-gt-class——————————————-gt-获取完整的包类信息"><a href="#类名————————————-gt-class——————————————-gt-获取完整的包类信息" class="headerlink" title="类名————————————>.class——————————————>获取完整的包类信息"></a>类名————————————&gt;.class——————————————&gt;获取完整的包类信息</h6></blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException </span>{</span><br><span class="line">    <span class="comment">// 方式1----通过全路径获取student信息</span></span><br><span class="line">    Class c= Class.forName(<span class="string">"com.annotation.example.demo.entity.Student"</span>);</span><br><span class="line">    System.out.println(c.hashCode());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//方式2----通过new对象的getClass()方法获取student信息</span></span><br><span class="line">    Student student = <span class="keyword">new</span> Student();</span><br><span class="line">    Class c2 = student.getClass();</span><br><span class="line">    System.out.println(c2.hashCode());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//方式3----通过类名获取student信息</span></span><br><span class="line">    Class c1 = Student.class;</span><br><span class="line">    System.out.println(c1.hashCode());</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="删除镜像："><a href="#删除镜像：" class="headerlink" title="删除镜像："></a>删除镜像：</h4><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker rmi -f (镜像id)		#删除镜像信息，镜像d可通过docker images进行查询</span><br><span class="line">docker rmi -f $（dokcer images）		 #删除所有镜像信息</span><br><span class="line">dokker rmi -f 镜像id 镜像id 			#删除多个镜像信息</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<h6 id="反射获取基本信息：更多方法可自行测试查看"><a href="#反射获取基本信息：更多方法可自行测试查看" class="headerlink" title="反射获取基本信息：更多方法可自行测试查看"></a>反射获取基本信息：更多方法可自行测试查看</h6></blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchFieldException </span>{</span><br><span class="line">    <span class="comment">// 方式1----通过全路径获取student信息</span></span><br><span class="line">    Class c= Class.forName(<span class="string">"com.annotation.example.demo.entity.Student"</span>);</span><br><span class="line">    System.out.println(c.hashCode());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获得包名+类名</span></span><br><span class="line">    System.out.println(c.getName());</span><br><span class="line">    <span class="comment">//获得类名</span></span><br><span class="line">    System.out.println(c.getSimpleName());</span><br><span class="line">    <span class="comment">//获取public的信息</span></span><br><span class="line">    Field[] fields = c.getFields();</span><br><span class="line">    <span class="keyword">for</span> (Field field : fields) {</span><br><span class="line">        System.out.println(field);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//获取全部的信息</span></span><br><span class="line">    Field[] declaredFields = c.getDeclaredFields();</span><br><span class="line">    <span class="keyword">for</span> (Field field : declaredFields) {</span><br><span class="line">        System.out.println(field);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//获取具体某一个的字段</span></span><br><span class="line">    Field name = c.getDeclaredField(<span class="string">"name"</span>);</span><br><span class="line">    System.out.println(name);</span><br><span class="line">    <span class="comment">//获取本类的方法及其父类的额所有方法</span></span><br><span class="line">    Method[] methods = c.getMethods();</span><br><span class="line">    <span class="keyword">for</span> (Method method : methods) {</span><br><span class="line">        System.out.println(method);</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//只获取本类的基本信息</span></span><br><span class="line">    Method[] declaredMethods = c.getDeclaredMethods();</span><br><span class="line">    <span class="keyword">for</span> (Method declaredMethod : declaredMethods) {</span><br><span class="line">        System.out.println(declaredMethod);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h4 id="Docker的容器命令："><a href="#Docker的容器命令：" class="headerlink" title="Docker的容器命令："></a>Docker的容器命令：</h4><h6 id="首先我们先下载个centos镜像命令进行学习"><a href="#首先我们先下载个centos镜像命令进行学习" class="headerlink" title="首先我们先下载个centos镜像命令进行学习"></a>首先我们先下载个centos镜像命令进行学习</h6><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull centos</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<h6 id="常用的获取对象信息的方式"><a href="#常用的获取对象信息的方式" class="headerlink" title="常用的获取对象信息的方式"></a>常用的获取对象信息的方式</h6></blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException </span>{</span><br><span class="line">    Class c = Student.class;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//通过newInstance的方式获取对象信息</span></span><br><span class="line">    Student student = (Student) c.newInstance();</span><br><span class="line">    student.setName(<span class="string">"小婉"</span>);</span><br><span class="line">    System.out.println(student.getName());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//通过构造器创建对象</span></span><br><span class="line">    Constructor declaredConstructor = c.getDeclaredConstructor(String.class, String.class, <span class="keyword">int</span>.class);</span><br><span class="line">    Student student1 = (Student) declaredConstructor.newInstance(<span class="string">"小婉"</span>, <span class="string">"驻马店"</span>, <span class="number">30</span>);</span><br><span class="line">    System.out.println(student1);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//通过获取方法获得对象信息</span></span><br><span class="line">    Student student2 = (Student) c.newInstance();</span><br><span class="line">    Method setName = c.getDeclaredMethod(<span class="string">"setName"</span>, String.class);</span><br><span class="line">   setName.invoke(student2, <span class="string">"小婉"</span>);</span><br><span class="line">    System.out.println(student2.getName());</span><br><span class="line"></span><br><span class="line">    <span class="comment">//通过反射操作属性</span></span><br><span class="line">    Student student3 = (Student) c.newInstance();</span><br><span class="line">    Field name1 = c.getDeclaredField(<span class="string">"name"</span>);</span><br><span class="line">    <span class="comment">//不能直接操作私有属性,关闭安全检测，如果反射运用比较多，可以关闭检测提高性能</span></span><br><span class="line">    name1.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">    name1.set(student3,<span class="string">"小婉"</span>);</span><br><span class="line">    System.out.println(student3.getName());</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h6 id="容器命令："><a href="#容器命令：" class="headerlink" title="容器命令："></a>容器命令：</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">docker run [可选参数] image</span><br><span class="line"><span class="meta">#</span><span class="bash">常用参数</span></span><br><span class="line">--name   #容器名字，用来区分容器</span><br><span class="line">-d		 #后台方式运行</span><br><span class="line">-it 	 #使用交互方式运行，进入容器查看内容</span><br><span class="line">-p		 #指定容器的端口  -p 主机端口：容器端口</span><br><span class="line">-P		 #随机指定端口</span><br><span class="line"></span><br><span class="line">运行查看容器：</span><br><span class="line">docker run -it centos /bin/bash  		#进入centos</span><br><span class="line">docker ps 				#查看正在运行的容器</span><br><span class="line">docker ps -a 			#查看历史运行的容器</span><br><span class="line">docker ps -n=？		   #查看最近运行的容器,如果加上=？则表示最近几条</span><br><span class="line"></span><br><span class="line">退出容器：</span><br><span class="line">exit 			#容器停止并退出</span><br><span class="line">CTRL+P+Q		#容器不停止退出</span><br><span class="line"></span><br><span class="line">删除容器：</span><br><span class="line">docker rm 容器id    		#删除非运行的容器，如果运行会报错</span><br><span class="line">docker rm -f 容器id		#强制删除容器</span><br><span class="line">docker rm -f $(docker ps -aq)		#删除所有容器id</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<h6 id="获取参数类型及返回值类型步骤"><a href="#获取参数类型及返回值类型步骤" class="headerlink" title="获取参数类型及返回值类型步骤"></a>获取参数类型及返回值类型步骤</h6></blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> NoSuchMethodException </span>{</span><br><span class="line">    Method method = Reflection2.class.getMethod(<span class="string">"test1"</span>, Map.class, List.class); <span class="comment">//获取test1的方法</span></span><br><span class="line">    Type[] types = method.getGenericParameterTypes(); <span class="comment">//获取方法内所有的参数</span></span><br><span class="line">    <span class="keyword">for</span> (Type type : types) {  <span class="comment">//便利参数</span></span><br><span class="line">        System.out.println(type); <span class="comment">//输出参数</span></span><br><span class="line">        <span class="keyword">if</span> (type <span class="keyword">instanceof</span> ParameterizedType){   <span class="comment">//查看参数是否属于参数化类型</span></span><br><span class="line">            Type[] typeArguments = ((ParameterizedType) type).getActualTypeArguments();  <span class="comment">//把参数强转为参数化类型在获取具体的参数</span></span><br><span class="line">            <span class="keyword">for</span> (Type typeArgument : typeArguments) {</span><br><span class="line">                System.out.println(typeArgument);   <span class="comment">//便利参数并打印</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    Method method1 = Reflection2.class.getMethod(<span class="string">"test2"</span>);</span><br><span class="line">    Type genericReturnType = method1.getGenericReturnType();   <span class="comment">//获取返回参数类型</span></span><br><span class="line">    System.out.println(genericReturnType);</span><br><span class="line">    <span class="keyword">if</span> (genericReturnType <span class="keyword">instanceof</span> ParameterizedType){   <span class="comment">//查看参数是否属于参数化类型</span></span><br><span class="line">        Type[] typeArguments = ((ParameterizedType) genericReturnType).getActualTypeArguments();  <span class="comment">//把参数强转为参数化类型在获取具体的参数</span></span><br><span class="line">        <span class="keyword">for</span> (Type typeArgument : typeArguments) {</span><br><span class="line">            System.out.println(typeArgument);   <span class="comment">//便利参数并打印</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">(Map&lt;String, Student&gt; map, List&lt;Student&gt; list)</span></span>{</span><br><span class="line">    System.out.println(<span class="string">"test1"</span>);</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">public</span> Map&lt;String,Student&gt; <span class="title">test2</span><span class="params">()</span></span>{</span><br><span class="line">    System.out.println(<span class="string">"test2"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h6 id="启动容器命令："><a href="#启动容器命令：" class="headerlink" title="启动容器命令："></a>启动容器命令：</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker start 容器id			#启动容器</span><br><span class="line">docker restart 容器id			#重启容器</span><br><span class="line">docker stop 容器id			#停止正在运行的容器</span><br><span class="line">docker kill 容器id			#强制停止当前容器</span><br></pre></td></tr></tbody></table></figure>
-
-<h6 id="日志命令："><a href="#日志命令：" class="headerlink" title="日志命令："></a>日志命令：</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -tf tail 10 容器id   #查询后十条日志信息   tail 10 可省略</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h6 id="常用其他命令："><a href="#常用其他命令：" class="headerlink" title="常用其他命令："></a>常用其他命令：</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker top 容器id			#查看容器进程</span><br><span class="line">docker inspect  容器id	#查看容器的基本信息</span><br><span class="line">docker exec  -it  容器id /bin/bash		#进入正在启动的容器，并开启一个新容器</span><br><span class="line">docker attach 容器id						#进入正在启动的容器，不会启动新的容器</span><br><span class="line">docker cp 容器id:容器内路径 容器外路径		  #复制文件从内部容器到外部容器</span><br><span class="line">docker stats 			#查询docker的内存使用率</span><br></pre></td></tr></tbody></table></figure>
-
-<h6 id="下载nginx镜像到linux服务器"><a href="#下载nginx镜像到linux服务器" class="headerlink" title="下载nginx镜像到linux服务器"></a>下载nginx镜像到linux服务器</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker search nginx 		#查看镜像</span><br><span class="line">docker pull nginx 			#下载最新版本的镜像</span><br><span class="line">docker images				#查看下载的容器</span><br><span class="line">docker run -d --name nginx01 -p 3344:80 nginx		</span><br><span class="line"><span class="meta">#</span><span class="bash">-d   后台运行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> --name 给容器起个名字以便分辨</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -p 3344 宿主机端口,即外部端口</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 80 内部容器端口即nginx端口</span> </span><br></pre></td></tr></tbody></table></figure>
-
-<h6 id="下载mysql5-7到linux服务器"><a href="#下载mysql5-7到linux服务器" class="headerlink" title="下载mysql5.7到linux服务器"></a>下载mysql5.7到linux服务器</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">获取mysql镜像</span></span><br><span class="line">docker pull mysql:5.7</span><br><span class="line"><span class="meta">#</span><span class="bash"> -v 卷挂载</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -e 环境配置</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -d 后台运行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -p 端口映射</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> --name 给容器命名</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 配置mysql地址环境</span></span><br><span class="line">docker run -d -p 3310:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql  -e MYSQL_ROOT_PASSWORD=wlk161536 --name mysql01 mysql:5.7</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">-v的目的是映射到本地</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<h6 id="获取注解的值及参数信息"><a href="#获取注解的值及参数信息" class="headerlink" title="获取注解的值及参数信息"></a>获取注解的值及参数信息</h6></blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reflection3</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> NoSuchFieldException </span>{</span><br><span class="line">        classAnnotation annotation = Student2.class.getAnnotation(classAnnotation.class);</span><br><span class="line">        System.out.println(annotation.value());</span><br><span class="line"></span><br><span class="line">        Field name = Student2.class.getDeclaredField(<span class="string">"name"</span>);</span><br><span class="line">        filedAnnotation annotation1 = name.getAnnotation(filedAnnotation.class);</span><br><span class="line">        System.out.println(annotation1.id());</span><br><span class="line">        System.out.println(annotation1.length());</span><br><span class="line">        <span class="comment">//db_student</span></span><br><span class="line">		<span class="comment">//db_id</span></span><br><span class="line">		<span class="comment">//10  </span></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@classAnnotation("db_student")</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student2</span></span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@filedAnnotation(id="db_id",length = 10)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@filedAnnotation(id="db_address",length = 19)</span></span><br><span class="line">    <span class="keyword">private</span> String address;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@filedAnnotation(id="db_age",length = 3)</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 类注解</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@interface</span> classAnnotation{</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">}</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 字段注解</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Target(ElementType.FIELD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@interface</span> filedAnnotation{</span><br><span class="line">    <span class="function">String <span class="title">id</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">length</span><span class="params">()</span></span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 
                 
@@ -641,7 +634,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://moleWorld.github.io/2021/04/18/docker-ji-chu/">https://moleWorld.github.io/2021/04/18/docker-ji-chu/</a>
+                    <a href="https://moleWorld.github.io/2021/04/20/fan-she-ji-chu/">https://moleWorld.github.io/2021/04/20/fan-she-ji-chu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -679,8 +672,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81docker/">
-                                    <span class="chip bg-color">学习、docker</span>
+                                <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E5%8F%8D%E5%B0%84/">
+                                    <span class="chip bg-color">学习、反射</span>
                                 </a>
                             
                         </div>
@@ -854,13 +847,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/18/linux-ji-chu-ming-ling/">
+                <a href="/2021/04/20/swagger-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="linux基础命令">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="swagger总结">
                         
-                        <span class="card-title">linux基础命令</span>
+                        <span class="card-title">swagger总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -871,7 +864,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-18
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
                         </span>
                         <span class="publish-author">
                             
@@ -884,8 +877,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">基础学习</span>
+                    <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81swagger/">
+                        <span class="chip bg-color">学习、swagger</span>
                     </a>
                     
                 </div>
@@ -896,16 +889,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/18/docker-ji-chu/">
+                <a href="/2021/04/20/quan-ju-bu-huo-ri-zhi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="docker基础">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="全局捕获日志">
                         
-                        <span class="card-title">docker基础</span>
+                        <span class="card-title">全局捕获日志</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -916,26 +909,21 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java/" class="post-category">
-                                    java
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            摩尔
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81docker/">
-                        <span class="chip bg-color">学习、docker</span>
+                    <a href="/tag/%E5%AD%A6%E4%B9%A0%E3%80%81%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">学习、框架</span>
                     </a>
                     
                 </div>

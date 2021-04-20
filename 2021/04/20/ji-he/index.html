@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="swagger总结, 摩尔的世界">
+    <meta name="keywords" content="集合, 摩尔的世界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>swagger总结 | 摩尔的世界</title>
+    <title>集合 | 摩尔的世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">swagger总结</h1>
+                    <h1 class="description center-align post-title">集合</h1>
                 </div>
             </div>
         </div>
@@ -541,23 +541,14 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tag/swagger/">
-                                <span class="chip bg-color">swagger</span>
+                            <a href="/tag/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
-                                中间件
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -587,33 +578,61 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="Swagger简介"><a href="#Swagger简介" class="headerlink" title="Swagger简介"></a>Swagger简介</h4><h6 id="swagger即是一个接口文档生成工具，也是一个接口调用工具，主要目的是解决前后端的即时交互问题。"><a href="#swagger即是一个接口文档生成工具，也是一个接口调用工具，主要目的是解决前后端的即时交互问题。" class="headerlink" title="swagger即是一个接口文档生成工具，也是一个接口调用工具，主要目的是解决前后端的即时交互问题。"></a>swagger即是一个接口文档生成工具，也是一个接口调用工具，主要目的是解决前后端的即时交互问题。</h6><h6 id="swagger的配置："><a href="#swagger的配置：" class="headerlink" title="swagger的配置："></a>swagger的配置：</h6><ul>
-<li>ApiInfo   文档的简介</li>
-<li>enable    是否启动swagger   以便保证生产环境不启动</li>
-<li>select ().apis ()  可扫描的路径</li>
-<li>select().paths()  可匹配的路径     </li>
-<li>build是固定结束格式</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2</span>  <span class="comment">//开启swagger2</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>{</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">(Environment environment)</span></span>{</span><br><span class="line">        <span class="comment">//读取application.yml读取的环境</span></span><br><span class="line">        Profiles profiles = Profiles.of(<span class="string">"dev"</span>,<span class="string">"test"</span>);</span><br><span class="line">        <span class="comment">//判断运行的环境是否是可读取的环境</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = environment.acceptsProfiles(profiles);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(<span class="keyword">new</span> ApiInfo(<span class="string">"小婉Swagger"</span>,   <span class="comment">//title</span></span><br><span class="line">                                <span class="string">"当一个闲鱼"</span>,			<span class="comment">//description</span></span><br><span class="line">                                <span class="string">"v.1.0"</span>,			<span class="comment">//版本</span></span><br><span class="line">                                <span class="string">"47.100.69.105"</span>,    <span class="comment">//服务器地址</span></span><br><span class="line">                                <span class="keyword">new</span> Contact(</span><br><span class="line">                                        <span class="string">"小婉"</span>,</span><br><span class="line">                                        <span class="string">"47.100.69.105"</span>,</span><br><span class="line">                                        <span class="string">"wlkjava@163.com"</span></span><br><span class="line">                                ),     				<span class="comment">//个人介绍</span></span><br><span class="line">                                <span class="string">"Apache 2.0"</span>,</span><br><span class="line">                                <span class="string">"http://www.apache.org/licenses/LICENSE-2.0"</span>,</span><br><span class="line">                                <span class="keyword">new</span> ArrayList()</span><br><span class="line">                                )</span><br><span class="line">                        )</span><br><span class="line">                <span class="comment">//右上角的命名path</span></span><br><span class="line">                .groupName(<span class="string">"learn"</span>)</span><br><span class="line">                <span class="comment">//设置swagger是否启动</span></span><br><span class="line">                .enable(flag)</span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">//RequestHandlerSelectors.basePackage扫描包下的所有接口</span></span><br><span class="line">                <span class="comment">//RequestHandlerSelectors.any扫描所有接口    具体的可查看源码</span></span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.example.swagger.controller"</span>))</span><br><span class="line">                <span class="comment">//匹配所有符合的路径</span></span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                <h6 id="数组和集合的区别？"><a href="#数组和集合的区别？" class="headerlink" title="数组和集合的区别？"></a>数组和集合的区别？</h6><blockquote>
+<p>数组是同一类型的数据汇总，长度是固定的，可以通过下标的形式获取值，存入值。</p>
+</blockquote>
+<blockquote>
+<p>集合是具有某种特质的抽象对象汇成的集体。</p>
+</blockquote>
+<blockquote>
+<p>相对来说数组适用于简单固定的数据操作，而集合不仅适用于简单的数据操作，也可操作复杂的数据信息。</p>
+</blockquote>
+<blockquote>
+<p>对简单数据操作来说数组更方便快捷。</p>
+</blockquote>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组的三种创建方式</span></span><br><span class="line"><span class="keyword">int</span>[] createOne = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};</span><br><span class="line"><span class="keyword">int</span>[] createTwo = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};</span><br><span class="line"><span class="keyword">int</span>[] createThree = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="comment">//数组存储值方式，获取值方式</span></span><br><span class="line">createThree[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">System.out.println(createThree[<span class="number">0</span>]);</span><br><span class="line">createThree[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">System.out.println(createThree[<span class="number">0</span>]);</span><br></pre></td></tr></tbody></table></figure>
 
-<h6 id="swagger的常用注解"><a href="#swagger的常用注解" class="headerlink" title="swagger的常用注解"></a>swagger的常用注解</h6><ul>
-<li>@ApiModel    用在实体类上的注解</li>
-<li>@ApiModelProperty        用在字段上的注解</li>
-<li>@ApiOperation                 用在方法上的注解</li>
-<li>@ApiParam                       用在入参上的注解</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ApiModel(value = "用户信息表")</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(value = "用户名")</span></span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line">    <span class="meta">@ApiModelProperty(value = "密码")</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="谈谈你对集合的理解"><a href="#谈谈你对集合的理解" class="headerlink" title="谈谈你对集合的理解"></a>谈谈你对集合的理解</h6><blockquote>
+<p>集合分为Collection和Map两个大的方向，Collection有包含了Set不重复集合、List可重复集合两种。</p>
+</blockquote>
+<h6 id="Set集合描述"><a href="#Set集合描述" class="headerlink" title="Set集合描述"></a>Set集合描述</h6><blockquote>
+<p>Set是存储无序元素集合，且集合内的元素不会重复。</p>
+</blockquote>
+<blockquote>
+<p>Set接口的实现方式有很多，例如HashSet、TreeSet、LinkedHashSet等</p>
+</blockquote>
+<p>HashSet的特点是无重复、无序，存储位置是通过特定的hash算法进行获得，存储方式时数组结构，如果两个元素hashCode()相等但equals()不相等时，存储的方式时在数组的基础上增加链表。如果两则均相等则表示重复，具体存储方式可了解hashMap的存储方式。</p>
+<p>TreeSet的特点是自然排序，无重复，存储机构是红黑树的形式，判断两个元素是否重复（重写了Comparable的CompareTo方法来判断返回值是否为0，如果0则表示重复）</p>
+<p>LinkedHashSet的特点是按插入顺序排序，无重复，判断是否重复的方式跟HashSet一致。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常见的集合操作</span></span><br><span class="line">Set&lt;String&gt; setOne = <span class="keyword">new</span> LinkedHashSet&lt;String&gt;();</span><br><span class="line">Set&lt;String&gt; setTwo = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">Set&lt;String&gt; setThree = <span class="keyword">new</span> TreeSet&lt;String&gt;();</span><br><span class="line"><span class="comment">//添加元素</span></span><br><span class="line">setOne.add(<span class="string">"ea"</span>);</span><br><span class="line">setOne.add(<span class="string">"a"</span>);</span><br><span class="line">setOne.add(<span class="string">"dc"</span>);</span><br><span class="line">setOne.add(<span class="string">"nb"</span>);</span><br><span class="line">setOne.add(<span class="string">"md"</span>);</span><br><span class="line">setTwo.add(<span class="string">"ea"</span>);</span><br><span class="line">setTwo.add(<span class="string">"a"</span>);</span><br><span class="line">setTwo.add(<span class="string">"dc"</span>);</span><br><span class="line">setTwo.add(<span class="string">"nb"</span>);</span><br><span class="line">setTwo.add(<span class="string">"md"</span>);</span><br><span class="line">setThree.add(<span class="string">"ea"</span>);</span><br><span class="line">setThree.add(<span class="string">"a"</span>);</span><br><span class="line">setThree.add(<span class="string">"dc"</span>);</span><br><span class="line">setThree.add(<span class="string">"nb"</span>);</span><br><span class="line">setThree.add(<span class="string">"md"</span>);</span><br><span class="line"><span class="comment">//遍历元素</span></span><br><span class="line">setOne.forEach(set-&gt;System.out.print(set+<span class="string">"   "</span>));</span><br><span class="line">System.out.println(<span class="string">"LinkedHashSet的遍历结果"</span>);</span><br><span class="line">setTwo.forEach(set-&gt;System.out.print(set+<span class="string">"   "</span>));</span><br><span class="line">System.out.println(<span class="string">"HashSet的遍历结果"</span>);</span><br><span class="line">setThree.forEach(set-&gt;System.out.print(set+<span class="string">"   "</span>));</span><br><span class="line">System.out.println(<span class="string">"TreeSet的遍历结果"</span>);</span><br><span class="line"><span class="comment">//删除元素</span></span><br><span class="line">setOne.remove(<span class="string">"d"</span>);</span><br><span class="line"><span class="comment">//查看集合是否有值</span></span><br><span class="line">setOne.isEmpty();</span><br><span class="line"><span class="comment">//查看集合的个数</span></span><br><span class="line"> setOne.size();</span><br><span class="line"><span class="comment">//查看是否包含元素</span></span><br><span class="line">setOne.contains(<span class="string">"d"</span>);</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210123111636040.png" alt="image-20210123111636040"></p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation("测试")</span></span><br><span class="line"><span class="meta">@PostMapping(value = "/test")</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">(<span class="meta">@ApiParam(value ="用户名")</span> String  userName)</span></span>{</span><br><span class="line">    <span class="keyword">return</span> userName;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">这是上述三种集合遍历的结果，可看出三种集合的排序方式</span></span><br><span class="line">ea   a   dc   nb   md   LinkedHashSet的遍历结果</span><br><span class="line">a   nb   md   ea   dc   HashSet的遍历结果</span><br><span class="line">a   dc   ea   md   nb   TreeSet的遍历结果</span><br></pre></td></tr></tbody></table></figure>
 
+<h6 id="List集合描述"><a href="#List集合描述" class="headerlink" title="List集合描述"></a>List集合描述</h6><blockquote>
+<p>List集合是存储有序的集合，且集合内的元素是可重复的。</p>
+</blockquote>
+<blockquote>
+<p>List接口的实现方式有ArrayList,Vector,LinkedList三种方式</p>
+</blockquote>
+<p>ArrayList底层实现方式是数组的结构，方便查找。</p>
+<p>Vector底层实现方式也是数组结构，与ArrayList不同之处在于它是线程安全的，所以性能消耗更大，不建议使用</p>
+<p>LinkedList底层实现方式时双向链表结构，方便插入、删除。</p>
+<p>由于ArrayList插入方式大部分都是尾插法，与LinkedList相比两则在数据插入时ArrayList的效率更高。</p>
+<p>再删除时，ArrayList删除的数据更靠后或数据量很小时移动的次数也会很少，两则的效率差不太多，故使用场景中ArrayList运用比较广泛。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常见的集合操作</span></span><br><span class="line">List&lt;String&gt; listOne = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">List&lt;String&gt; listTwo = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">listOne.add(<span class="string">"aaa"</span>);</span><br><span class="line">listOne.add(<span class="string">"bbb"</span>);</span><br><span class="line">listOne.add(<span class="string">"ccc"</span>);</span><br><span class="line">listTwo.add(<span class="string">"aaa"</span>);</span><br><span class="line">listTwo.add(<span class="string">"bbb"</span>);</span><br><span class="line">listTwo.add(<span class="string">"ccc"</span>);</span><br><span class="line"><span class="comment">//遍历操作</span></span><br><span class="line">listOne.forEach(System.out::print);</span><br><span class="line"><span class="comment">//集合大小</span></span><br><span class="line">System.out.println(listOne.size());</span><br><span class="line"><span class="comment">//是否为空</span></span><br><span class="line">System.out.println(listOne.isEmpty());</span><br><span class="line"><span class="comment">//是否包含某个数据</span></span><br><span class="line">System.out.println(listOne.contains(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//通过下标获取元素</span></span><br><span class="line">System.out.println(listOne.get(<span class="number">0</span>));</span><br><span class="line"><span class="comment">//移除某个元素</span></span><br><span class="line">System.out.println(listOne.remove(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//替换某个元素</span></span><br><span class="line">System.out.println(listOne.set(<span class="number">1</span>,<span class="string">"aaaaaaa"</span>));</span><br><span class="line"><span class="comment">//截取集合</span></span><br><span class="line">System.out.println(listOne.subList(<span class="number">0</span>,<span class="number">1</span>));</span><br><span class="line"><span class="comment">//获取某个元素的下标</span></span><br><span class="line">System.out.println(listOne.indexOf(<span class="string">"bbb"</span>));</span><br></pre></td></tr></tbody></table></figure>
 
+<h6 id="Map集合描述"><a href="#Map集合描述" class="headerlink" title="Map集合描述"></a>Map集合描述</h6><blockquote>
+<p>Map是一个key/value的键值对集合，key不可重复，value可重复的。</p>
+</blockquote>
+<blockquote>
+<p>Map接口的实现方式有HashMap、HashTable、TreeMap、LinkedHashMap</p>
+</blockquote>
+<p>HashMap是我们最常用且最快速的，key底层数据结构是数组+链表+红黑树形式的，key/value都可为null。</p>
+<p>HashTable和HashMap是线程安全的，效率较慢，故不经常用，且key/value都不允许为null。</p>
+<p>TreeMap的存储是根据比较器进行排序，跟TreeSet的数据结构层上一致，key不可以为null。</p>
+<p>LinkedHashMap是按存储的先后位置进行确定的，key/value都可为null。</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,String&gt;  mapOne = <span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line"><span class="comment">//添加数据</span></span><br><span class="line">mapOne.put(<span class="string">"aaa"</span>,<span class="string">"aaaaaaaaaaa"</span>);</span><br><span class="line"><span class="comment">//遍历数据</span></span><br><span class="line">mapOne.forEach((str,str1)-&gt;{</span><br><span class="line">    System.out.println(str1);</span><br><span class="line">});</span><br><span class="line"><span class="comment">//根据key值获取value</span></span><br><span class="line">System.out.println(mapOne.get(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//判断集合是否为null</span></span><br><span class="line">System.out.println( mapOne.isEmpty());</span><br><span class="line"><span class="comment">//查看集合的大小</span></span><br><span class="line">System.out.println( mapOne.size());</span><br><span class="line"><span class="comment">//查看集合是否包含某个key值</span></span><br><span class="line">System.out.println( mapOne.containsKey(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//查看集合是否包含某个value值</span></span><br><span class="line">System.out.println( mapOne.containsValue(<span class="string">"aaaaaaa"</span>));</span><br><span class="line"><span class="comment">//移除某个key值</span></span><br><span class="line">System.out.println( mapOne.remove(<span class="string">"aaaaaaa"</span>));</span><br><span class="line"><span class="comment">//替换某个key的value值</span></span><br><span class="line">System.out.println( mapOne.replace(<span class="string">"aaa"</span>,<span class="string">"bbbbbbb"</span>));</span><br><span class="line"><span class="comment">//清除value的值</span></span><br><span class="line">mapOne.clear();</span><br></pre></td></tr></tbody></table></figure>
 
-
-
-<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>1、swagger在一些比较难理解的属性或者接口上增加注释信息 （替换了平常书写接口文档的office、wps等）</p>
-<p>2、接口文档实时更新（更易于前后端对接、其各部分之间的对接）</p>
-<p>3、在线测试工具（替换了接口测试工具，如POSTMan等）</p>
 
                 
             </div>
@@ -640,7 +659,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://moleWorld.github.io/2021/04/20/swagger-zong-jie/">https://moleWorld.github.io/2021/04/20/swagger-zong-jie/</a>
+                    <a href="https://moleWorld.github.io/2021/04/20/ji-he/">https://moleWorld.github.io/2021/04/20/ji-he/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -678,8 +697,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tag/swagger/">
-                                    <span class="chip bg-color">swagger</span>
+                                <a href="/tag/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
                                 </a>
                             
                         </div>
@@ -853,13 +872,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/20/chang-yong-pai-xu-suan-fa/">
+                <a href="/2021/04/20/xu-lie-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="常用排序算法">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="序列化">
                         
-                        <span class="card-title">常用排序算法</span>
+                        <span class="card-title">序列化</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -887,8 +906,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tag/%E5%BA%8F%E5%88%97%E5%8C%96/">
+                        <span class="chip bg-color">序列化</span>
                     </a>
                     
                 </div>
@@ -902,13 +921,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/20/fan-she-ji-chu/">
+                <a href="/2021/04/20/chang-yong-pai-xu-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="反射基础">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="常用排序算法">
                         
-                        <span class="card-title">反射基础</span>
+                        <span class="card-title">常用排序算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -936,8 +955,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/%E5%8F%8D%E5%B0%84/">
-                        <span class="chip bg-color">反射</span>
+                    <a href="/tag/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>代码设计记录1</title>
+      <link href="2021/04/20/dai-ma-she-ji-ji-lu-1/"/>
+      <url>2021/04/20/dai-ma-she-ji-ji-lu-1/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 代码 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>序列化</title>
       <link href="2021/04/20/xu-lie-hua/"/>
       <url>2021/04/20/xu-lie-hua/</url>
@@ -202,7 +227,7 @@
       <link href="2021/04/18/linux-ji-chu-ming-ling/"/>
       <url>2021/04/18/linux-ji-chu-ming-ling/</url>
       
-        <content type="html"><![CDATA[<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">查看版本信息</span><br><span class="line">uname -r</span><br><span class="line">查看系统版本</span><br><span class="line">cat /etc/os-release</span><br></pre></td></tr></tbody></table></figure>]]></content>
+        <content type="html"><![CDATA[<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看版本信息</span></span><br><span class="line">uname -r</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看系统版本</span></span><br><span class="line">cat /etc/os-release</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><h6 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示目录文件</span></span><br><span class="line">ls </span><br><span class="line"><span class="meta">#</span><span class="bash"> 显示带隐藏的目录文件</span></span><br><span class="line">ls -a</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建目录</span></span><br><span class="line">mkdir 目录名</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建文件</span></span><br><span class="line">touch 文件名</span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换目录</span></span><br><span class="line">cd  /目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 返回上一级目录</span></span><br><span class="line">cd ..</span><br><span class="line"><span class="meta">#</span><span class="bash"> 显示当前目录</span></span><br><span class="line">pwd</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除空目录</span></span><br><span class="line">rmdir /目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 复制目录或者文件</span></span><br><span class="line">cp -rp /源文件或者目录 /目标目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 剪切文件或目录</span></span><br><span class="line">mv /源文件或者目录 /目标目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除文件或目录</span></span><br><span class="line">rm -rf /目录或文件</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询文件信息</span></span><br><span class="line">cat 文件名  </span><br><span class="line">tail -f 文件名  #实时查询信息</span><br><span class="line">tail -n 1000 文件名 #倒叙查询1000行信息</span><br></pre></td></tr></tbody></table></figure><h6 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 参数 文件名#更改文件的读写执行权限  参数有-r -w -x 读 写 执行 u所有人 g所属组 例如：chown U+x 123.log</span><br><span class="line">chown 用户 文件名#更改某个文件用户权限用户必须是真实存在的</span><br></pre></td></tr></tbody></table></figure><h6 id="文件查询命令"><a href="#文件查询命令" class="headerlink" title="文件查询命令"></a>文件查询命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find /目录或文件 -name *init*查询含有init的文件 *可以匹配任意个字符</span><br><span class="line">find /目录或文件 -name *init？？？一个？只能匹配一个字符</span><br></pre></td></tr></tbody></table></figure><h6 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">whoami #查看当前用户</span><br><span class="line">useradd -m 账号#新建一个账号</span><br><span class="line">passwd 账号#给此账号输入密码</span><br><span class="line">userdel -r 账号 #删除账号信息</span><br></pre></td></tr></tbody></table></figure>]]></content>
       
       
       <categories>

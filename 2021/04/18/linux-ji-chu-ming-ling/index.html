@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
 </head>
 
 
@@ -593,9 +593,11 @@
 
 <h6 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 参数 文件名	#更改文件的读写执行权限  参数有-r -w -x 读 写 执行 u所有人 g所属组 例如：chown U+x 123.log</span><br><span class="line">chown 用户 文件名	#更改某个文件用户权限		用户必须是真实存在的</span><br></pre></td></tr></tbody></table></figure>
 
-<h6 id="文件查询命令"><a href="#文件查询命令" class="headerlink" title="文件查询命令"></a>文件查询命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find /目录或文件 -name *init*	查询含有init的文件 *可以匹配任意个字符</span><br><span class="line">find /目录或文件 -name *init？？？	一个？只能匹配一个字符</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="文件查询命令"><a href="#文件查询命令" class="headerlink" title="文件查询命令"></a>文件查询命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find /目录或文件 -name *init*	#查询含有init的文件 *可以匹配任意个字符</span><br><span class="line">find /目录或文件 -name *init？？？	#一个？只能匹配一个字符</span><br></pre></td></tr></tbody></table></figure>
 
 <h6 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">whoami 	#查看当前用户</span><br><span class="line">useradd -m 账号	#新建一个账号</span><br><span class="line">passwd 账号		#给此账号输入密码</span><br><span class="line">userdel -r 账号 	#删除账号信息</span><br></pre></td></tr></tbody></table></figure>
+
+<h6 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cal -1 5 2020  #查看2020年5月份的日历</span><br><span class="line">wc -lc 文件名 &gt;要创建的文件			# 统计某个文件的行数和列数要书写到某个文件</span><br></pre></td></tr></tbody></table></figure>
 
 
                 

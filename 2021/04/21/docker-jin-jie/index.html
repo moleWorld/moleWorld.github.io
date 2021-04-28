@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
 </head>
 
 
@@ -594,6 +594,15 @@
 <p>2、指令的执行顺序从上到下</p>
 <p>3、#表示注释</p>
 <p>4、每个指令都会提交一个镜像，层层提交。</p>
+<h4 id="DokcerFile的基础命令"><a href="#DokcerFile的基础命令" class="headerlink" title="DokcerFile的基础命令"></a>DokcerFile的基础命令</h4><p><img src="https://i.loli.net/2021/04/22/9BiAIRS7wEUqkPD.jpg" alt="docker命令.jpg"></p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FROM 				#基础镜像</span><br><span class="line">MAINRAINER			#姓名+邮箱</span><br><span class="line">RUN					#运行命令</span><br><span class="line">ADD					#添加分层镜像</span><br><span class="line">WORKDIR				#工作目录</span><br><span class="line">VOLUME				#挂载卷</span><br><span class="line">EXPOSE				#暴露端口号</span><br><span class="line">CMD					#指定容器运行的适合要启动的命令，只有最后一个命令生效，不可追加</span><br><span class="line">ENTRYPOINT			#指定容器运行的适合要启动的命令，可以追加命令</span><br><span class="line">ENV					#构建的时候设置环境变量</span><br><span class="line">COPY				#把一个镜像拷贝进去类似ADD</span><br></pre></td></tr></tbody></table></figure>
+
+<h6 id="docker-网络"><a href="#docker-网络" class="headerlink" title="docker 网络"></a>docker 网络</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker network ls   #查看所有的docker网络</span><br><span class="line">b6fbe2727cc1        bridge              bridge              local</span><br><span class="line">e8ea254fb069        host                host                local</span><br><span class="line">4956a8e7920a        none                null                local</span><br><span class="line"><span class="meta">#</span><span class="bash">其中bridge 是桥接模式（默认）		host是主机模式  none不配置网络</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h6 id="springboot项目打包成Docker镜像"><a href="#springboot项目打包成Docker镜像" class="headerlink" title="springboot项目打包成Docker镜像"></a>springboot项目打包成Docker镜像</h6><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、编写成功Springboot项目</span><br><span class="line"></span><br><span class="line">2、达成jar包</span><br><span class="line"></span><br><span class="line">3、编写dockerFile进行发布</span><br><span class="line"></span><br><span class="line">4、构建镜像</span><br><span class="line"></span><br><span class="line">5、发布运行</span><br></pre></td></tr></tbody></table></figure>
+
+
+
 
                 
             </div>
@@ -829,18 +838,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/21/docker-jin-jie/">
+                <a href="/2021/04/28/docker-chang-yong-ming-ling-hui-zong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="docker进阶">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="docker常用命令汇总">
                         
-                        <span class="card-title">docker进阶</span>
+                        <span class="card-title">docker常用命令汇总</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -850,9 +858,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -865,7 +873,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     

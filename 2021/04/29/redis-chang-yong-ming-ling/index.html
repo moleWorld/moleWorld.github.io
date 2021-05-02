@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="代码设计记录1, 摩尔的世界">
+    <meta name="keywords" content="redis常用命令, 摩尔的世界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>代码设计记录1 | 摩尔的世界</title>
+    <title>redis常用命令 | 摩尔的世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
 </head>
 
 
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">代码设计记录1</h1>
+                    <h1 class="description center-align post-title">redis常用命令</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tag/%E8%AE%BE%E8%AE%A1/">
-                                <span class="chip bg-color">设计</span>
+                            <a href="/tag/redis/">
+                                <span class="chip bg-color">redis</span>
                             </a>
                         
                     </div>
@@ -553,8 +553,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%BB%A3%E7%A0%81/" class="post-category">
-                                代码
+                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
+                                中间件
                             </a>
                         
                     </div>
@@ -566,7 +566,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-20
+                    2021-04-29
                 </div>
                 
 
@@ -587,7 +587,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; FLUSHALL			#清空所有数据库</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; set name '123'		#设置key为name的值</span><br><span class="line">OK	</span><br><span class="line">127.0.0.1:6379&gt; set age 1			#设置key为age的值</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get name			#获取key为name的值，如果不存在key值则返回nil。</span><br><span class="line">"123"</span><br><span class="line">127.0.0.1:6379&gt; gea age</span><br><span class="line">(error) ERR unknown command `gea`, with args beginning with: `age`, </span><br><span class="line">127.0.0.1:6379&gt; get age				#获取key为age的值</span><br><span class="line">"1"</span><br><span class="line">127.0.0.1:6379&gt; EXISTS naem			#查询是否存在此key值，存在返回1，否则返回0</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; EXISTS name			</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; move name 1			#移除key值，成功返回1，失败返回0</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; keys *				#查询当前存在的key值</span><br><span class="line">1) "age"</span><br><span class="line">127.0.0.1:6379&gt; EXPIRE age 15		#设置key值得过期时间</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; ttl name			</span><br><span class="line">(integer) -2</span><br><span class="line">127.0.0.1:6379&gt; ttl age				#查看当前key的剩余时间，如果key值不存在则返回-2</span><br><span class="line">(integer) 7</span><br><span class="line">127.0.0.1:6379&gt; ttl age</span><br><span class="line">(integer) 4</span><br><span class="line">127.0.0.1:6379&gt; ttl age</span><br><span class="line">(integer) -2</span><br><span class="line">127.0.0.1:6379&gt; type age			#查看key值得返回类型</span><br><span class="line">String</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="String基本数据类型"><a href="#String基本数据类型" class="headerlink" title="String基本数据类型"></a>String基本数据类型</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
                 
             </div>
             <hr/>
@@ -613,7 +617,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://moleWorld.github.io/2021/04/20/dai-ma-she-ji-ji-lu-1/">https://moleWorld.github.io/2021/04/20/dai-ma-she-ji-ji-lu-1/</a>
+                    <a href="https://moleWorld.github.io/2021/04/29/redis-chang-yong-ming-ling/">https://moleWorld.github.io/2021/04/29/redis-chang-yong-ming-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -651,8 +655,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tag/%E8%AE%BE%E8%AE%A1/">
-                                    <span class="chip bg-color">设计</span>
+                                <a href="/tag/redis/">
+                                    <span class="chip bg-color">redis</span>
                                 </a>
                             
                         </div>
@@ -822,17 +826,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/04/21/docker-jin-jie/">
+                <a href="/2021/04/29/redis-chang-yong-ming-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="docker进阶">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="redis常用命令">
                         
-                        <span class="card-title">docker进阶</span>
+                        <span class="card-title">redis常用命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -842,9 +847,59 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-21
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
+                                    中间件
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tag/redis/">
+                        <span class="chip bg-color">redis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/04/29/redis-jian-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="redis简介">
+                        
+                        <span class="card-title">redis简介</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -860,57 +915,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/docker/">
-                        <span class="chip bg-color">docker</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/04/20/xu-lie-hua/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="序列化">
-                        
-                        <span class="card-title">序列化</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    java基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tag/%E5%BA%8F%E5%88%97%E5%8C%96/">
-                        <span class="chip bg-color">序列化</span>
+                    <a href="/tag/redis/">
+                        <span class="chip bg-color">redis</span>
                     </a>
                     
                 </div>

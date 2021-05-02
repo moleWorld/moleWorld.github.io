@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>redis常用命令</title>
+      <link href="2021/04/29/redis-chang-yong-ming-ling/"/>
+      <url>2021/04/29/redis-chang-yong-ming-ling/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; FLUSHALL#清空所有数据库</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; set name '123'#设置key为name的值</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; set age 1#设置key为age的值</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get name#获取key为name的值，如果不存在key值则返回nil。</span><br><span class="line">"123"</span><br><span class="line">127.0.0.1:6379&gt; gea age</span><br><span class="line">(error) ERR unknown command `gea`, with args beginning with: `age`, </span><br><span class="line">127.0.0.1:6379&gt; get age#获取key为age的值</span><br><span class="line">"1"</span><br><span class="line">127.0.0.1:6379&gt; EXISTS naem#查询是否存在此key值，存在返回1，否则返回0</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; EXISTS name</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; move name 1#移除key值，成功返回1，失败返回0</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; keys *#查询当前存在的key值</span><br><span class="line">1) "age"</span><br><span class="line">127.0.0.1:6379&gt; EXPIRE age 15#设置key值得过期时间</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; ttl name</span><br><span class="line">(integer) -2</span><br><span class="line">127.0.0.1:6379&gt; ttl age#查看当前key的剩余时间，如果key值不存在则返回-2</span><br><span class="line">(integer) 7</span><br><span class="line">127.0.0.1:6379&gt; ttl age</span><br><span class="line">(integer) 4</span><br><span class="line">127.0.0.1:6379&gt; ttl age</span><br><span class="line">(integer) -2</span><br><span class="line">127.0.0.1:6379&gt; type age#查看key值得返回类型</span><br><span class="line">String</span><br></pre></td></tr></tbody></table></figure><h3 id="String基本数据类型"><a href="#String基本数据类型" class="headerlink" title="String基本数据类型"></a>String基本数据类型</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></tbody></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 中间件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>redis简介</title>
+      <link href="2021/04/29/redis-jian-jie/"/>
+      <url>2021/04/29/redis-jian-jie/</url>
+      
+        <content type="html"><![CDATA[<h3 id="NoSQL简介"><a href="#NoSQL简介" class="headerlink" title="NoSQL简介"></a>NoSQL简介</h3><ul><li>NoSQL的全称     not only SQL</li><li>方便扩展，数据之间没有关系</li><li>大数据高性能（读取11万次每秒，写8万次每秒）</li><li>数据类型多种多样且不需要事先设计数据库的表，有更好的扩展性    </li></ul><h3 id="传统的数据库和NoSQL的区别"><a href="#传统的数据库和NoSQL的区别" class="headerlink" title="传统的数据库和NoSQL的区别"></a>传统的数据库和NoSQL的区别</h3><h4 id="传统数据库："><a href="#传统数据库：" class="headerlink" title="传统数据库："></a>传统数据库：</h4><ul><li>结构化组织</li><li>数据都存储在表中</li><li>需要用sql进行查询</li><li>严格的一致性</li><li>数据定义语言</li></ul><h4 id="NoSQL："><a href="#NoSQL：" class="headerlink" title="NoSQL："></a>NoSQL：</h4><ul><li>不仅仅是数据库</li><li>没有固定的查询语言</li><li>键值对存储、列存储、文档存储、图形数据库等</li><li>最终一致性</li><li>CAP定理和BASE理论</li><li>高性能、高可用、高扩展</li></ul><h3 id="NoSQL的4种存储方式"><a href="#NoSQL的4种存储方式" class="headerlink" title="NoSQL的4种存储方式"></a>NoSQL的4种存储方式</h3><ul><li>k-v键值对    常见的有redis、Tair、Memcache</li><li>文档数据库：MongoDB</li><li>列存储数据库：HBase、分布式文件系统</li><li>图形数据库：Neo4j</li></ul><p><img src="https://i.loli.net/2021/04/29/RtrZoQSJaFqiGUs.png" alt="nosql分类.png"></p><h3 id="Redis的概述"><a href="#Redis的概述" class="headerlink" title="Redis的概述"></a>Redis的概述</h3><p>英文官网：    <a href="https://redis.io/">https://redis.io/</a></p><p>中文官网：    <a href="http://www.redis.cn/">http://www.redis.cn/</a></p><h4 id="redis是什么"><a href="#redis是什么" class="headerlink" title="redis是什么"></a>redis是什么</h4><p>Redis（Remote Dictionary Server )，即远程字典服务。</p><p>是一个开源的使用ANSI <a href="https://baike.baidu.com/item/C%E8%AF%AD%E8%A8%80">C语言</a>编写、支持网络、可基于内存亦可持久化的日志型、Key-Value<a href="https://baike.baidu.com/item/%E6%95%B0%E6%8D%AE%E5%BA%93/103728">数据库</a>，并提供多种语言的API。</p><h4 id="redis能做什么"><a href="#redis能做什么" class="headerlink" title="redis能做什么"></a>redis能做什么</h4><ul><li>内存存储，持久化，常用的持久化是RDB、AOF</li><li>效率高用于缓存</li><li>发布订阅系统</li><li>地图信息分析</li><li>计时器、计数器</li><li>………………</li></ul><h4 id="redis的特性"><a href="#redis的特性" class="headerlink" title="redis的特性"></a>redis的特性</h4><ul><li>多样的数据类型</li><li>持久化</li><li>集群</li><li>事务</li></ul><h4 id="redis数据库"><a href="#redis数据库" class="headerlink" title="redis数据库"></a>redis数据库</h4><p>redis有16个数据库，默认数据库是0号数据库</p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; select 3#切换数据库到3</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379[3]&gt; dbsize#显示当前数据库的key值数量</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379[3]&gt; set key 1#设置一个值</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379[3]&gt; get key#获取值</span><br><span class="line">"1"</span><br><span class="line">127.0.0.1:6379[3]&gt; select 1    #切换到1号数据库</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379[1]&gt; get key#得到的数据为nil，也即是在3号数据库设置的值在1号数据库查不到</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379[1]&gt; keys *#查询当前数据库的所有key值</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379[1]&gt; FLUSHALL#清空所有数据库的值</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379[1]&gt; FLUSHdb #清空当前数据库的值</span><br><span class="line">OK</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><h4 id="redis的原理"><a href="#redis的原理" class="headerlink" title="redis的原理"></a>redis的原理</h4><p>redis是单线程的，redis是基于内存操作的，CPU不是redis的性能瓶颈，redis的性能瓶颈是由内存和网络带宽决定的。</p><p>redis是用c语言编写的，每秒大概100000QPS，性能不比Memcache差。</p><p>由于redis的数据都存储在内存中，所以单线程操作更加快速。多线程操作会存在CPU之间的切换消耗资源。对于内存系统，没有CPU切换效率最高。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 中间件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker常用命令汇总</title>
       <link href="2021/04/28/docker-chang-yong-ming-ling-hui-zong/"/>
       <url>2021/04/28/docker-chang-yong-ming-ling-hui-zong/</url>
@@ -46,31 +96,6 @@
         <tags>
             
             <tag> docker </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>代码设计记录1</title>
-      <link href="2021/04/20/dai-ma-she-ji-ji-lu-1/"/>
-      <url>2021/04/20/dai-ma-she-ji-ji-lu-1/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 代码 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 设计 </tag>
             
         </tags>
       

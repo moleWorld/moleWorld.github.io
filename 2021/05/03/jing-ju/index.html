@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="linux基础命令, 摩尔的世界">
+    <meta name="keywords" content="精句, 摩尔的世界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>linux基础命令 | 摩尔的世界</title>
+    <title>精句 | 摩尔的世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">linux基础命令</h1>
+                    <h1 class="description center-align post-title">精句</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tag/linux/">
-                                <span class="chip bg-color">linux</span>
+                            <a href="/tag/%E7%94%9F%E6%B4%BB/">
+                                <span class="chip bg-color">生活</span>
                             </a>
                         
                     </div>
@@ -553,8 +553,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/linux/" class="post-category">
-                                linux
+                            <a href="/categories/%E6%84%9F%E6%82%9F/" class="post-category">
+                                感悟
                             </a>
                         
                     </div>
@@ -566,7 +566,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-18
+                    2021-05-03
                 </div>
                 
 
@@ -587,19 +587,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看版本信息</span></span><br><span class="line">uname -r</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看系统版本</span></span><br><span class="line">cat /etc/os-release</span><br><span class="line"><span class="meta">#</span><span class="bash">centos7的查看关闭开启防火墙命令</span></span><br><span class="line">firewall-cmd --state					#查看防火墙状态</span><br><span class="line">systemctl stop firewalld.service		#停止防火墙</span><br><span class="line">systemctl disable firewalld.service 	#开机自启</span><br></pre></td></tr></tbody></table></figure>
-
-<h6 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示目录文件</span></span><br><span class="line">ls </span><br><span class="line"><span class="meta">#</span><span class="bash"> 显示带隐藏的目录文件</span></span><br><span class="line">ls -a</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建目录</span></span><br><span class="line">mkdir 目录名</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建文件</span></span><br><span class="line">touch 文件名</span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换目录</span></span><br><span class="line">cd  /目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 返回上一级目录</span></span><br><span class="line">cd ..</span><br><span class="line"><span class="meta">#</span><span class="bash"> 显示当前目录</span></span><br><span class="line">pwd</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除空目录</span></span><br><span class="line">rmdir /目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 复制目录或者文件</span></span><br><span class="line">cp -rp /源文件或者目录 /目标目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 剪切文件或目录</span></span><br><span class="line">mv /源文件或者目录 /目标目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除文件或目录</span></span><br><span class="line">rm -rf /目录或文件</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询文件信息</span></span><br><span class="line">cat 文件名  </span><br><span class="line">tail -f 文件名  #实时查询信息</span><br><span class="line">tail -n 1000 文件名 #倒叙查询1000行信息</span><br></pre></td></tr></tbody></table></figure>
-
-<h6 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 参数 文件名	#更改文件的读写执行权限  参数有-r -w -x 读 写 执行 u所有人 g所属组 例如：chown U+x 123.log</span><br><span class="line">chown 用户 文件名	#更改某个文件用户权限		用户必须是真实存在的</span><br></pre></td></tr></tbody></table></figure>
-
-<h6 id="文件查询命令"><a href="#文件查询命令" class="headerlink" title="文件查询命令"></a>文件查询命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find /目录或文件 -name *init*	#查询含有init的文件 *可以匹配任意个字符</span><br><span class="line">find /目录或文件 -name *init？？？	#一个？只能匹配一个字符</span><br></pre></td></tr></tbody></table></figure>
-
-<h6 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">whoami 	#查看当前用户</span><br><span class="line">useradd -m 账号	#新建一个账号</span><br><span class="line">passwd 账号		#给此账号输入密码</span><br><span class="line">userdel -r 账号 	#删除账号信息</span><br></pre></td></tr></tbody></table></figure>
-
-<h6 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cal -1 5 2020  #查看2020年5月份的日历</span><br><span class="line">wc -lc 文件名 &gt;要创建的文件			# 统计某个文件的行数和列数要书写到某个文件</span><br></pre></td></tr></tbody></table></figure>
-
-
+                <h4 id="知其然并知其所以然，授人以鱼不如授人以渔！学习需慢慢来，不能太过急躁。"><a href="#知其然并知其所以然，授人以鱼不如授人以渔！学习需慢慢来，不能太过急躁。" class="headerlink" title="知其然并知其所以然，授人以鱼不如授人以渔！学习需慢慢来，不能太过急躁。"></a>知其然并知其所以然，授人以鱼不如授人以渔！学习需慢慢来，不能太过急躁。</h4>
                 
             </div>
             <hr/>
@@ -625,7 +613,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://moleWorld.github.io/2021/04/18/linux-ji-chu-ming-ling/">https://moleWorld.github.io/2021/04/18/linux-ji-chu-ming-ling/</a>
+                    <a href="https://moleWorld.github.io/2021/05/03/jing-ju/">https://moleWorld.github.io/2021/05/03/jing-ju/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -663,8 +651,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tag/linux/">
-                                    <span class="chip bg-color">linux</span>
+                                <a href="/tag/%E7%94%9F%E6%B4%BB/">
+                                    <span class="chip bg-color">生活</span>
                                 </a>
                             
                         </div>
@@ -838,13 +826,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/20/yong-xin-xiang-mu-jia-gou-da-jian/">
+                <a href="/2021/05/03/zhu-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="永鑫项目架构搭建">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="注解">
                         
-                        <span class="card-title">永鑫项目架构搭建</span>
+                        <span class="card-title">注解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -855,7 +843,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-03
                         </span>
                         <span class="publish-author">
                             
@@ -872,8 +860,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">设计</span>
+                    <a href="/tag/SpringBoot/">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                 </div>
@@ -887,13 +875,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/04/18/docker-ji-chu/">
+                <a href="/2021/05/03/redis-shi-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="docker基础">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="redis进阶">
                         
-                        <span class="card-title">docker基础</span>
+                        <span class="card-title">redis进阶</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -904,7 +892,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-03
                             </span>
                         <span class="publish-author">
                             
@@ -921,8 +909,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/docker/">
-                        <span class="chip bg-color">docker</span>
+                    <a href="/tag/redis/">
+                        <span class="chip bg-color">redis</span>
                     </a>
                     
                 </div>

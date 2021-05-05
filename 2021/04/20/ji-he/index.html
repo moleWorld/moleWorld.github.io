@@ -587,7 +587,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h6 id="数组和集合的区别？"><a href="#数组和集合的区别？" class="headerlink" title="数组和集合的区别？"></a>数组和集合的区别？</h6><blockquote>
+                <h4 id="数组和集合的区别？"><a href="#数组和集合的区别？" class="headerlink" title="数组和集合的区别？"></a>数组和集合的区别？</h4><blockquote>
 <p>数组是同一类型的数据汇总，长度是固定的，可以通过下标的形式获取值，存入值。</p>
 </blockquote>
 <blockquote>
@@ -601,10 +601,10 @@
 </blockquote>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组的三种创建方式</span></span><br><span class="line"><span class="keyword">int</span>[] createOne = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};</span><br><span class="line"><span class="keyword">int</span>[] createTwo = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};</span><br><span class="line"><span class="keyword">int</span>[] createThree = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="comment">//数组存储值方式，获取值方式</span></span><br><span class="line">createThree[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">System.out.println(createThree[<span class="number">0</span>]);</span><br><span class="line">createThree[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">System.out.println(createThree[<span class="number">0</span>]);</span><br></pre></td></tr></tbody></table></figure>
 
-<h6 id="谈谈你对集合的理解"><a href="#谈谈你对集合的理解" class="headerlink" title="谈谈你对集合的理解"></a>谈谈你对集合的理解</h6><blockquote>
+<h4 id="谈谈你对集合的理解"><a href="#谈谈你对集合的理解" class="headerlink" title="谈谈你对集合的理解"></a>谈谈你对集合的理解</h4><blockquote>
 <p>集合分为Collection和Map两个大的方向，Collection有包含了Set不重复集合、List可重复集合两种。</p>
 </blockquote>
-<h6 id="Set集合描述"><a href="#Set集合描述" class="headerlink" title="Set集合描述"></a>Set集合描述</h6><blockquote>
+<h4 id="Set集合描述"><a href="#Set集合描述" class="headerlink" title="Set集合描述"></a>Set集合描述</h4><blockquote>
 <p>Set是存储无序元素集合，且集合内的元素不会重复。</p>
 </blockquote>
 <blockquote>
@@ -617,7 +617,7 @@
 
 <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">这是上述三种集合遍历的结果，可看出三种集合的排序方式</span></span><br><span class="line">ea   a   dc   nb   md   LinkedHashSet的遍历结果</span><br><span class="line">a   nb   md   ea   dc   HashSet的遍历结果</span><br><span class="line">a   dc   ea   md   nb   TreeSet的遍历结果</span><br></pre></td></tr></tbody></table></figure>
 
-<h6 id="List集合描述"><a href="#List集合描述" class="headerlink" title="List集合描述"></a>List集合描述</h6><blockquote>
+<h4 id="List集合描述"><a href="#List集合描述" class="headerlink" title="List集合描述"></a>List集合描述</h4><blockquote>
 <p>List集合是存储有序的集合，且集合内的元素是可重复的。</p>
 </blockquote>
 <blockquote>
@@ -630,7 +630,7 @@
 <p>再删除时，ArrayList删除的数据更靠后或数据量很小时移动的次数也会很少，两则的效率差不太多，故使用场景中ArrayList运用比较广泛。</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常见的集合操作</span></span><br><span class="line">List&lt;String&gt; listOne = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">List&lt;String&gt; listTwo = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">listOne.add(<span class="string">"aaa"</span>);</span><br><span class="line">listOne.add(<span class="string">"bbb"</span>);</span><br><span class="line">listOne.add(<span class="string">"ccc"</span>);</span><br><span class="line">listTwo.add(<span class="string">"aaa"</span>);</span><br><span class="line">listTwo.add(<span class="string">"bbb"</span>);</span><br><span class="line">listTwo.add(<span class="string">"ccc"</span>);</span><br><span class="line"><span class="comment">//遍历操作</span></span><br><span class="line">listOne.forEach(System.out::print);</span><br><span class="line"><span class="comment">//集合大小</span></span><br><span class="line">System.out.println(listOne.size());</span><br><span class="line"><span class="comment">//是否为空</span></span><br><span class="line">System.out.println(listOne.isEmpty());</span><br><span class="line"><span class="comment">//是否包含某个数据</span></span><br><span class="line">System.out.println(listOne.contains(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//通过下标获取元素</span></span><br><span class="line">System.out.println(listOne.get(<span class="number">0</span>));</span><br><span class="line"><span class="comment">//移除某个元素</span></span><br><span class="line">System.out.println(listOne.remove(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//替换某个元素</span></span><br><span class="line">System.out.println(listOne.set(<span class="number">1</span>,<span class="string">"aaaaaaa"</span>));</span><br><span class="line"><span class="comment">//截取集合</span></span><br><span class="line">System.out.println(listOne.subList(<span class="number">0</span>,<span class="number">1</span>));</span><br><span class="line"><span class="comment">//获取某个元素的下标</span></span><br><span class="line">System.out.println(listOne.indexOf(<span class="string">"bbb"</span>));</span><br></pre></td></tr></tbody></table></figure>
 
-<h6 id="Map集合描述"><a href="#Map集合描述" class="headerlink" title="Map集合描述"></a>Map集合描述</h6><blockquote>
+<h4 id="Map集合描述"><a href="#Map集合描述" class="headerlink" title="Map集合描述"></a>Map集合描述</h4><blockquote>
 <p>Map是一个key/value的键值对集合，key不可重复，value可重复的。</p>
 </blockquote>
 <blockquote>

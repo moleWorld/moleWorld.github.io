@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="反射基础, 摩尔的世界">
+    <meta name="keywords" content="springboot, 摩尔的世界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>反射基础 | 摩尔的世界</title>
+    <title>springboot | 摩尔的世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">反射基础</h1>
+                    <h1 class="description center-align post-title">springboot</h1>
                 </div>
             </div>
         </div>
@@ -539,25 +539,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tag/%E5%8F%8D%E5%B0%84/">
-                                <span class="chip bg-color">反射</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                java基础
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -566,7 +553,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-20
+                    2021-05-10
                 </div>
                 
 
@@ -575,7 +562,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    924
+                    0
                 </div>
                 
 
@@ -595,196 +582,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<h6 id="正常方式-引入包名、类名-————————-gt-new对象————————-gt-取得实例化对象"><a href="#正常方式-引入包名、类名-————————-gt-new对象————————-gt-取得实例化对象" class="headerlink" title="正常方式: 引入包名、类名_————————>new对象————————>取得实例化对象"></a>正常方式: 引入包名、类名_————————&gt;new对象————————&gt;取得实例化对象</h6></blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.annotation.example.demo.controller;
-
-import com.annotation.example.demo.entity.Student; //引入类名
-
-public class Reflection {
-
-    public void test(){
-        Student student = new Student();  //new对象
-        student.getAddress();	 //获取对象信息
-    }
-
-
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<blockquote>
-<h6 id="反射方式：-实例化对象—————————-gt-getClass-方法—————————-gt-获取完整的包类信息"><a href="#反射方式：-实例化对象—————————-gt-getClass-方法—————————-gt-获取完整的包类信息" class="headerlink" title="反射方式：  实例化对象—————————>getClass()方法—————————>获取完整的包类信息"></a>反射方式：  实例化对象—————————&gt;getClass()方法—————————&gt;获取完整的包类信息</h6></blockquote>
-<blockquote>
-<h6 id="全路径信息—————————-gt-forName-方法—————————-gt-获取完整的包类信息"><a href="#全路径信息—————————-gt-forName-方法—————————-gt-获取完整的包类信息" class="headerlink" title="全路径信息—————————>forName()方法—————————>获取完整的包类信息"></a>全路径信息—————————&gt;forName()方法—————————&gt;获取完整的包类信息</h6></blockquote>
-<blockquote>
-<h6 id="类名————————————-gt-class——————————————-gt-获取完整的包类信息"><a href="#类名————————————-gt-class——————————————-gt-获取完整的包类信息" class="headerlink" title="类名————————————>.class——————————————>获取完整的包类信息"></a>类名————————————&gt;.class——————————————&gt;获取完整的包类信息</h6></blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public static void main(String[] args) throws ClassNotFoundException {
-    // 方式1----通过全路径获取student信息
-    Class c= Class.forName("com.annotation.example.demo.entity.Student");
-    System.out.println(c.hashCode());
-
-    //方式2----通过new对象的getClass()方法获取student信息
-    Student student = new Student();
-    Class c2 = student.getClass();
-    System.out.println(c2.hashCode());
-
-    //方式3----通过类名获取student信息
-    Class c1 = Student.class;
-    System.out.println(c1.hashCode());
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<h6 id="反射获取基本信息：更多方法可自行测试查看"><a href="#反射获取基本信息：更多方法可自行测试查看" class="headerlink" title="反射获取基本信息：更多方法可自行测试查看"></a>反射获取基本信息：更多方法可自行测试查看</h6></blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException {
-    // 方式1----通过全路径获取student信息
-    Class c= Class.forName("com.annotation.example.demo.entity.Student");
-    System.out.println(c.hashCode());
-
-    //获得包名+类名
-    System.out.println(c.getName());
-    //获得类名
-    System.out.println(c.getSimpleName());
-    //获取public的信息
-    Field[] fields = c.getFields();
-    for (Field field : fields) {
-        System.out.println(field);
-    }
-    //获取全部的信息
-    Field[] declaredFields = c.getDeclaredFields();
-    for (Field field : declaredFields) {
-        System.out.println(field);
-    }
-    //获取具体某一个的字段
-    Field name = c.getDeclaredField("name");
-    System.out.println(name);
-    //获取本类的方法及其父类的额所有方法
-    Method[] methods = c.getMethods();
-    for (Method method : methods) {
-        System.out.println(method);
-    }
-    //只获取本类的基本信息
-    Method[] declaredMethods = c.getDeclaredMethods();
-    for (Method declaredMethod : declaredMethods) {
-        System.out.println(declaredMethod);
-    }
-
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<h6 id="常用的获取对象信息的方式"><a href="#常用的获取对象信息的方式" class="headerlink" title="常用的获取对象信息的方式"></a>常用的获取对象信息的方式</h6></blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public static void main(String[] args) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, NoSuchFieldException {
-    Class c = Student.class;
-
-    //通过newInstance的方式获取对象信息
-    Student student = (Student) c.newInstance();
-    student.setName("小婉");
-    System.out.println(student.getName());
-
-    //通过构造器创建对象
-    Constructor declaredConstructor = c.getDeclaredConstructor(String.class, String.class, int.class);
-    Student student1 = (Student) declaredConstructor.newInstance("小婉", "驻马店", 30);
-    System.out.println(student1);
-
-    //通过获取方法获得对象信息
-    Student student2 = (Student) c.newInstance();
-    Method setName = c.getDeclaredMethod("setName", String.class);
-   	setName.invoke(student2, "小婉");
-    System.out.println(student2.getName());
-
-    //通过反射操作属性
-    Student student3 = (Student) c.newInstance();
-    Field name1 = c.getDeclaredField("name");
-    //不能直接操作私有属性,关闭安全检测，如果反射运用比较多，可以关闭检测提高性能
-    name1.setAccessible(true);
-    name1.set(student3,"小婉");
-    System.out.println(student3.getName());
-
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<h6 id="获取参数类型及返回值类型步骤"><a href="#获取参数类型及返回值类型步骤" class="headerlink" title="获取参数类型及返回值类型步骤"></a>获取参数类型及返回值类型步骤</h6></blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public static void main(String[] args) throws NoSuchMethodException {
-    Method method = Reflection2.class.getMethod("test1", Map.class, List.class); //获取test1的方法
-    Type[] types = method.getGenericParameterTypes(); //获取方法内所有的参数
-    for (Type type : types) {  //便利参数
-        System.out.println(type); //输出参数
-        if (type instanceof ParameterizedType){   //查看参数是否属于参数化类型
-            Type[] typeArguments = ((ParameterizedType) type).getActualTypeArguments();  //把参数强转为参数化类型在获取具体的参数
-            for (Type typeArgument : typeArguments) {
-                System.out.println(typeArgument);   //便利参数并打印
-            }
-        }
-    }
-    Method method1 = Reflection2.class.getMethod("test2");
-    Type genericReturnType = method1.getGenericReturnType();   //获取返回参数类型
-    System.out.println(genericReturnType);
-    if (genericReturnType instanceof ParameterizedType){   //查看参数是否属于参数化类型
-        Type[] typeArguments = ((ParameterizedType) genericReturnType).getActualTypeArguments();  //把参数强转为参数化类型在获取具体的参数
-        for (Type typeArgument : typeArguments) {
-            System.out.println(typeArgument);   //便利参数并打印
-        }
-    }
-}
-
-public void test1(Map&lt;String, Student&gt; map, List&lt;Student&gt; list){
-    System.out.println("test1");
-}
-public Map&lt;String,Student&gt; test2(){
-    System.out.println("test2");
-    return null;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<h6 id="获取注解的值及参数信息"><a href="#获取注解的值及参数信息" class="headerlink" title="获取注解的值及参数信息"></a>获取注解的值及参数信息</h6></blockquote>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Reflection3 {
-    public static void main(String[] args) throws NoSuchFieldException {
-        classAnnotation annotation = Student2.class.getAnnotation(classAnnotation.class);
-        System.out.println(annotation.value());
-
-        Field name = Student2.class.getDeclaredField("name");
-        filedAnnotation annotation1 = name.getAnnotation(filedAnnotation.class);
-        System.out.println(annotation1.id());
-        System.out.println(annotation1.length());
-        //db_student
-		//db_id
-		//10  
-    }
-}
-
-@Data
-@classAnnotation("db_student")
-class Student2{
-
-    @filedAnnotation(id="db_id",length = 10)
-    private String name;
-
-    @filedAnnotation(id="db_address",length = 19)
-    private String address;
-
-    @filedAnnotation(id="db_age",length = 3)
-    private int age;
-
-}
-/**
- * 类注解
- */
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-@interface classAnnotation{
-    String value();
-}
-/**
- * 字段注解
- */
-@Target(ElementType.FIELD)
-@Retention(RetentionPolicy.RUNTIME)
-@interface filedAnnotation{
-    String id();
-    int length();
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+                
                 
             </div>
             <hr/>
@@ -810,7 +608,7 @@ class Student2{
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://moleWorld.github.io/2021/04/20/fan-she-ji-chu/">https://moleWorld.github.io/2021/04/20/fan-she-ji-chu/</a>
+                    <a href="https://moleWorld.github.io/2021/05/10/springboot/">https://moleWorld.github.io/2021/05/10/springboot/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -847,11 +645,7 @@ class Student2{
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tag/%E5%8F%8D%E5%B0%84/">
-                                    <span class="chip bg-color">反射</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1019,66 +813,18 @@ class Student2{
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/04/20/swagger-zong-jie/">
+                <a href="/2021/05/10/springboot/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="swagger总结">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="springboot">
                         
-                        <span class="card-title">swagger总结</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
-                                    中间件
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tag/swagger/">
-                        <span class="chip bg-color">swagger</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/04/20/quan-ju-bu-huo-ri-zhi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="全局捕获日志">
-                        
-                        <span class="card-title">全局捕获日志</span>
+                        <span class="card-title">springboot</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1089,14 +835,52 @@ class Student2{
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            摩尔
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/05/10/jvm/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="jvm">
+                        
+                        <span class="card-title">jvm</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    框架
+                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    java基础
                                 </a>
                             
                             
@@ -1106,8 +890,8 @@ class Student2{
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">设计</span>
+                    <a href="/tag/jvm/">
+                        <span class="chip bg-color">jvm</span>
                     </a>
                     
                 </div>

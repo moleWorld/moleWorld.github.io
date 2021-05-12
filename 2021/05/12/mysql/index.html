@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="springboot, 摩尔的世界">
+    <meta name="keywords" content="mysql, 摩尔的世界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>springboot | 摩尔的世界</title>
+    <title>mysql | 摩尔的世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">springboot</h1>
+                    <h1 class="description center-align post-title">mysql</h1>
                 </div>
             </div>
         </div>
@@ -539,12 +539,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tag/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                <span class="chip bg-color">数据库</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
+                                中间件
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -553,7 +566,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-10
+                    2021-05-12
                 </div>
                 
 
@@ -562,7 +575,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.6k
                 </div>
                 
 
@@ -582,7 +595,182 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h4 id="mysql中innodb和myisam"><a href="#mysql中innodb和myisam" class="headerlink" title="mysql中innodb和myisam"></a>mysql中innodb和myisam</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>innodb</th>
+<th>myisam</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>事务</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>外键</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>全文索引</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>锁级别</td>
+<td>行级锁</td>
+<td>表锁</td>
+</tr>
+<tr>
+<td>表空间大小</td>
+<td>较大，约为myisam的2倍</td>
+<td>较小</td>
+</tr>
+<tr>
+<td>索引</td>
+<td>聚簇索引、索引就是数据，顺序存储，因此能缓存索引，也能缓存数据</td>
+<td>非聚簇索引、索引和文件分开，随机存储，只能缓存索引</td>
+</tr>
+<tr>
+<td>备份和恢复</td>
+<td>拷贝数据文件、备份 binlog，或者用 mysqldump，数据量大时很慢</td>
+<td>数据是以文件的形式存储，所以在跨平台的数据转移中会很方便</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>myisam：节约空间，速度快，如果不注重事务或读取操作较多时选择myisam，其他情况选择innodb。</p>
+</blockquote>
+<blockquote>
+<p>innodb：安全性高、事务处理、多表多用户操作。</p>
+</blockquote>
+<p>mysql的数据库信息都存在data目录下：</p>
+<ul>
+<li>InnoDB基于磁盘的资源是InnoDB表空间数据文件和它的日志文件，InnoDB 表的大小只受限于操作系统文件的大小</li>
+<li>MyISAM在磁盘上存储成三个文件。第一个文件的名字以表的名字开始，扩展名指出文件类型， .frm文件存储表定义，数据文件的扩展名为.MYD， 索引文件的扩展名是.MYI</li>
+</ul>
+<h4 id="mysql的事务ACID"><a href="#mysql的事务ACID" class="headerlink" title="mysql的事务ACID"></a>mysql的事务ACID</h4><ul>
+<li>原子性(A)：事务是最小单位，不可再分</li>
+<li>一致性©：事务要求所有的DML语句操作的时候，必须保证同时成功或者同时失败</li>
+<li>隔离性(I)：事务A和事务B之间具有隔离性</li>
+<li>持久性(D)：是事务的保证，事务终结的标志(内存的数据持久到硬盘文件中)</li>
+</ul>
+<blockquote>
+<p>隔离存在的并发问题</p>
+</blockquote>
+<ul>
+<li>脏读：事务A读取了事务B更新的数据，然后B回滚操作（即未提交），那么A读取到的数据是脏数据</li>
+<li>不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。</li>
+<li>幻读：系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。</li>
+</ul>
+<blockquote>
+<p>隔离级别的分类</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>事务隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>读未提交（read-uncommitted）</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>不可重复读（read-committed）</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>可重复读（repeatable-read）</td>
+<td>否</td>
+<td>否</td>
+<td>是</td>
+</tr>
+<tr>
+<td>串行化（serializable）</td>
+<td>否</td>
+<td>否</td>
+<td>否</td>
+</tr>
+</tbody></table>
+<p><strong>mysql默认的事务隔离级别为repeatable-read</strong></p>
+<blockquote>
+<p>mysql事务的常用方法</p>
+</blockquote>
+<pre class="line-numbers language-SHELl" data-language="SHELl"><code class="language-SHELl">set autocommit =0   #关闭自动提交
+set autocommit =1	#开启自动提交
+Start Transaction	#开启事务
+Commit 		#提交事务
+Rollback 	#回滚事务
+End Transaction			#事务结束
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="索引-index"><a href="#索引-index" class="headerlink" title="索引 index"></a>索引 index</h4><h5 id="B-Tree索引"><a href="#B-Tree索引" class="headerlink" title="B-Tree索引"></a>B-Tree索引</h5><ul>
+<li><strong>InnoDB使用的是B+Tree，每一个叶子节点都包含指向下一个叶子节点的指针，从而方便叶子节点的范围遍历。</strong></li>
+<li><strong>B-Tree通常意味着所有的值都是按顺序存储的，并且每一个叶子页到根的距离相同，很适合查找范围数据。</strong></li>
+<li><strong>B-Tree可以对&lt;，&lt;=，=，&gt;，&gt;=，BETWEEN，IN，以及不以通配符开始的LIKE使用索引。</strong></li>
+</ul>
+<h5 id="索引的优缺点"><a href="#索引的优缺点" class="headerlink" title="索引的优缺点"></a>索引的优缺点</h5><blockquote>
+<p>优点：</p>
+</blockquote>
+<ul>
+<li>建立索引的列可以保证行的唯一性，生成唯一的rowId</li>
+<li> 建立索引可以有效缩短数据的检索时间</li>
+<li> 建立索引可以加快表与表之间的连接</li>
+<li> 为用来排序或者是分组的字段添加索引可以加快分组和排序顺序</li>
+</ul>
+<blockquote>
+<p>缺点：</p>
+</blockquote>
+<ul>
+<li><p>创建索引和维护索引需要时间成本，这个成本随着数据量的增加而加大</p>
+</li>
+<li><p>创建索引和维护索引需要空间成本，每一条索引都要占据数据库的物理存储空间，数据量越大，占用空间也越大（数据表占据的是数据库的数据空间）</p>
+</li>
+<li><p>会降低表的增删改的效率，因为每次增删改索引需要进行动态维护，导致时间变长</p>
+</li>
+</ul>
+<h5 id="常见的索引类型"><a href="#常见的索引类型" class="headerlink" title="常见的索引类型"></a>常见的索引类型</h5><ul>
+<li><p>普通索引      index</p>
+<p><strong>普通索引是最基本的索引，它没有任何限制。</strong></p>
+</li>
+<li><p>唯一索引     uniqe index</p>
+<p><strong>唯一索引和普通索引类似，主要的区别在于，唯一索引限制列的值必须唯一，但允许存在空值（只允许存在一条空值）。</strong></p>
+</li>
+<li><p>主键索引     primary key</p>
+<p><strong>主键索引是一种特殊的唯一索引，一个表只能有一个主键，不允许有空值。一般是在建表的时候同时创建主键索引</strong></p>
+</li>
+<li><p>组合索引     index</p>
+<p><strong>复合索引是在多个字段上创建的索引。复合索引遵守“最左前缀”原则，即在查询条件中使用了复合索引的第一个字段，索引才会被使用。因此，在复合索引中索引列的顺序至关重要。</strong></p>
+</li>
+<li><p>全文索引    fullText</p>
+<p><strong>FULLTEXT 索引在 MySQL 5.6 版本之后支持 InnoDB，而之前的版本只支持 MyISAM 表。一般用于模糊查询</strong></p>
+</li>
+</ul>
+<h5 id="索引失效场景"><a href="#索引失效场景" class="headerlink" title="索引失效场景"></a>索引失效场景</h5><ul>
+<li>在where后使用or，导致索引失效（尽量少用or）</li>
+<li>使用like ，like查询是以%开头</li>
+<li>复合索引遵守“最左前缀”原则，即在查询条件中使用了复合索引的第一个字段，索引才会被使用</li>
+<li>如果列类型是字符串，那一定要在条件中将数据使用引号引用起来,否则不使用索引</li>
+<li>在索引字段上使用not，&lt;&gt;，!=。不等于操作符是永远不会用到索引的，因此对它的处理只会产生全表扫描</li>
+<li>DATE_FORMAT()格式化时间，格式化后的时间再去比较，可能会导致索引失效。</li>
+<li>is null， is not null也无法使用索引</li>
+</ul>
+<h5 id="什么情况下不适合建立索引"><a href="#什么情况下不适合建立索引" class="headerlink" title="什么情况下不适合建立索引"></a>什么情况下不适合建立索引</h5><ul>
+<li>小数据量的表不超过10万</li>
+<li>数据变动强的字段不建立索引</li>
+<li>大字段不建立索引</li>
+<li>有枚举类型的字段不建议索引，或者建立组合索引</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -608,7 +796,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://moleWorld.github.io/2021/05/10/springboot/">https://moleWorld.github.io/2021/05/10/springboot/</a>
+                    <a href="https://moleWorld.github.io/2021/05/12/mysql/">https://moleWorld.github.io/2021/05/12/mysql/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -645,7 +833,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tag/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                                    <span class="chip bg-color">数据库</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -813,9 +1005,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/05/12/mysql/">
                     <div class="card-image">
@@ -833,9 +1026,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -848,6 +1041,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -866,13 +1060,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/10/jvm/">
+                <a href="/2021/05/10/springboot/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="jvm">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="springboot">
                         
-                        <span class="card-title">jvm</span>
+                        <span class="card-title">springboot</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -887,23 +1081,11 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    java基础
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            摩尔
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tag/jvm/">
-                        <span class="chip bg-color">jvm</span>
-                    </a>
-                    
                 </div>
                 
             </div>

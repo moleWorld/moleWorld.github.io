@@ -6,7 +6,7 @@
   <link href="https://moleworld.github.io/atom.xml" rel="self"/>
   
   <link href="https://moleworld.github.io/"/>
-  <updated>2021-05-12T14:21:56.247Z</updated>
+  <updated>2021-05-14T14:41:49.201Z</updated>
   <id>https://moleworld.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mybatis</title>
+    <link href="https://moleworld.github.io/2021/05/13/mybatis/"/>
+    <id>https://moleworld.github.io/2021/05/13/mybatis/</id>
+    <published>2021-05-13T12:16:25.000Z</published>
+    <updated>2021-05-14T14:41:49.201Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;mybatis的中文官网地址&quot;&gt;&lt;a href=&quot;#mybatis的中文官网地址&quot; class=&quot;headerlink&quot; title=&quot;mybatis的中文官网地址&quot;&gt;&lt;/a&gt;mybatis的中文官网地址&lt;/h4&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="中间件" scheme="https://moleworld.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
+    
+    
+    <category term="mybatis" scheme="https://moleworld.github.io/tag/mybatis/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql</title>
@@ -46,11 +71,15 @@
     <link href="https://moleworld.github.io/2021/05/10/springboot/"/>
     <id>https://moleworld.github.io/2021/05/10/springboot/</id>
     <published>2021-05-10T15:11:15.000Z</published>
-    <updated>2021-05-10T15:11:15.777Z</updated>
+    <updated>2021-05-15T08:41:57.854Z</updated>
     
     
     
     
+    <category term="框架" scheme="https://moleworld.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="spring" scheme="https://moleworld.github.io/tag/spring/"/>
     
   </entry>
   
@@ -479,31 +508,6 @@
     
     
     <category term="注解" scheme="https://moleworld.github.io/tag/%E6%B3%A8%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>永鑫项目架构搭建</title>
-    <link href="https://moleworld.github.io/2021/04/20/yong-xin-xiang-mu-jia-gou-da-jian/"/>
-    <id>https://moleworld.github.io/2021/04/20/yong-xin-xiang-mu-jia-gou-da-jian/</id>
-    <published>2021-04-20T12:10:47.000Z</published>
-    <updated>2021-04-20T13:44:37.897Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h6 id=&quot;一、项目搭建目的&quot;&gt;&lt;a href=&quot;#一、项目搭建目的&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="框架" scheme="https://moleworld.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="设计" scheme="https://moleworld.github.io/tag/%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   

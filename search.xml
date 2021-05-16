@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>mybatis</title>
+      <link href="2021/05/13/mybatis/"/>
+      <url>2021/05/13/mybatis/</url>
+      
+        <content type="html"><![CDATA[<h4 id="mybatis的中文官网地址"><a href="#mybatis的中文官网地址" class="headerlink" title="mybatis的中文官网地址"></a>mybatis的中文官网地址</h4><p><a href="https://mybatis.org/mybatis-3/zh/">https://mybatis.org/mybatis-3/zh/</a></p><h4 id="mybatis的主要核心部件"><a href="#mybatis的主要核心部件" class="headerlink" title="mybatis的主要核心部件"></a>mybatis的主要核心部件</h4><ul><li>SqlSession    表示和数据库交互的会话，完成必要的数据库增删改查功能</li><li>Executor       执行器，是mybatis的核心，负责sql语句的执行，缓存的查询</li><li>StatementHandler    封装了JDBC Statement操作，负责对JDBC statement的操作，如设置参数，或将结果集转换成List</li><li>ParameterHandler    负责对用户传递的参数转换成JDBC Statement所需要的参数</li><li>ResultSetHandler      负责将jdbc返回的结果集转换成List集合</li><li>TypeHandler              负责将java的数据类型和jdbc数据类型之间的转换</li><li>Configuration             配置mybatis的信息</li><li>SqlSource                    负责用户传递的paramterObject,动态的生成SQL语句，将信息封装到BoundSql中</li><li>BoundSql                    表示动态生成SQL语句以及相应的参数信息</li></ul><h4 id="mybatis-工作流程"><a href="#mybatis-工作流程" class="headerlink" title="mybatis 工作流程"></a>mybatis 工作流程</h4><ol><li>读取mybatis的配置信息，可以是xml的格式，也可以是基于Configuration的对象。</li><li>实例化SqlSessionFactoryBuilder,并通过build配置文件生成SqlSessionFactory实例</li><li>创建一个SqlSession会话，用于实现CRUD。</li><li>创建会话时也会创建一个新的Executor执行器，用于执行SQL或者查询缓存</li><li>执行完成，返回结果并关闭SqlSession会话。</li></ol><h4 id="mybatis的缓存"><a href="#mybatis的缓存" class="headerlink" title="mybatis的缓存"></a>mybatis的缓存</h4><h5 id="一级缓存SqlSession"><a href="#一级缓存SqlSession" class="headerlink" title="一级缓存SqlSession"></a>一级缓存SqlSession</h5><p>mybatis的一级缓存是默认开启的，是SqlSession级别的，即拿到这个链接到结束连接的过程中缓存是有效的。其特点有以下：</p><ul><li>映射语句文件中的所有 select 语句的结果将会被缓存。</li><li>映射语句文件中的所有 insert、update 和 delete 语句会刷新缓存。</li><li>缓存会使用最近最少使用算法（LRU, Least Recently Used）算法来清除不需要的缓存。</li><li>缓存不会定时进行刷新（也就是说，没有刷新间隔）。</li><li>缓存会保存列表或对象（无论查询方法返回哪种）的 1024 个引用。</li><li>缓存会被视为读/写缓存，这意味着获取到的对象并不是共享的，可以安全地被调用者修改，而不干扰其他调用者或线程所做的潜在修改。</li></ul><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--可以设置缓存算法，刷新间隔、引用大小、只读表示等 --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cache</span>  <span class="token attr-name">eviction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>FIFO<span class="token punctuation">"</span></span>  <span class="token attr-name">flushInterval</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60000<span class="token punctuation">"</span></span>  <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>512<span class="token punctuation">"</span></span>  <span class="token attr-name">readOnly</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="二级缓存nameSpace"><a href="#二级缓存nameSpace" class="headerlink" title="二级缓存nameSpace"></a>二级缓存nameSpace</h5><p>mybatis的二级缓存也叫全局缓存，由于一级缓存的作用域只在sqlSession中（太窄了），所以诞生了二级缓存，它是基于nameSpace级别的缓存，相当于一个nameSpace对应一个二级缓存。mybatis的二级缓存需要手动开启。</p><p>二级缓存的工作机制：</p><ul><li>当一个会话查询到一条数据时首先会存储到一级缓存中</li><li>如果当前会话关闭，则一级缓存不存在了，则会把一级缓存的信息过渡到二级缓存</li><li>当我们再次在此nameSPace空间内查询时则会从二级缓存中获得内容</li><li>不同的nameSpace有不同的缓存集合</li></ul><h5 id="自定义缓存"><a href="#自定义缓存" class="headerlink" title="自定义缓存"></a>自定义缓存</h5><p>自定义缓存只需实现Cache就可以了！具体可查看官方文档！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 中间件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mybatis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mysql</title>
       <link href="2021/05/12/mysql/"/>
       <url>2021/05/12/mysql/</url>
@@ -36,6 +61,18 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 框架 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> spring </tag>
+            
+        </tags>
       
     </entry>
     

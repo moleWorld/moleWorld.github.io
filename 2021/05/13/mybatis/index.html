@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="jvm, 摩尔的世界">
+    <meta name="keywords" content="mybatis, 摩尔的世界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>jvm | 摩尔的世界</title>
+    <title>mybatis | 摩尔的世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">jvm</h1>
+                    <h1 class="description center-align post-title">mybatis</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tag/jvm/">
-                                <span class="chip bg-color">jvm</span>
+                            <a href="/tag/mybatis/">
+                                <span class="chip bg-color">mybatis</span>
                             </a>
                         
                     </div>
@@ -553,8 +553,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                java基础
+                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
+                                中间件
                             </a>
                         
                     </div>
@@ -566,7 +566,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-10
+                    2021-05-13
                 </div>
                 
 
@@ -575,7 +575,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    776
                 </div>
                 
 
@@ -595,94 +595,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="jvm（hotSpot）的体系结构"><a href="#jvm（hotSpot）的体系结构" class="headerlink" title="jvm（hotSpot）的体系结构"></a>jvm（hotSpot）的体系结构</h4><p><img src="https://i.loli.net/2021/05/10/pZ1nxflVTFqdOaC.png" alt="jvm体系结构.png"></p>
-<h4 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h4><h5 id="类加载器的种类"><a href="#类加载器的种类" class="headerlink" title="类加载器的种类"></a>类加载器的种类</h5><ul>
-<li>启动类根加载器                      lib/rb.jar</li>
-<li>扩展类加载器                          lib/exc/*.jar</li>
-<li>应用程序加载器                     classpath</li>
+                <h4 id="mybatis的中文官网地址"><a href="#mybatis的中文官网地址" class="headerlink" title="mybatis的中文官网地址"></a>mybatis的中文官网地址</h4><p><a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/">https://mybatis.org/mybatis-3/zh/</a></p>
+<h4 id="mybatis的主要核心部件"><a href="#mybatis的主要核心部件" class="headerlink" title="mybatis的主要核心部件"></a>mybatis的主要核心部件</h4><ul>
+<li>SqlSession    表示和数据库交互的会话，完成必要的数据库增删改查功能</li>
+<li>Executor       执行器，是mybatis的核心，负责sql语句的执行，缓存的查询</li>
+<li>StatementHandler    封装了JDBC Statement操作，负责对JDBC statement的操作，如设置参数，或将结果集转换成List</li>
+<li>ParameterHandler    负责对用户传递的参数转换成JDBC Statement所需要的参数</li>
+<li>ResultSetHandler      负责将jdbc返回的结果集转换成List集合</li>
+<li>TypeHandler              负责将java的数据类型和jdbc数据类型之间的转换</li>
+<li>Configuration             配置mybatis的信息</li>
+<li>SqlSource                    负责用户传递的paramterObject,动态的生成SQL语句，将信息封装到BoundSql中</li>
+<li>BoundSql                    表示动态生成SQL语句以及相应的参数信息</li>
 </ul>
-<h5 id="类加载器概念"><a href="#类加载器概念" class="headerlink" title="类加载器概念"></a>类加载器概念</h5><p>我们编写号类文件之后，通过类加载器class loader加载成class文件，class文件也可通过getClassload转换到class loader里，如果我们需要实例化，则一般常用new的方式实例化成具体的对象，对象也可通过getClass得到想要的class文件。其中class是抽象的，对象是具体的实现。每个对象都是一个实例化。</p>
-<h4 id="双亲委派机制"><a href="#双亲委派机制" class="headerlink" title="双亲委派机制"></a>双亲委派机制</h4><h5 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h5><p>双亲委派模型是为了保证Java核心库的类型安全。所有Java应用都至少需要引用java.lang.Object类，在运行时这个类需要被加载到Java虚拟机中。如果该加载过程由自定义类加载器来完成，可能就会存在多个版本的java.lang.Object类，而且这些类之间是不兼容的。</p>
-<p>通过双亲委派模型，对于Java核心库的类的加载工作由启动类加载器来统一完成，保证了Java应用所使用的都是同一个版本的Java核心库的类，是互相兼容的。</p>
-<h5 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h5><p>如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把这个请求委派给父类加载器去完成，每一个层次的加载器都是如此，因此所有的类加载请求都会传给顶层的启动类加载器，只有当父加载器反馈自己无法完成该加载请求（该加载器的搜索范围中没有找到对应的类）时，子加载器才会尝试自己去加载。三种加载器的子父关系：启动类根加载器/扩展类加载器 /应用程序加载器      </p>
-<h4 id="native关键字"><a href="#native关键字" class="headerlink" title="native关键字"></a>native关键字</h4><ul>
-<li>凡是用native修饰的方法，说明java程序的作用范围达不到，需要调用底层的C语言</li>
-<li>会进入本地方法栈调用本地方法接口JNI</li>
-<li>JNI的作用是扩展java的应用，融合不同的语言为java使用</li>
-<li>存储native方法的区域叫做native Method Stack即本地方法栈</li>
-<li>在最终执行的时候会加载到本地方法库通过JNI进行调用</li>
-</ul>
-<h4 id="PC寄存器"><a href="#PC寄存器" class="headerlink" title="PC寄存器"></a>PC寄存器</h4><ul>
-<li>它是一块很小的内存空间，几乎可以忽略不计。也是运行速度最快的存储区域</li>
-<li>在jvm规范中，每个线程都有它自己的程序计数器，是线程私有的，生命周期与线程的生命周期保持一致</li>
-<li>任何时间一个线程都只有一个方法在执行，也就是所谓的当前方法。程序计数器会存储当前线程正在执行的java方法的JVM指令地址；或者，如果在执行native方法，则是未指定值（undefined）,因为程序计数器不负责本地方法栈。</li>
-<li>它是程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都需要依赖这个计数器来完成</li>
-<li>字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令</li>
-<li>它是唯一一个在java虚拟机规范中没有规定任何OOM（Out Of Memery）情况的区域,而且没有垃圾回收</li>
-</ul>
-<h4 id="方法区、元空间"><a href="#方法区、元空间" class="headerlink" title="方法区、元空间"></a>方法区、元空间</h4><ul>
-<li>方法区（Method Area）与 Java 堆一样，是所有线程共享的内存区域。</li>
-<li>JDK7 之前（永久代）用于存储已被虚拟机加载的类信息、常量、字符串常量、类静态变量、即时编译器编译后的代码等。即static、final、Class、常量池。</li>
-<li>JDK8 彻底将永久代移除出 HotSpot JVM，将其原有的数据迁移至 Java Heap 或 Native Heap，取代它的是另一个内存区域被称为元空间(Metaspace）</li>
-</ul>
-<p>元空间的本质和永久代类似，都是对 JVM 规范中方法区的实现。不过元空间与永久代之间最大的区别在于：元空间并不在虚拟机中，而是使用本地内存。</p>
-<h4 id="栈stack"><a href="#栈stack" class="headerlink" title="栈stack"></a>栈stack</h4><ul>
-<li>栈内存主管程序的运行和线程同步</li>
-<li>线程结束，栈内存也就释放不存在垃圾回收机制</li>
-<li>栈存储的有8大基本数据类型+对象引用+实例方法</li>
-<li>栈的优势是，存取速度比堆要快，仅次于寄存器，栈数据可以共享。但缺点是，存在栈中的数据大小与生存期必须是确定的，缺乏灵活。</li>
-<li>如果栈满则会抛出stackOverFlowError错误</li>
-</ul>
-<h4 id="堆heap"><a href="#堆heap" class="headerlink" title="堆heap"></a>堆heap</h4><ul>
-<li><p>一个jvm只有一个堆内存，堆内存的大小是可以调节的。</p>
-</li>
-<li><p>类加载器读取类文件之后，会把类、方法、常亮放入堆中，保存我们引用类型的真实对象</p>
-</li>
-<li><p>堆分为：新生区（伊甸园区eden、from、to）、老年区</p>
-</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">-Xms1024m -Xmx1024m -XX:+PrintGCDetails			//自定义堆的内存空间为1024m，其中xms时初始化内存大小，xmx时最大分配内存·
- //新生代总内存   305664K,
-PSYoungGen      total 305664K, used 47186K [0x00000000eab00000, 0x0000000100000000, 0x0000000100000000)  
-   //伊甸园区 使用率                               
-  eden space 262144K, 18% used [0x00000000eab00000,0x00000000ed914aa0,0x00000000fab00000)
-  //幸村一区、幸存0区的内次使用率                             
-  from space 43520K, 0% used [0x00000000fd580000,0x00000000fd580000,0x0000000100000000)
-  to   space 43520K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fd580000)
-  //养老区的内存总数                            
- ParOldGen       total 699392K, used 0K [0x00000000c0000000, 0x00000000eab00000, 0x00000000eab00000)
-  //养老区内存使用率                                       
-  object space 699392K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000eab00000)
-  //元空间的 的逻辑内存，实际上存储在本地内存中                             
- Metaspace       used 3396K, capacity 4500K, committed 4864K, reserved 1056768K
-  class space    used 369K, capacity 388K, committed 512K, reserved 1048576K
-                                 
-  -Xms16m -Xmx16m -XX:+PrintGCDetails      //自定义空间为16m，可以看出明显的差别                       
-  PSYoungGen      total 4608K, used 851K [0x00000000ffb00000, 0x0000000100000000, 0x0000000100000000)
-  eden space 4096K, 8% used [0x00000000ffb00000,0x00000000ffb586f0,0x00000000fff00000)
-  from space 512K, 97% used [0x00000000fff00000,0x00000000fff7c7a0,0x00000000fff80000)
-  to   space 512K, 0% used [0x00000000fff80000,0x00000000fff80000,0x0000000100000000)
- ParOldGen       total 11264K, used 786K [0x00000000ff000000, 0x00000000ffb00000, 0x00000000ffb00000)
-  object space 11264K, 6% used [0x00000000ff000000,0x00000000ff0c4a28,0x00000000ffb00000)
- Metaspace       used 3447K, capacity 4500K, committed 4864K, reserved 1056768K
-  class space    used 370K, capacity 388K, committed 512K, reserved 1048576K 
-                                
-                                
-//当运行的对象过多时会进行轻量级的GC清理和重量级的GC清理，如果重量级的GC清理也不成功，则会提示 java.lang.OutOfMemoryError: Java heap space内存溢出
-[GC (Allocation Failure) --[PSYoungGen: 3072K-&gt;3072K(3584K)] 14077K-&gt;14333K(14848K), 0.0025489 secs] [Times: user=0.00 sys=0.00, real=0.00 secs]                                 
-[Full GC (Ergonomics) [PSYoungGen: 3072K-&gt;3071K(3584K)] [ParOldGen: 11208K-&gt;11208K(11264K)] 14280K-&gt;14279K(14848K), [Metaspace: 36735K-&gt;36735K(1083392K)], 0.0202492 secs] [Times: user=0.01 sys=0.00, real=0.02 secs] 
-2021-05-11 21:38:46.349 ERROR 8084 --- [  restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} init error
-
-java.lang.OutOfMemoryError: Java heap space<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="垃圾回收GC"><a href="#垃圾回收GC" class="headerlink" title="垃圾回收GC"></a>垃圾回收GC</h4><p><strong>1、分代收集算法：</strong> 堆中的每个对象都会添加一个引用计数器。每当一个地方引用这个对象时，计数器值 <code>+1</code>；当引用失效时，计数器值 <code>-1</code>。任何时刻计数值为 <code>0</code> 的对象就是不可能再被使用的。这种算法无法解决<strong>对象之间相互引用的情况</strong>。</p>
-<p><strong>2、复制算法：</strong>将可用内存分为两块，每次只用其中一块，当这一块内存用完了，就将还存活着的对象复制到另外一块上面，然后再把已经使用过的内存空间一次性清理掉。这种算法适用于对象存活率低的场景，比如新生代。</p>
-<p><strong>3、标记、清除、压缩算法：</strong>首先垃圾回收器此时会找出哪些内存在使用中，那些未使用，接着删除未使用对象并内存分配器会保留指向可用内存的引用，以供分配新对象，最后为了提升性能，删除了未引用对象后，还可以将剩下的已引用对象放在一起（压缩），这样就能更简单快捷地分配新对象了。一般可以设置N次标记清除之后，压缩一次。其中N最多15次。</p>
-<p><strong>4、分代收集算法：</strong></p>
+<h4 id="mybatis-工作流程"><a href="#mybatis-工作流程" class="headerlink" title="mybatis 工作流程"></a>mybatis 工作流程</h4><ol>
+<li>读取mybatis的配置信息，可以是xml的格式，也可以是基于Configuration的对象。</li>
+<li>实例化SqlSessionFactoryBuilder,并通过build配置文件生成SqlSessionFactory实例</li>
+<li>创建一个SqlSession会话，用于实现CRUD。</li>
+<li>创建会话时也会创建一个新的Executor执行器，用于执行SQL或者查询缓存</li>
+<li>执行完成，返回结果并关闭SqlSession会话。</li>
+</ol>
+<h4 id="mybatis的缓存"><a href="#mybatis的缓存" class="headerlink" title="mybatis的缓存"></a>mybatis的缓存</h4><h5 id="一级缓存SqlSession"><a href="#一级缓存SqlSession" class="headerlink" title="一级缓存SqlSession"></a>一级缓存SqlSession</h5><p>mybatis的一级缓存是默认开启的，是SqlSession级别的，即拿到这个链接到结束连接的过程中缓存是有效的。其特点有以下：</p>
 <ul>
-<li>新生代的目标就是尽可能快速的收集掉那些生命周期短的对象，一般情况下，所有新生成的对象首先都是放在新生代的。新生代内存按照 8:1:1 的比例分为一个eden区和两个survivor(survivor0，survivor1)区，大部分对象在Eden区中生成。在进行垃圾回收时，先将eden区存活对象复制到survivor0区，然后清空eden区，当这个survivor0区也满了时，则将eden区和survivor0区存活对象复制到survivor1区，然后清空eden和这个survivor0区，此时survivor0区是空的，然后交换survivor0区和survivor1区的角色（即下次垃圾回收时会扫描Eden区和survivor1区），即保持survivor0区为空，如此往复。特别地，当survivor1区也不足以存放eden区和survivor0区的存活对象时，就将存活对象直接存放到老年代。如果老年代也满了，就会触发一次FullGC，也就是新生代、老年代都进行回收。注意，新生代发生的GC也叫做MinorGC，MinorGC发生频率比较高，不一定等 Eden区满了才触发。</li>
-<li>老年代存放的都是一些生命周期较长的对象，就像上面所叙述的那样，在新生代中经历了N次垃圾回收后仍然存活的对象就会被放到老年代中。此外，老年代的内存也比新生代大很多(大概比例是1:2)，当老年代满时会触发Major GC(Full GC)，老年代对象存活时间比较长，因此FullGC发生的频率比较低。</li>
+<li>映射语句文件中的所有 select 语句的结果将会被缓存。</li>
+<li>映射语句文件中的所有 insert、update 和 delete 语句会刷新缓存。</li>
+<li>缓存会使用最近最少使用算法（LRU, Least Recently Used）算法来清除不需要的缓存。</li>
+<li>缓存不会定时进行刷新（也就是说，没有刷新间隔）。</li>
+<li>缓存会保存列表或对象（无论查询方法返回哪种）的 1024 个引用。</li>
+<li>缓存会被视为读/写缓存，这意味着获取到的对象并不是共享的，可以安全地被调用者修改，而不干扰其他调用者或线程所做的潜在修改。</li>
 </ul>
+<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--可以设置缓存算法，刷新间隔、引用大小、只读表示等 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cache</span>
+  <span class="token attr-name">eviction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>FIFO<span class="token punctuation">"</span></span>
+  <span class="token attr-name">flushInterval</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60000<span class="token punctuation">"</span></span>
+  <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>512<span class="token punctuation">"</span></span>
+  <span class="token attr-name">readOnly</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h5 id="二级缓存nameSpace"><a href="#二级缓存nameSpace" class="headerlink" title="二级缓存nameSpace"></a>二级缓存nameSpace</h5><p>mybatis的二级缓存也叫全局缓存，由于一级缓存的作用域只在sqlSession中（太窄了），所以诞生了二级缓存，它是基于nameSpace级别的缓存，相当于一个nameSpace对应一个二级缓存。mybatis的二级缓存需要手动开启。</p>
+<p>二级缓存的工作机制：</p>
+<ul>
+<li>当一个会话查询到一条数据时首先会存储到一级缓存中</li>
+<li>如果当前会话关闭，则一级缓存不存在了，则会把一级缓存的信息过渡到二级缓存</li>
+<li>当我们再次在此nameSPace空间内查询时则会从二级缓存中获得内容</li>
+<li>不同的nameSpace有不同的缓存集合</li>
+</ul>
+<h5 id="自定义缓存"><a href="#自定义缓存" class="headerlink" title="自定义缓存"></a>自定义缓存</h5><p>自定义缓存只需实现Cache就可以了！具体可查看官方文档！</p>
 
                 
             </div>
@@ -709,7 +665,7 @@ java.lang.OutOfMemoryError: Java heap space<span aria-hidden="true" class="line-
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://moleWorld.github.io/2021/05/10/jvm/">https://moleWorld.github.io/2021/05/10/jvm/</a>
+                    <a href="https://moleWorld.github.io/2021/05/13/mybatis/">https://moleWorld.github.io/2021/05/13/mybatis/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -747,8 +703,8 @@ java.lang.OutOfMemoryError: Java heap space<span aria-hidden="true" class="line-
                     
                         <div class="article-tag">
                             
-                                <a href="/tag/jvm/">
-                                    <span class="chip bg-color">jvm</span>
+                                <a href="/tag/mybatis/">
+                                    <span class="chip bg-color">mybatis</span>
                                 </a>
                             
                         </div>
@@ -918,17 +874,18 @@ java.lang.OutOfMemoryError: Java heap space<span aria-hidden="true" class="line-
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/05/10/springboot/">
+                <a href="/2021/05/13/mybatis/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="springboot">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="mybatis">
                         
-                        <span class="card-title">springboot</span>
+                        <span class="card-title">mybatis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -938,26 +895,27 @@ java.lang.OutOfMemoryError: Java heap space<span aria-hidden="true" class="line-
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    框架
+                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
+                                    中间件
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/spring/">
-                        <span class="chip bg-color">spring</span>
+                    <a href="/tag/mybatis/">
+                        <span class="chip bg-color">mybatis</span>
                     </a>
                     
                 </div>
@@ -971,13 +929,13 @@ java.lang.OutOfMemoryError: Java heap space<span aria-hidden="true" class="line-
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/05/duo-xian-cheng/">
+                <a href="/2021/05/12/mysql/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="多线程">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="mysql">
                         
-                        <span class="card-title">多线程</span>
+                        <span class="card-title">mysql</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -988,14 +946,14 @@ java.lang.OutOfMemoryError: Java heap space<span aria-hidden="true" class="line-
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    java基础
+                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
+                                    中间件
                                 </a>
                             
                             
@@ -1005,8 +963,8 @@ java.lang.OutOfMemoryError: Java heap space<span aria-hidden="true" class="line-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
-                        <span class="chip bg-color">多线程</span>
+                    <a href="/tag/%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                        <span class="chip bg-color">数据库</span>
                     </a>
                     
                 </div>

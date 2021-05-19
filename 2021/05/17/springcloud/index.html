@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mybatis, 摩尔的世界">
+    <meta name="keywords" content="springCloud, 摩尔的世界">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mybatis | 摩尔的世界</title>
+    <title>springCloud | 摩尔的世界</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mybatis</h1>
+                    <h1 class="description center-align post-title">springCloud</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tag/mybatis/">
-                                <span class="chip bg-color">mybatis</span>
+                            <a href="/tag/springCloud/">
+                                <span class="chip bg-color">springCloud</span>
                             </a>
                         
                     </div>
@@ -553,8 +553,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
-                                中间件
+                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
+                                框架
                             </a>
                         
                     </div>
@@ -566,7 +566,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-13
+                    2021-05-17
                 </div>
                 
 
@@ -575,7 +575,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    776
+                    1.3k
                 </div>
                 
 
@@ -595,50 +595,105 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="mybatis的中文官网地址"><a href="#mybatis的中文官网地址" class="headerlink" title="mybatis的中文官网地址"></a>mybatis的中文官网地址</h4><p><a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/">https://mybatis.org/mybatis-3/zh/</a></p>
-<h4 id="mybatis的主要核心部件"><a href="#mybatis的主要核心部件" class="headerlink" title="mybatis的主要核心部件"></a>mybatis的主要核心部件</h4><ul>
-<li>SqlSession    表示和数据库交互的会话，完成必要的数据库增删改查功能</li>
-<li>Executor       执行器，是mybatis的核心，负责sql语句的执行，缓存的查询</li>
-<li>StatementHandler    封装了JDBC Statement操作，负责对JDBC statement的操作，如设置参数，或将结果集转换成List</li>
-<li>ParameterHandler    负责对用户传递的参数转换成JDBC Statement所需要的参数</li>
-<li>ResultSetHandler      负责将jdbc返回的结果集转换成List集合</li>
-<li>TypeHandler              负责将java的数据类型和jdbc数据类型之间的转换</li>
-<li>Configuration             配置mybatis的信息</li>
-<li>SqlSource                    负责用户传递的paramterObject,动态的生成SQL语句，将信息封装到BoundSql中</li>
-<li>BoundSql                    表示动态生成SQL语句以及相应的参数信息</li>
-</ul>
-<h4 id="mybatis-工作流程"><a href="#mybatis-工作流程" class="headerlink" title="mybatis 工作流程"></a>mybatis 工作流程</h4><ol>
-<li>读取mybatis的配置信息，可以是xml的格式，也可以是基于Configuration的对象。</li>
-<li>实例化SqlSessionFactoryBuilder,并通过build配置文件生成SqlSessionFactory实例</li>
-<li>创建一个SqlSession会话，用于实现CRUD。</li>
-<li>创建会话时也会创建一个新的Executor执行器，用于执行SQL或者查询缓存</li>
-<li>执行完成，返回结果并关闭SqlSession会话。</li>
-</ol>
-<h4 id="mybatis的缓存"><a href="#mybatis的缓存" class="headerlink" title="mybatis的缓存"></a>mybatis的缓存</h4><h5 id="一级缓存SqlSession"><a href="#一级缓存SqlSession" class="headerlink" title="一级缓存SqlSession"></a>一级缓存SqlSession</h5><p>mybatis的一级缓存是默认开启的，是SqlSession级别的，即拿到这个链接到结束连接的过程中缓存是有效的。其特点有以下：</p>
+                <h4 id="微服务是什么"><a href="#微服务是什么" class="headerlink" title="微服务是什么"></a>微服务是什么</h4><p>对于微服务，其实没有太多统一定义，通常而言对于微服务架构来说它只是一个架构风格，就是把所有的应用分成一个个独立的模块，每个独立的模块能运行在自己的进程中并各模块之间相互协助，相互通信去完成一个具体的业务。</p>
+<h4 id="微服务的优缺点"><a href="#微服务的优缺点" class="headerlink" title="微服务的优缺点"></a>微服务的优缺点</h4><blockquote>
+<p>优点</p>
+</blockquote>
 <ul>
-<li>映射语句文件中的所有 select 语句的结果将会被缓存。</li>
-<li>映射语句文件中的所有 insert、update 和 delete 语句会刷新缓存。</li>
-<li>缓存会使用最近最少使用算法（LRU, Least Recently Used）算法来清除不需要的缓存。</li>
-<li>缓存不会定时进行刷新（也就是说，没有刷新间隔）。</li>
-<li>缓存会保存列表或对象（无论查询方法返回哪种）的 1024 个引用。</li>
-<li>缓存会被视为读/写缓存，这意味着获取到的对象并不是共享的，可以安全地被调用者修改，而不干扰其他调用者或线程所做的潜在修改。</li>
+<li>每个微服务都很小，这样能聚焦一个指定的业务功能或业务需求</li>
+<li>微服务能够被小团队单独开发，这个小团队是2到5人的开发人员组成</li>
+<li>微服务是松耦合的，是有功能意义的服务，无论是在开发阶段或部署阶段都是独立的</li>
+<li>微服务能使用不同的语言开发</li>
+<li>微服务易于被一个开发人员理解，修改和维护，这样小团队能够更关注自己的工作成果。无需通过合作才能体现价值</li>
+<li>微服务允许你利用融合最新技术</li>
+<li>微服务只是业务逻辑的代码，不会和HTML,CSS 或其他界面组件混合</li>
 </ul>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--可以设置缓存算法，刷新间隔、引用大小、只读表示等 --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cache</span>
-  <span class="token attr-name">eviction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>FIFO<span class="token punctuation">"</span></span>
-  <span class="token attr-name">flushInterval</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60000<span class="token punctuation">"</span></span>
-  <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>512<span class="token punctuation">"</span></span>
-  <span class="token attr-name">readOnly</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>缺点</p>
+</blockquote>
+<ul>
+<li>开发人员要处理系统的复杂性</li>
+<li>随着服务器的增加，运维的工作压力增大</li>
+<li>系统部署之间存在依赖关系</li>
+<li>服务之间通信需要成本</li>
+<li>数据的一致性问题</li>
+<li>性能的监控等</li>
+</ul>
+<h4 id="什么是SpringCloud"><a href="#什么是SpringCloud" class="headerlink" title="什么是SpringCloud"></a>什么是SpringCloud</h4><p>SpringCloud是一种微服务框架，也可以说是一种生态，它把微服务之间所需要解决的问题的组件融合在一起来实现微服务架构通信，数据传输等。</p>
+<h4 id="SpringBoot和SpringCloud的区别"><a href="#SpringBoot和SpringCloud的区别" class="headerlink" title="SpringBoot和SpringCloud的区别"></a>SpringBoot和SpringCloud的区别</h4><ul>
+<li>Sprinboot专注于开发单体微服务项目</li>
+<li>SpringCloud是关注全局的微服务协调框架，它把Springboot开发的单体微服务项目整合在一起，并为各个服务之间提供通信、注册和发现、断路器、路由等</li>
+<li>Springboot可以离开SpringCloud称为一个单体的服务，但是SpringCloud必须依赖于Springboot开发</li>
+<li>Springboot专注为于个体，SpringCloud专注于服务治理</li>
+</ul>
+<h4 id="SpringCloud-Netflix的组件"><a href="#SpringCloud-Netflix的组件" class="headerlink" title="SpringCloud Netflix的组件"></a>SpringCloud Netflix的组件</h4><h5 id="Eureka服务注册及发现"><a href="#Eureka服务注册及发现" class="headerlink" title="Eureka服务注册及发现"></a>Eureka服务注册及发现</h5><blockquote>
+<p>Eureka的两大组件Eureka Server、Eureka Client</p>
+</blockquote>
+<p>Eureka Server是提供节点服务的，每个服务启动之后会在Eureka Server中进行注册，服务节点的信息也可通过界面直观的感受</p>
+<p>Eureka Client是一个java客户端，用来检测服务是否有效，即每30秒Eureka Client会想Eureka Server发送一个心跳，如果Eureka Server在多个周期内没有接收到心跳，Eureka Server则会把该服务从注册中心移除。默认周期为90s。</p>
+<blockquote>
+<p>获取Eureka Serve中的以已注册的信息</p>
+</blockquote>
+<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">@RestController
+@RequestMapping("/discover")
+public class DiscoverController {
 
-<h5 id="二级缓存nameSpace"><a href="#二级缓存nameSpace" class="headerlink" title="二级缓存nameSpace"></a>二级缓存nameSpace</h5><p>mybatis的二级缓存也叫全局缓存，由于一级缓存的作用域只在sqlSession中（太窄了），所以诞生了二级缓存，它是基于nameSpace级别的缓存，相当于一个nameSpace对应一个二级缓存。mybatis的二级缓存需要手动开启。</p>
-<p>二级缓存的工作机制：</p>
+    @Autowired
+    private DiscoveryClient client;
+
+    @GetMapping("/get")
+    public Object getDiscover(){
+        //获取所有的服务
+        List&lt;String&gt; list = client.getServices();
+        list.forEach(s -&gt; System.out.println(s));
+		//获取某个服务的信息
+        List&lt;ServiceInstance&gt; provide8081 = client.getInstances("PROVIDE8081");
+        provide8081.forEach(serviceInstance -&gt; System.out.println(
+                "host:"+serviceInstance.getHost()+"----------"
+                +"instance:"+serviceInstance.getInstanceId()+"----------"
+                +"port:"+serviceInstance.getPort()+"----------"
+                +"uri:"+serviceInstance.getUri()+"----------"
+                +"metadata:"+serviceInstance.getMetadata()
+        ));
+        return this.client;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>Eureka和zookeeper的区别</p>
+</blockquote>
+<p>Eureka利用的是CAP理论中AP原则，即可用性和容错性。会造成注册中心返回的是几分钟之前的信息。</p>
+<p>zookeeper是利用CAP理论中的CP原则，即一致性和容错性。如果主服务器master宕机之后，会存在一个选举的过程，次选举过程会造成服务不可用。</p>
+<p>两则相比之下，对于大部分业务逻辑来说，高可用性更强于一致性。</p>
+<h5 id="Ribbon负载均衡工具"><a href="#Ribbon负载均衡工具" class="headerlink" title="Ribbon负载均衡工具"></a>Ribbon负载均衡工具</h5><p>ribbon是NetFlix的开源项目，提供负载均衡算法，将各个中间件信息链接在一起，简单的来说就是列出所有的机器，通过某种算法实现负载均衡。</p>
+<blockquote>
+<p>ribbon和nginx的区别</p>
+</blockquote>
+<p>Nginx 是客户端所有请求统一交给 nginx 进行实现负载均衡请求转发，属于服务器端负载均衡。是一种<strong>集中式</strong>的负载均衡器。即请求由 nginx 服务器端进行转发。</p>
+<p>Ribbon 是从 eureka 注册中心服务器端上获取服务注册信息列表，缓存到本地，然后在本地实现轮询负载均衡策略。即在<strong>客户端</strong>实现负载均衡。</p>
+<p>Nginx 适合于<strong>服务器端</strong>实现负载均衡 比如 Tomcat</p>
+<p>Ribbon 适合与在微服务中 RPC 远程调用实现本地服务负载均衡，比如 Dubbo、SpringCloud 中都是采用本地负载均衡。</p>
+<blockquote>
+<p>常用的负载均衡算法    </p>
+</blockquote>
 <ul>
-<li>当一个会话查询到一条数据时首先会存储到一级缓存中</li>
-<li>如果当前会话关闭，则一级缓存不存在了，则会把一级缓存的信息过渡到二级缓存</li>
-<li>当我们再次在此nameSPace空间内查询时则会从二级缓存中获得内容</li>
-<li>不同的nameSpace有不同的缓存集合</li>
+<li>轮询算法                  默认</li>
+<li>随机算法</li>
+<li>权重算法</li>
 </ul>
-<h5 id="自定义缓存"><a href="#自定义缓存" class="headerlink" title="自定义缓存"></a>自定义缓存</h5><p>自定义缓存只需实现Cache就可以了！具体可查看官方文档！</p>
+<p>负载均衡算法的实现接口为IRule类，我们可以自定义算法来做负载均衡。</p>
+<blockquote>
+<p>ribbon和feign的区别</p>
+</blockquote>
+<ul>
+<li><p>启动类使用的注解不同，Ribbon用的是@RibbonClient，Feign用的是@EnableFeignClients。</p>
+</li>
+<li><p>服务的指定位置不同，Ribbon是在@RibbonClient注解上声明，Feign则是在定义抽象方法的接口中使用@FeignClient声明。</p>
+</li>
+<li><p>调用方式不同，Ribbon需要自己构建http请求，模拟http请求然后使用RestTemplate发送给其他服务，步骤相当繁琐。</p>
+</li>
+</ul>
+<p>总的来说feign是面向接口编程更符合开发人员的思想，而ribbon+restTemplate对http进行了封装，形成了一套模板化带调用方式。</p>
 
                 
             </div>
@@ -665,7 +720,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://moleWorld.github.io/2021/05/13/mybatis/">https://moleWorld.github.io/2021/05/13/mybatis/</a>
+                    <a href="https://moleWorld.github.io/2021/05/17/springcloud/">https://moleWorld.github.io/2021/05/17/springcloud/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -703,8 +758,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tag/mybatis/">
-                                    <span class="chip bg-color">mybatis</span>
+                                <a href="/tag/springCloud/">
+                                    <span class="chip bg-color">springCloud</span>
                                 </a>
                             
                         </div>
@@ -878,13 +933,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/05/17/springcloud/">
+                <a href="/2021/05/18/springsummary/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="springCloud">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="springSummary">
                         
-                        <span class="card-title">springCloud</span>
+                        <span class="card-title">springSummary</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -895,14 +950,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-17
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-18
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    框架
+                            <a href="/categories/%E6%80%BB%E7%BB%93/" class="post-category">
+                                    总结
                                 </a>
                             
                             
@@ -912,8 +967,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/springCloud/">
-                        <span class="chip bg-color">springCloud</span>
+                    <a href="/tag/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
                 </div>
@@ -927,13 +982,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/12/mysql/">
+                <a href="/2021/05/13/mybatis/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="mysql">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="mybatis">
                         
-                        <span class="card-title">mysql</span>
+                        <span class="card-title">mybatis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -944,7 +999,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-13
                             </span>
                         <span class="publish-author">
                             
@@ -961,8 +1016,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tag/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                        <span class="chip bg-color">数据库</span>
+                    <a href="/tag/mybatis/">
+                        <span class="chip bg-color">mybatis</span>
                     </a>
                     
                 </div>

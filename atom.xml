@@ -6,7 +6,7 @@
   <link href="https://moleworld.github.io/atom.xml" rel="self"/>
   
   <link href="https://moleworld.github.io/"/>
-  <updated>2021-05-14T14:41:49.201Z</updated>
+  <updated>2021-05-18T15:25:14.616Z</updated>
   <id>https://moleworld.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springSummary</title>
+    <link href="https://moleworld.github.io/2021/05/18/springsummary/"/>
+    <id>https://moleworld.github.io/2021/05/18/springsummary/</id>
+    <published>2021-05-18T15:09:56.000Z</published>
+    <updated>2021-05-18T15:25:14.616Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;什么是CAP理论&quot;&gt;&lt;a href=&quot;#什么是CAP理论&quot; class=&quot;headerlink&quot; title=&quot;什么是CAP理论&quot;&gt;&lt;/a&gt;什么是CAP理论&lt;/h4&gt;&lt;p&gt;CAP原则又称CAP定理，指的是在一个分布式系统中，&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="总结" scheme="https://moleworld.github.io/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="spring" scheme="https://moleworld.github.io/tag/spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springCloud</title>
+    <link href="https://moleworld.github.io/2021/05/17/springcloud/"/>
+    <id>https://moleworld.github.io/2021/05/17/springcloud/</id>
+    <published>2021-05-17T12:37:34.000Z</published>
+    <updated>2021-05-19T14:46:35.113Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;微服务是什么&quot;&gt;&lt;a href=&quot;#微服务是什么&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://moleworld.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="springCloud" scheme="https://moleworld.github.io/tag/springCloud/"/>
+    
+  </entry>
   
   <entry>
     <title>mybatis</title>
@@ -71,7 +121,7 @@
     <link href="https://moleworld.github.io/2021/05/10/springboot/"/>
     <id>https://moleworld.github.io/2021/05/10/springboot/</id>
     <published>2021-05-10T15:11:15.000Z</published>
-    <updated>2021-05-15T08:41:57.854Z</updated>
+    <updated>2021-05-17T12:52:36.954Z</updated>
     
     
     
@@ -458,56 +508,6 @@
     
     
     <category term="反射" scheme="https://moleworld.github.io/tag/%E5%8F%8D%E5%B0%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>全局捕获日志</title>
-    <link href="https://moleworld.github.io/2021/04/20/quan-ju-bu-huo-ri-zhi/"/>
-    <id>https://moleworld.github.io/2021/04/20/quan-ju-bu-huo-ri-zhi/</id>
-    <published>2021-04-20T12:53:43.000Z</published>
-    <updated>2021-04-20T13:44:00.966Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h6 id=&quot;问题：记录所有方法运行时间用来判断哪些方法的书写不规范导致运行时间过长，如果超过规定的秒数-2000ms-则存储到日志表，以便后续优化。&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="框架" scheme="https://moleworld.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
-    
-    
-    <category term="设计" scheme="https://moleworld.github.io/tag/%E8%AE%BE%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义注解</title>
-    <link href="https://moleworld.github.io/2021/04/20/zi-ding-yi-zhu-jie/"/>
-    <id>https://moleworld.github.io/2021/04/20/zi-ding-yi-zhu-jie/</id>
-    <published>2021-04-20T12:50:02.000Z</published>
-    <updated>2021-04-20T13:43:13.759Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h6 id=&quot;Target-：用于描述注解的使用范围&quot;&gt;&lt;a href=&quot;#Target-：用于描述注解的使用范围&quot; class=&quot;headerlink&quot; title=&quot;@Target ：用于描述注解的使用范围&quot;&gt;&lt;/a&gt;@Target</summary>
-        
-      
-    
-    
-    
-    <category term="java基础" scheme="https://moleworld.github.io/categories/java%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="注解" scheme="https://moleworld.github.io/tag/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   

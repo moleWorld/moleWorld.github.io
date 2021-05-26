@@ -6,7 +6,7 @@
   <link href="https://moleworld.github.io/atom.xml" rel="self"/>
   
   <link href="https://moleworld.github.io/"/>
-  <updated>2021-05-18T15:25:14.616Z</updated>
+  <updated>2021-05-26T14:57:22.927Z</updated>
   <id>https://moleworld.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shiro</title>
+    <link href="https://moleworld.github.io/2021/05/26/shiro/"/>
+    <id>https://moleworld.github.io/2021/05/26/shiro/</id>
+    <published>2021-05-26T12:54:09.000Z</published>
+    <updated>2021-05-26T14:57:22.927Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;shiro的核心组件&quot;&gt;&lt;a href=&quot;#shiro的核心组件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://moleworld.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="spring" scheme="https://moleworld.github.io/tag/spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springBootSummary</title>
+    <link href="https://moleworld.github.io/2021/05/25/springbootsummary/"/>
+    <id>https://moleworld.github.io/2021/05/25/springbootsummary/</id>
+    <published>2021-05-25T12:58:30.000Z</published>
+    <updated>2021-05-25T13:06:11.854Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;dependencyManagement和dependencies的区别&quot;&gt;&lt;a href=&quot;#dependencyManagement和dependencies的区别&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="总结" scheme="https://moleworld.github.io/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="spring" scheme="https://moleworld.github.io/tag/spring/"/>
+    
+  </entry>
   
   <entry>
     <title>springSummary</title>
@@ -46,7 +96,7 @@
     <link href="https://moleworld.github.io/2021/05/17/springcloud/"/>
     <id>https://moleworld.github.io/2021/05/17/springcloud/</id>
     <published>2021-05-17T12:37:34.000Z</published>
-    <updated>2021-05-19T14:46:35.113Z</updated>
+    <updated>2021-05-25T13:28:36.582Z</updated>
     
     
       
@@ -457,57 +507,6 @@
     
     
     <category term="算法" scheme="https://moleworld.github.io/tag/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>swagger总结</title>
-    <link href="https://moleworld.github.io/2021/04/20/swagger-zong-jie/"/>
-    <id>https://moleworld.github.io/2021/04/20/swagger-zong-jie/</id>
-    <published>2021-04-20T12:57:48.000Z</published>
-    <updated>2021-04-20T13:42:15.089Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;Swagger简介&quot;&gt;&lt;a href=&quot;#Swagger简介&quot; class=&quot;headerlink&quot; title=&quot;Swagger简介&quot;&gt;&lt;/a&gt;Swagger简介&lt;/h4&gt;&lt;h6</summary>
-        
-      
-    
-    
-    
-    <category term="中间件" scheme="https://moleworld.github.io/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/"/>
-    
-    
-    <category term="swagger" scheme="https://moleworld.github.io/tag/swagger/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>反射基础</title>
-    <link href="https://moleworld.github.io/2021/04/20/fan-she-ji-chu/"/>
-    <id>https://moleworld.github.io/2021/04/20/fan-she-ji-chu/</id>
-    <published>2021-04-20T12:55:32.000Z</published>
-    <updated>2021-05-10T12:09:42.344Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;h6 id=&quot;正常方式-引入包名、类名-————————-gt-new对象————————-gt-取得实例化对象&quot;&gt;&lt;a href=&quot;#正常方式-引入包名、类名-————————-gt-new对象————————-gt-取得实例化对象&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="java基础" scheme="https://moleworld.github.io/categories/java%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="反射" scheme="https://moleworld.github.io/tag/%E5%8F%8D%E5%B0%84/"/>
     
   </entry>
   

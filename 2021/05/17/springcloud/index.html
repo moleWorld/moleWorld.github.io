@@ -575,7 +575,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    2.5k
                 </div>
                 
 
@@ -694,6 +694,47 @@ public class DiscoverController {
 </li>
 </ul>
 <p>总的来说feign是面向接口编程更符合开发人员的思想，而ribbon+restTemplate对http进行了封装，形成了一套模板化带调用方式。</p>
+<h5 id="hystrix服务熔断"><a href="#hystrix服务熔断" class="headerlink" title="hystrix服务熔断"></a>hystrix服务熔断</h5><blockquote>
+<p>hystrix的简介</p>
+</blockquote>
+<p>Hystrix是一个用于处理分布式系统的延迟和容错的开源库，在分布式系统里，许多依赖不可避免的会调用失败，比如超时、异常等，Hystrix能够保证在一个依赖出问题的情况下，不会导致整体服务失败，避免级联故障，已提高分布式系统的弹性。</p>
+<p>“ 断路器 ” 本身是一种开关装置，当某个服务单元发送故障之后，通过断路器的故障监控（类似熔断保险丝），向调用方返回一个符合预期的、可处理的备选响应（FallBack），而不是长时间的等待或抛出调用方无法处理的异常，这样就保证了服务调用方的线程不会被长时间、不必要地占用，从而避免了故障在分布式系统中的蔓延，乃至雪崩。</p>
+<blockquote>
+<p>hystrix的特性</p>
+</blockquote>
+<ul>
+<li><strong>服务熔断：</strong>熔断是应对雪崩效应的一种微服务链路保护机制。当扇出链路的某个微服务不可用或者响应实践太长时，会进行服务的降级，<strong>进而熔断该节点微服务的调用，快速返回错误的响应信息</strong>。当检测到该节点微服务调用响应正常后恢复调用链路。在SpringCloud框架里熔断机制通过Hystrix实现。Hystrix会监控微服务间调用的状况，当失败的调用到一定的阈值，缺省是5秒内20次调用失败就会启动熔断机制。熔断机制的注解是<code>HystrixCommand</code>。</li>
+<li><strong>服务降级：</strong>降级的目的是为了解决整体项目的压力，而牺牲掉某一服务模块而采取的措施。</li>
+<li><strong>服务监控：</strong>可视化页面观察服务的信息</li>
+</ul>
+<p><img src="https://i.loli.net/2021/05/20/Cc4rno9ZPTxitQL.png" alt="服务监控.png"></p>
+<blockquote>
+<p>服务熔断和服务降级的区别</p>
+</blockquote>
+<ul>
+<li><p><strong>触发原因不太一样</strong>，服务熔断一般是某个服务（下游服务）故障引起，而服务降级一般是从整体负荷考虑；</p>
+</li>
+<li><p><strong>管理目标的层次不太一样</strong>，熔断其实是一个框架级的处理，每个微服务都需要（无层级之分），而降级一般需要对业务有层级之分（比如降级一般是从最外围服务开始）</p>
+</li>
+</ul>
+<h5 id="zuul服务网关（已停用）"><a href="#zuul服务网关（已停用）" class="headerlink" title="zuul服务网关（已停用）"></a>zuul服务网关（已停用）</h5><ul>
+<li>提供统一服务入口，微服务对前台透明</li>
+<li>聚合后台服务，节省流量，提升性能</li>
+<li>安全，过滤，流控等API管理功能</li>
+<li>提供统一服务出口，解耦</li>
+</ul>
+<h5 id="SpringCloud-gateway服务网关"><a href="#SpringCloud-gateway服务网关" class="headerlink" title="SpringCloud gateway服务网关"></a>SpringCloud gateway服务网关</h5><h6 id="什么是网关"><a href="#什么是网关" class="headerlink" title="什么是网关"></a>什么是网关</h6><p> 网关是整个微服务API请求的入口，负责拦截所有请求，分发到服务上去。可以实现日志拦截、权限控制、解决跨域问题、限流、熔断、负载均衡，隐藏服务端的ip，黑名单与白名单拦截、授权等，常用的网关有zuul(netflix的，但是已经停更了)和spring cloud gateway (springcloudalibaba)。这里主要讲springcloud gateway，springcloud gateway是一个全新的项目,其基于spring5.0 以及springboot2.0和项目Reactor等技术开发的网关,其主要的目的是为微服务架构提供一种简单有效的API路由管理方式.</p>
+<h6 id="过滤器和网关的对比"><a href="#过滤器和网关的对比" class="headerlink" title="过滤器和网关的对比"></a>过滤器和网关的对比</h6><p>过滤器：对单个服务器的请求进行拦截控制</p>
+<p>网关：对所有的服务器的请求进行拦截控制</p>
+<h6 id="zuul和spring-cloud-gateway的对比"><a href="#zuul和spring-cloud-gateway的对比" class="headerlink" title="zuul和spring cloud gateway的对比"></a>zuul和spring cloud gateway的对比</h6><p>zuul：是Netflix的，是基于servlet实现的，阻塞式的api即基于servlet实现，不支持长连接。</p>
+<p>gateway：是springcloud自己研制的微服务网关，是基于Spring5构建，能够实现响应式非阻塞式的Api，支持长连接</p>
+<h6 id="网关与nginx区别"><a href="#网关与nginx区别" class="headerlink" title="网关与nginx区别"></a>网关与nginx区别</h6><p>相同点：都是可以实现对api接口的拦截，负载均衡、反向代理、请求过滤等，可以实现和网关一样的效果。</p>
+<p>不同点：Nginx采用C语言编写，Gateway属于Java语言编写的， 能够更好让我们使用java语言来实现对请求的处理。</p>
+<p>Nginx 属于服务器端负载均衡器。</p>
+<p>Gateway 属于本地负载均衡器。 </p>
+<h6 id="gateway的组成"><a href="#gateway的组成" class="headerlink" title="gateway的组成"></a>gateway的组成</h6><p>路由 : 网关的基本模块，有ID，目标URI，一组断言和一组过滤器组成</p>
+<p>断言：就是访问该旅游的访问规则，可以用来匹配来自http请求的任何内容，例如headers或者参数</p>
+<p>过滤器：这个就是我们平时说的过滤器，用来过滤一些请求的，gateway有自己默认的过滤器，具体请参考官网，我们也可以自定义过滤器，但是要实现两个接口，ordered和globalfilter</p>
 
                 
             </div>

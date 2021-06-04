@@ -603,12 +603,64 @@
 <p>geoRadius    查询某个坐标下（经度、维度）的所有位置信息</p>
 <p>georadiusBymember    查询某个坐标下（集合内的数据）的位置信息</p>
 <p>geohash    返回某个城市的一维数据，11位</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#顺序为key、经度、维度、城市</span></span><br><span class="line"><span class="comment">#有效的经度从-180度到180度。</span></span><br><span class="line"><span class="comment">#有效的纬度从-85.05112878度到85.05112878度。</span></span><br><span class="line"><span class="comment">#如果超过则会提示如下错误</span></span><br><span class="line">127.0.0.1:6379&gt; GEOADD china:city 116.405289 39.904987 beijing		<span class="comment">#添加地理位置信息</span></span><br><span class="line">(<span class="built_in">integer</span>) 1</span><br><span class="line">127.0.0.1:6379&gt; GEOADD china:city 117.190186 39.125595 tianqing 114.502464  38.045475 shijiazhuang 126.642464 45.756966 haerbing 121.472641 31.231707 shanghai</span><br><span class="line">(<span class="built_in">integer</span>) 4</span><br><span class="line">127.0.0.1:6379&gt; GEOADD china:city 113.374375 23.368923 guangzhou</span><br><span class="line">(<span class="built_in">integer</span>) 1</span><br><span class="line">127.0.0.1:6379&gt; keys *</span><br><span class="line">1) <span class="string">"china:city"</span></span><br><span class="line">127.0.0.1:6379&gt; GEOADD china:city    23.368923  113.374375  guangzhou		<span class="comment">#位置信息添加错误提示</span></span><br><span class="line">(error) ERR invalid longitude,latitude pair 23.368923,113.374375</span><br><span class="line">127.0.0.1:6379&gt; GEOPOS china:city beijing tianqing					<span class="comment">#查看当前经纬度的值</span></span><br><span class="line">1) 1) <span class="string">"116.40528827905654907"</span></span><br><span class="line">   2) <span class="string">"39.90498588819134085"</span></span><br><span class="line">2) 1) <span class="string">"117.19018846750259399"</span></span><br><span class="line">   2) <span class="string">"39.12559461779084558"</span></span><br><span class="line"><span class="comment">#获取两人之间的距离</span></span><br><span class="line">127.0.0.1:6379&gt; GEODIST china:city beijing tianqing km				<span class="comment">#获取两地之间的距离，单位为km</span></span><br><span class="line"><span class="string">"109.7753"</span></span><br><span class="line"><span class="comment">#查询附近的人	key、经度、维度、半径、单位、直接距离、总数</span></span><br><span class="line">127.0.0.1:6379&gt; GEORADIUS china:city 100 30 1000 km withdist count 3		<span class="comment">#查询某个经纬度内半径为1000km的地点3个位置</span></span><br><span class="line">(empty array)</span><br><span class="line"><span class="comment">#查询以某个集合内的位置作为基础半径内的位置信息</span></span><br><span class="line">127.0.0.1:6379&gt; GEORADIUSBYMEMBER china:city beijing 500 km withdist</span><br><span class="line">1) 1) <span class="string">"shijiazhuang"</span></span><br><span class="line">   2) <span class="string">"264.2750"</span></span><br><span class="line">2) 1) <span class="string">"tianqing"</span></span><br><span class="line">   2) <span class="string">"109.7753"</span></span><br><span class="line">3) 1) <span class="string">"beijing"</span></span><br><span class="line">   2) <span class="string">"0.0000"</span></span><br><span class="line"><span class="comment">#获取某个城市的一维字符串</span></span><br><span class="line">127.0.0.1:6379&gt; GEOHASH china:city beijing</span><br><span class="line">1) <span class="string">"wx4g0b7xru0"</span></span><br><span class="line">127.0.0.1:6379&gt; GEOHASH china:city shanghai guangzhou</span><br><span class="line">1) <span class="string">"wtw3sjt9vs0"</span></span><br><span class="line">2) <span class="string">"ws0sgyhty70"</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-BASH" data-language="BASH"><code class="language-BASH">#顺序为key、经度、维度、城市
+#有效的经度从-180度到180度。
+#有效的纬度从-85.05112878度到85.05112878度。
+#如果超过则会提示如下错误
+127.0.0.1:6379&gt; GEOADD china:city 116.405289 39.904987 beijing		#添加地理位置信息
+(integer) 1
+127.0.0.1:6379&gt; GEOADD china:city 117.190186 39.125595 tianqing 114.502464  38.045475 shijiazhuang 126.642464 45.756966 haerbing 121.472641 31.231707 shanghai
+(integer) 4
+127.0.0.1:6379&gt; GEOADD china:city 113.374375 23.368923 guangzhou
+(integer) 1
+127.0.0.1:6379&gt; keys *
+1) "china:city"
+127.0.0.1:6379&gt; GEOADD china:city    23.368923  113.374375  guangzhou		#位置信息添加错误提示
+(error) ERR invalid longitude,latitude pair 23.368923,113.374375
+127.0.0.1:6379&gt; GEOPOS china:city beijing tianqing					#查看当前经纬度的值
+1) 1) "116.40528827905654907"
+   2) "39.90498588819134085"
+2) 1) "117.19018846750259399"
+   2) "39.12559461779084558"
+#获取两人之间的距离
+127.0.0.1:6379&gt; GEODIST china:city beijing tianqing km				#获取两地之间的距离，单位为km
+"109.7753"
+#查询附近的人	key、经度、维度、半径、单位、直接距离、总数
+127.0.0.1:6379&gt; GEORADIUS china:city 100 30 1000 km withdist count 3		#查询某个经纬度内半径为1000km的地点3个位置
+(empty array)
+#查询以某个集合内的位置作为基础半径内的位置信息
+127.0.0.1:6379&gt; GEORADIUSBYMEMBER china:city beijing 500 km withdist
+1) 1) "shijiazhuang"
+   2) "264.2750"
+2) 1) "tianqing"
+   2) "109.7753"
+3) 1) "beijing"
+   2) "0.0000"
+#获取某个城市的一维字符串
+127.0.0.1:6379&gt; GEOHASH china:city beijing
+1) "wx4g0b7xru0"
+127.0.0.1:6379&gt; GEOHASH china:city shanghai guangzhou
+1) "wtw3sjt9vs0"
+2) "ws0sgyhty70"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>地理位置的底层实现是根据zset进行操作的。</p>
 </blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; ZRAnge china:city 0 -1			<span class="comment">#查询所有的经纬度信息</span></span><br><span class="line">1) <span class="string">"guangzhou"</span></span><br><span class="line">2) <span class="string">"shanghai"</span></span><br><span class="line">3) <span class="string">"shijiazhuang"</span></span><br><span class="line">4) <span class="string">"tianqing"</span></span><br><span class="line">5) <span class="string">"beijing"</span></span><br><span class="line">6) <span class="string">"haerbing"</span></span><br><span class="line">127.0.0.1:6379&gt; zrem china:city beijing			<span class="comment">#删除某个经纬度信息</span></span><br><span class="line">(<span class="built_in">integer</span>) 1</span><br><span class="line">127.0.0.1:6379&gt; ZRAnge china:city 0 -1</span><br><span class="line">1) <span class="string">"guangzhou"</span></span><br><span class="line">2) <span class="string">"shanghai"</span></span><br><span class="line">3) <span class="string">"shijiazhuang"</span></span><br><span class="line">4) <span class="string">"tianqing"</span></span><br><span class="line">5) <span class="string">"haerbing"</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-BASH" data-language="BASH"><code class="language-BASH">127.0.0.1:6379&gt; ZRAnge china:city 0 -1			#查询所有的经纬度信息
+1) "guangzhou"
+2) "shanghai"
+3) "shijiazhuang"
+4) "tianqing"
+5) "beijing"
+6) "haerbing"
+127.0.0.1:6379&gt; zrem china:city beijing			#删除某个经纬度信息
+(integer) 1
+127.0.0.1:6379&gt; ZRAnge china:city 0 -1
+1) "guangzhou"
+2) "shanghai"
+3) "shijiazhuang"
+4) "tianqing"
+5) "haerbing"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="Hyperloglog数据类型"><a href="#Hyperloglog数据类型" class="headerlink" title="Hyperloglog数据类型"></a>Hyperloglog数据类型</h3><p>优点：占用的内存是固定的，可以存取2的64个不同的元素，只需要12kb的内存。</p>
 <p>缺点：是有0.81%的错误率，一般可以忽略不计。</p>
@@ -618,7 +670,18 @@
 <li>pfcount      计算元素总数</li>
 <li>pfmegre    合并两个元素为一个全新的元素</li>
 </ul>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; PFADD key a b c d e f g h i j k			<span class="comment">#向集合中添加元素</span></span><br><span class="line">(<span class="built_in">integer</span>) 1</span><br><span class="line">127.0.0.1:6379&gt; PFCOUNT key								<span class="comment">#查看当前集合的元素总数	</span></span><br><span class="line">(<span class="built_in">integer</span>) 11</span><br><span class="line">127.0.0.1:6379&gt; PFADD key1 f f  n f e p o 				<span class="comment">#重复元素的按1计算</span></span><br><span class="line">(<span class="built_in">integer</span>) 1</span><br><span class="line">127.0.0.1:6379&gt; PFCOUNT key1</span><br><span class="line">(<span class="built_in">integer</span>) 5</span><br><span class="line">127.0.0.1:6379&gt; PFMERGE key2 key key1					<span class="comment">#合并两个key的元素为最新的key</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; PFCOUNT key2</span><br><span class="line">(<span class="built_in">integer</span>) 14</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-BASH" data-language="BASH"><code class="language-BASH">127.0.0.1:6379&gt; PFADD key a b c d e f g h i j k			#向集合中添加元素
+(integer) 1
+127.0.0.1:6379&gt; PFCOUNT key								#查看当前集合的元素总数	
+(integer) 11
+127.0.0.1:6379&gt; PFADD key1 f f  n f e p o 				#重复元素的按1计算
+(integer) 1
+127.0.0.1:6379&gt; PFCOUNT key1
+(integer) 5
+127.0.0.1:6379&gt; PFMERGE key2 key key1					#合并两个key的元素为最新的key
+OK
+127.0.0.1:6379&gt; PFCOUNT key2
+(integer) 14<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="BItMaps数据类型"><a href="#BItMaps数据类型" class="headerlink" title="BItMaps数据类型"></a>BItMaps数据类型</h3><p>表示位运算，一般应用场景是统计某个事情的真总数，以判断是否成立，例如：统计某员工一个月内的打卡次数</p>
 <ul>
@@ -626,7 +689,23 @@
 <li>getbit     key   offset                   获取这个key值的事件状态即0/1</li>
 <li>bitcount     key                            查询某个key的真事件的总数</li>
 </ul>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; setbit key 1 0						<span class="comment">#设置某个元素的某种事件值是0或者1</span></span><br><span class="line">(<span class="built_in">integer</span>) 0</span><br><span class="line">127.0.0.1:6379&gt; setbit key 2 1</span><br><span class="line">(<span class="built_in">integer</span>) 0</span><br><span class="line">127.0.0.1:6379&gt; setbit key 2 0</span><br><span class="line">(<span class="built_in">integer</span>) 1</span><br><span class="line">127.0.0.1:6379&gt; getbit key 2						<span class="comment">#获取该元素的事件状态</span></span><br><span class="line">(<span class="built_in">integer</span>) 0</span><br><span class="line">127.0.0.1:6379&gt; setbit key 3 0</span><br><span class="line">(<span class="built_in">integer</span>) 0</span><br><span class="line">127.0.0.1:6379&gt; BITCOUNT key						<span class="comment">#获取某个元素的为1的时间总数</span></span><br><span class="line">(<span class="built_in">integer</span>) 0</span><br><span class="line">127.0.0.1:6379&gt; setbit key 3 1</span><br><span class="line">(<span class="built_in">integer</span>) 0</span><br><span class="line">127.0.0.1:6379&gt; BITCOUNT key</span><br><span class="line">(<span class="built_in">integer</span>) 1</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-BASH" data-language="BASH"><code class="language-BASH">127.0.0.1:6379&gt; setbit key 1 0						#设置某个元素的某种事件值是0或者1
+(integer) 0
+127.0.0.1:6379&gt; setbit key 2 1
+(integer) 0
+127.0.0.1:6379&gt; setbit key 2 0
+(integer) 1
+127.0.0.1:6379&gt; getbit key 2						#获取该元素的事件状态
+(integer) 0
+127.0.0.1:6379&gt; setbit key 3 0
+(integer) 0
+127.0.0.1:6379&gt; BITCOUNT key						#获取某个元素的为1的时间总数
+(integer) 0
+127.0.0.1:6379&gt; setbit key 3 1
+(integer) 0
+127.0.0.1:6379&gt; BITCOUNT key
+(integer) 1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 

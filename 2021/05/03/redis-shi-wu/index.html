@@ -603,13 +603,62 @@
 <li>命令入队（。。。。。）</li>
 <li>执行事务（exec）</li>
 </ul>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#一个完整的事务执行过程</span></span><br><span class="line">127.0.0.1:6379&gt; MULTI						<span class="comment">#开启一个事务</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">set</span> k1 v1				<span class="comment">#在事务中执行操作</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">set</span> k2 v2 </span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; get k2</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">exec</span>					<span class="comment">#执行事务</span></span><br><span class="line">1) OK</span><br><span class="line">2) OK</span><br><span class="line">3) <span class="string">"v2"</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#一个完整的事务执行过程
+127.0.0.1:6379&gt; MULTI						#开启一个事务
+OK
+127.0.0.1:6379(TX)&gt; set k1 v1				#在事务中执行操作
+QUEUED
+127.0.0.1:6379(TX)&gt; set k2 v2 
+QUEUED
+127.0.0.1:6379(TX)&gt; get k2
+QUEUED
+127.0.0.1:6379(TX)&gt; exec					#执行事务
+1) OK
+2) OK
+3) "v2"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#如果在事务中做了取消操作，则所有操作都不会执行，此时具有原子性</span></span><br><span class="line">127.0.0.1:6379&gt; MULTI					<span class="comment">#开启事务</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">set</span> k1 v1 			<span class="comment">#执行操作</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">set</span> k2 v2</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; DISCARD				<span class="comment">#取消事务</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get k1					</span><br><span class="line">(nil)</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-BASH" data-language="BASH"><code class="language-BASH">#如果在事务中做了取消操作，则所有操作都不会执行，此时具有原子性
+127.0.0.1:6379&gt; MULTI					#开启事务
+OK
+127.0.0.1:6379(TX)&gt; set k1 v1 			#执行操作
+QUEUED
+127.0.0.1:6379(TX)&gt; set k2 v2
+QUEUED
+127.0.0.1:6379(TX)&gt; DISCARD				#取消事务
+OK
+127.0.0.1:6379&gt; get k1					
+(nil)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#编译时异常，即系统检测出的异常，此时具有原子性</span></span><br><span class="line">27.0.0.1:6379&gt; MULTI					<span class="comment">#开启事务</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">set</span> k1 v1			<span class="comment">#执行正确操作</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">set</span> k2 v2</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; getset k1			<span class="comment">#执行错误操作</span></span><br><span class="line">(error) ERR wrong number of arguments <span class="keyword">for</span> <span class="string">'getset'</span> <span class="built_in">command</span></span><br><span class="line">127.0.0.1:6379(TX)&gt; get k2</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">exec</span> 				<span class="comment">#执行事务时提示所有操作都未成功</span></span><br><span class="line">(error) EXECABORT Transaction discarded because of previous errors.</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#编译时异常，即系统检测出的异常，此时具有原子性
+27.0.0.1:6379&gt; MULTI					#开启事务
+OK
+127.0.0.1:6379(TX)&gt; set k1 v1			#执行正确操作
+QUEUED
+127.0.0.1:6379(TX)&gt; set k2 v2
+QUEUED
+127.0.0.1:6379(TX)&gt; getset k1			#执行错误操作
+(error) ERR wrong number of arguments for 'getset' command
+127.0.0.1:6379(TX)&gt; get k2
+QUEUED
+127.0.0.1:6379(TX)&gt; exec 				#执行事务时提示所有操作都未成功
+(error) EXECABORT Transaction discarded because of previous errors.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#运行时异常，即系统运行过程中才检测到异常，此时不具有原子性</span></span><br><span class="line">127.0.0.1:6379&gt; MULTI					<span class="comment">#开启事务</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">set</span> k1 v1			<span class="comment">#执行正确操作</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">set</span> k2 v2</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; incr k1				<span class="comment">#执行错误操作，向String中自增</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; get k2</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">exec</span>				<span class="comment">#执行事务，则提示第三步错误，其他都正常运行</span></span><br><span class="line">1) OK</span><br><span class="line">2) OK</span><br><span class="line">3) (error) ERR value is not an <span class="built_in">integer</span> or out of range</span><br><span class="line">4) <span class="string">"v2"</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#运行时异常，即系统运行过程中才检测到异常，此时不具有原子性
+127.0.0.1:6379&gt; MULTI					#开启事务
+OK
+127.0.0.1:6379(TX)&gt; set k1 v1			#执行正确操作
+QUEUED
+127.0.0.1:6379(TX)&gt; set k2 v2
+QUEUED
+127.0.0.1:6379(TX)&gt; incr k1				#执行错误操作，向String中自增
+QUEUED
+127.0.0.1:6379(TX)&gt; get k2
+QUEUED
+127.0.0.1:6379(TX)&gt; exec				#执行事务，则提示第三步错误，其他都正常运行
+1) OK
+2) OK
+3) (error) ERR value is not an integer or out of range
+4) "v2"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="redis的监控"><a href="#redis的监控" class="headerlink" title="redis的监控"></a>redis的监控</h3><blockquote>
 <p>乐观锁是什么</p>
@@ -622,11 +671,54 @@
 <blockquote>
 <p>redis的乐观锁用watch进行表示</p>
 </blockquote>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#一个正常的操作</span></span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">set</span> money 100</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">set</span> out 0</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; watch money				<span class="comment">#开启监控</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; MULTI</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379(TX)&gt; decrby money 60		<span class="comment">#减少60</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; INCRBY out 60		<span class="comment">#增加60</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">exec</span></span><br><span class="line">1) (<span class="built_in">integer</span>) 40</span><br><span class="line">2) (<span class="built_in">integer</span>) 60</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#一个正常的操作
+127.0.0.1:6379&gt; set money 100
+OK
+127.0.0.1:6379&gt; set out 0
+OK
+127.0.0.1:6379&gt; watch money				#开启监控
+OK
+127.0.0.1:6379&gt; MULTI
+OK
+127.0.0.1:6379(TX)&gt; decrby money 60		#减少60
+QUEUED
+127.0.0.1:6379(TX)&gt; INCRBY out 60		#增加60
+QUEUED
+127.0.0.1:6379(TX)&gt; exec
+1) (integer) 40
+2) (integer) 60<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#一个错误信息的执行过程</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#线程1</span></span><br><span class="line">127.0.0.1:6379&gt; WATCH money				<span class="comment">#监控money</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; MULTI</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379(TX)&gt; DECRby money 10		<span class="comment">#对money进行操作</span></span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; INCRBY out 10</span><br><span class="line">QUEUED</span><br><span class="line">127.0.0.1:6379(TX)&gt; <span class="built_in">exec</span> 				<span class="comment">#执行事务不成功</span></span><br><span class="line">(nil)</span><br><span class="line"><span class="comment">#线程2</span></span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">set</span> money 1000			<span class="comment">#线程2修改了监控的money</span></span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; UNWATCH					<span class="comment">#取消所有监控信息</span></span><br><span class="line">OK</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-BASH" data-language="BASH"><code class="language-BASH">#一个错误信息的执行过程
 
-<h3 id="设置redis的密码"><a href="#设置redis的密码" class="headerlink" title="设置redis的密码"></a>设置redis的密码</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; config <span class="built_in">set</span> requirepass 123456			<span class="comment">#设置redis的密码</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; <span class="built_in">exit</span></span><br><span class="line">root@5a78b143c447:/data<span class="comment"># redis-cli</span></span><br><span class="line">127.0.0.1:6379&gt; ping</span><br><span class="line">(error) NOAUTH Authentication required.</span><br><span class="line">127.0.0.1:6379&gt; auth 123456							<span class="comment">#密码认证</span></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; ping</span><br><span class="line">PONG</span><br></pre></td></tr></tbody></table></figure>
+#线程1
+127.0.0.1:6379&gt; WATCH money				#监控money
+OK
+127.0.0.1:6379&gt; MULTI
+OK
+127.0.0.1:6379(TX)&gt; DECRby money 10		#对money进行操作
+QUEUED
+127.0.0.1:6379(TX)&gt; INCRBY out 10
+QUEUED
+127.0.0.1:6379(TX)&gt; exec 				#执行事务不成功
+(nil)
+#线程2
+127.0.0.1:6379&gt; set money 1000			#线程2修改了监控的money
+OK
+
+
+127.0.0.1:6379&gt; UNWATCH					#取消所有监控信息
+OK<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="设置redis的密码"><a href="#设置redis的密码" class="headerlink" title="设置redis的密码"></a>设置redis的密码</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">127.0.0.1:6379&gt; config set requirepass 123456			#设置redis的密码
+OK
+127.0.0.1:6379&gt; exit
+root@5a78b143c447:/data# redis-cli
+127.0.0.1:6379&gt; ping
+(error) NOAUTH Authentication required.
+127.0.0.1:6379&gt; auth 123456							#密码认证
+OK
+127.0.0.1:6379&gt; ping
+PONG<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="RDB（redis-database）持久化"><a href="#RDB（redis-database）持久化" class="headerlink" title="RDB（redis database）持久化"></a>RDB（redis database）持久化</h3><blockquote>
 <p>触发机制产生dump.rdb文件</p>
@@ -640,7 +732,9 @@
 <p>如何恢复rdb文件</p>
 </blockquote>
 <p>找到rdb文件需识别的目录，启动redis的适合会自动加载</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; config get dir			<span class="comment">#输出此命令可查看rdb文件所在目录</span></span><br><span class="line">1) <span class="string">"dir"</span></span><br><span class="line">2) <span class="string">"/etc"</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">127.0.0.1:6379&gt; config get dir			#输出此命令可查看rdb文件所在目录
+1) "dir"
+2) "/etc"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>优点</strong></p>
 <ol>
@@ -666,7 +760,19 @@
 <li>相对于rdb的方式，aof的文件远大于rdb文件，修复速度也比rdb慢</li>
 <li>运行效率也比rdb慢</li>
 </ol>
-<h3 id="Redis消息队列"><a href="#Redis消息队列" class="headerlink" title="Redis消息队列"></a>Redis消息队列</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 消息接收者</span></span><br><span class="line">127.0.0.1:6379&gt; SUBSCRIBE wei 					<span class="comment">#设置接收数据的频道wei</span></span><br><span class="line">Reading messages... (press Ctrl-C to quit)</span><br><span class="line">1) <span class="string">"subscribe"</span></span><br><span class="line">2) <span class="string">"wei"</span></span><br><span class="line">3) (<span class="built_in">integer</span>) 1</span><br><span class="line">1) <span class="string">"message"</span>									<span class="comment">#下三步则为接收到数据信息</span></span><br><span class="line">2) <span class="string">"wei"</span></span><br><span class="line">3) <span class="string">"123232"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#消息发送者</span></span><br><span class="line">127.0.0.1:6379&gt; PUBLISH wei 123232				<span class="comment">#发送到wei频道信息</span></span><br><span class="line">(<span class="built_in">integer</span>) 1</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Redis消息队列"><a href="#Redis消息队列" class="headerlink" title="Redis消息队列"></a>Redis消息队列</h3><pre class="line-numbers language-BASH" data-language="BASH"><code class="language-BASH"># 消息接收者
+127.0.0.1:6379&gt; SUBSCRIBE wei 					#设置接收数据的频道wei
+Reading messages... (press Ctrl-C to quit)
+1) "subscribe"
+2) "wei"
+3) (integer) 1
+1) "message"									#下三步则为接收到数据信息
+2) "wei"
+3) "123232"
+
+#消息发送者
+127.0.0.1:6379&gt; PUBLISH wei 123232				#发送到wei频道信息
+(integer) 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="Redis的主从复制"><a href="#Redis的主从复制" class="headerlink" title="Redis的主从复制"></a>Redis的主从复制</h3><blockquote>
 <p>主从复制的概念</p>
@@ -681,9 +787,23 @@
 <li>负载均衡：在主从复制的基础上，配合读写分离，可以由主节点提供写服务，从节点提供读服务，分担服务器负载。</li>
 <li>高可用：除了上述作用外，主从复制还采用了哨兵和集群模式，实现了redis的高可用。</li>
 </ol>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; INFO replication			<span class="comment">#查看当前redis的机器信息</span></span><br><span class="line"><span class="comment"># Replication</span></span><br><span class="line">role:master				<span class="comment">#角色信息（主机）</span></span><br><span class="line">connected_slaves:0		<span class="comment">#从机数量</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-BASH" data-language="BASH"><code class="language-BASH">127.0.0.1:6379&gt; INFO replication			#查看当前redis的机器信息
+# Replication
+role:master				#角色信息（主机）
+connected_slaves:0		#从机数量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; info replication</span><br><span class="line"><span class="comment"># Replication</span></span><br><span class="line">role:master		<span class="comment">#主机标识</span></span><br><span class="line">connected_slaves:1		<span class="comment">#链接的从机数目</span></span><br><span class="line">slave0:ip=47.101.169.95,port=6379,state=online,offset=14,lag=0		<span class="comment">#从机的基本信息</span></span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; info replication			</span><br><span class="line"><span class="comment"># Replication</span></span><br><span class="line">role:slave				<span class="comment">#从机		</span></span><br><span class="line">master_host:47.100.3.247		<span class="comment">#连接到的主机信息</span></span><br><span class="line">master_port:6379</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">127.0.0.1:6379&gt; info replication
+# Replication
+role:master		#主机标识
+connected_slaves:1		#链接的从机数目
+slave0:ip=47.101.169.95,port=6379,state=online,offset=14,lag=0		#从机的基本信息
+
+127.0.0.1:6379&gt; info replication			
+# Replication
+role:slave				#从机		
+master_host:47.100.3.247		#连接到的主机信息
+master_port:6379
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><blockquote>
 <p>哨兵模式的概念</p>
@@ -701,10 +821,12 @@
 <p>哨兵配置</p>
 </blockquote>
 <p>1、配置sentinel.conf</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sentinel monitor myredis host port  1   </span></span><br><span class="line">sentinel monitor myredis 47.100.3.247 6379  1		<span class="comment">#1表示主机挂了，slave投票谁最多谁成为主机</span></span><br><span class="line"><span class="comment">#具体的配置后续再了解，目前只配置最基础的配置</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># sentinel monitor myredis host port  1   
+sentinel monitor myredis 47.100.3.247 6379  1		#1表示主机挂了，slave投票谁最多谁成为主机
+#具体的配置后续再了解，目前只配置最基础的配置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>2、启动哨兵</p>
-<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-sentinel sentinel.conf</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">redis-sentinel sentinel.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>优点：</strong></p>
 <ol>

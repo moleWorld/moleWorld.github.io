@@ -575,7 +575,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    433
+                    451
                 </div>
                 
 
@@ -595,17 +595,56 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看版本信息</span></span><br><span class="line">uname -r</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看系统版本</span></span><br><span class="line">cat /etc/os-release</span><br><span class="line"><span class="meta">#</span><span class="bash">centos7的查看关闭开启防火墙命令</span></span><br><span class="line">firewall-cmd --state					#查看防火墙状态</span><br><span class="line">systemctl stop firewalld.service		#停止防火墙</span><br><span class="line">systemctl disable firewalld.service 	#开机自启</span><br></pre></td></tr></tbody></table></figure>
+                <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 查看版本信息
+uname -r
+# 查看系统版本
+cat /etc/os-release
+#centos7的查看关闭开启防火墙命令
+firewall-cmd --state					#查看防火墙状态
+systemctl stop firewalld.service		#停止防火墙
+systemctl disable firewalld.service 	#开机自启<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示目录文件</span></span><br><span class="line">ls </span><br><span class="line"><span class="meta">#</span><span class="bash"> 显示带隐藏的目录文件</span></span><br><span class="line">ls -a</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建目录</span></span><br><span class="line">mkdir 目录名</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建文件</span></span><br><span class="line">touch 文件名</span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换目录</span></span><br><span class="line">cd  /目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 返回上一级目录</span></span><br><span class="line">cd ..</span><br><span class="line"><span class="meta">#</span><span class="bash"> 显示当前目录</span></span><br><span class="line">pwd</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除空目录</span></span><br><span class="line">rmdir /目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 复制目录或者文件</span></span><br><span class="line">cp -rp /源文件或者目录 /目标目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 剪切文件或目录</span></span><br><span class="line">mv /源文件或者目录 /目标目录</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除文件或目录</span></span><br><span class="line">rm -rf /目录或文件</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查询文件信息</span></span><br><span class="line">cat 文件名  </span><br><span class="line">tail -f 文件名  #实时查询信息</span><br><span class="line">tail -n 1000 文件名 #倒叙查询1000行信息</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h6><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 显示目录文件
+ls 
+# 显示带隐藏的目录文件
+ls -a
+# 创建目录
+mkdir 目录名
+# 创建文件
+touch 文件名
+# 切换目录
+cd  /目录
+# 返回上一级目录
+cd ..
+# 显示当前目录
+pwd
+# 删除空目录
+rmdir /目录
+# 复制目录或者文件
+cp -rp /源文件或者目录 /目标目录
+# 剪切文件或目录
+mv /源文件或者目录 /目标目录
+# 删除文件或目录
+rm -rf /目录或文件
+# 查询文件信息
+cat 文件名  
+tail -f 文件名  #实时查询信息
+tail -n 1000 文件名 #倒叙查询1000行信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 参数 文件名	#更改文件的读写执行权限  参数有-r -w -x 读 写 执行 u所有人 g所属组 例如：chown U+x 123.log</span><br><span class="line">chown 用户 文件名	#更改某个文件用户权限		用户必须是真实存在的</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h6><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">chmod 参数 文件名	#更改文件的读写执行权限  参数有-r -w -x 读 写 执行 u所有人 g所属组 例如：chown U+x 123.log
+chown 用户 文件名	#更改某个文件用户权限		用户必须是真实存在的<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h6 id="文件查询命令"><a href="#文件查询命令" class="headerlink" title="文件查询命令"></a>文件查询命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find /目录或文件 -name *init*	#查询含有init的文件 *可以匹配任意个字符</span><br><span class="line">find /目录或文件 -name *init？？？	#一个？只能匹配一个字符</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="文件查询命令"><a href="#文件查询命令" class="headerlink" title="文件查询命令"></a>文件查询命令</h6><pre class="line-numbers language-SHELL" data-language="SHELL"><code class="language-SHELL">find /目录或文件 -name *init*	#查询含有init的文件 *可以匹配任意个字符
+find /目录或文件 -name *init？？？	#一个？只能匹配一个字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h6 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">whoami 	#查看当前用户</span><br><span class="line">useradd -m 账号	#新建一个账号</span><br><span class="line">passwd 账号		#给此账号输入密码</span><br><span class="line">userdel -r 账号 	#删除账号信息</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h6><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">whoami 	#查看当前用户
+useradd -m 账号	#新建一个账号
+passwd 账号		#给此账号输入密码
+userdel -r 账号 	#删除账号信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cal -1 5 2020  #查看2020年5月份的日历</span><br><span class="line">wc -lc 文件名 &gt;要创建的文件			# 统计某个文件的行数和列数要书写到某个文件</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h6><pre class="line-numbers language-SHELL" data-language="SHELL"><code class="language-SHELL">cal -1 5 2020  #查看2020年5月份的日历
+wc -lc 文件名 &gt;要创建的文件			# 统计某个文件的行数和列数要书写到某个文件
+wget 远程地址			#下载某个文件从远程地址中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
                 

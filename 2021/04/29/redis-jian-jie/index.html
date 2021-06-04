@@ -575,7 +575,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    672
+                    680
                 </div>
                 
 
@@ -642,7 +642,25 @@
 <li>事务</li>
 </ul>
 <h4 id="redis数据库"><a href="#redis数据库" class="headerlink" title="redis数据库"></a>redis数据库</h4><p>redis有16个数据库，默认数据库是0号数据库</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; select 3		#切换数据库到3</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379[3]&gt; dbsize		#显示当前数据库的key值数量</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379[3]&gt; set key 1	#设置一个值</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379[3]&gt; get key		#获取值</span><br><span class="line">"1"</span><br><span class="line">127.0.0.1:6379[3]&gt; select 1	    #切换到1号数据库</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379[1]&gt; get key		#得到的数据为nil，也即是在3号数据库设置的值在1号数据库查不到</span><br><span class="line">(nil)</span><br><span class="line">127.0.0.1:6379[1]&gt; keys *		#查询当前数据库的所有key值</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379[1]&gt; FLUSHALL		#清空所有数据库的值</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379[1]&gt; FLUSHdb 		#清空当前数据库的值</span><br><span class="line">OK</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">127.0.0.1:6379&gt; select 3		#切换数据库到3
+OK
+127.0.0.1:6379[3]&gt; dbsize		#显示当前数据库的key值数量
+(integer) 0
+127.0.0.1:6379[3]&gt; set key 1	#设置一个值
+OK
+127.0.0.1:6379[3]&gt; get key		#获取值
+"1"
+127.0.0.1:6379[3]&gt; select 1	    #切换到1号数据库
+OK
+127.0.0.1:6379[1]&gt; get key		#得到的数据为nil，也即是在3号数据库设置的值在1号数据库查不到
+(nil)
+127.0.0.1:6379[1]&gt; keys *		#查询当前数据库的所有key值
+
+127.0.0.1:6379[1]&gt; FLUSHALL		#清空所有数据库的值
+OK
+127.0.0.1:6379[1]&gt; FLUSHdb 		#清空当前数据库的值
+OK
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="redis的原理"><a href="#redis的原理" class="headerlink" title="redis的原理"></a>redis的原理</h4><p>redis是单线程的，redis是基于内存操作的，CPU不是redis的性能瓶颈，redis的性能瓶颈是由内存和网络带宽决定的。</p>
 <p>redis是用c语言编写的，每秒大概100000QPS，性能不比Memcache差。</p>

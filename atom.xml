@@ -6,7 +6,7 @@
   <link href="https://moleworld.github.io/atom.xml" rel="self"/>
   
   <link href="https://moleworld.github.io/"/>
-  <updated>2021-05-27T14:28:22.357Z</updated>
+  <updated>2021-05-30T12:18:25.224Z</updated>
   <id>https://moleworld.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Alibaba</title>
+    <link href="https://moleworld.github.io/2021/05/30/alibaba/"/>
+    <id>https://moleworld.github.io/2021/05/30/alibaba/</id>
+    <published>2021-05-30T10:11:47.000Z</published>
+    <updated>2021-05-30T12:18:25.224Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;springCloud-alibaba的nacos组件&quot;&gt;&lt;a href=&quot;#springCloud-alibaba的nacos组件&quot; class=&quot;headerlink&quot; title=&quot;springCloud</summary>
+        
+      
+    
+    
+    
+    <category term="框架" scheme="https://moleworld.github.io/categories/%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="springCloud" scheme="https://moleworld.github.io/tag/springCloud/"/>
+    
+  </entry>
   
   <entry>
     <title>idea的常用快捷键</title>
@@ -414,14 +439,14 @@
     <link href="https://moleworld.github.io/2021/04/28/docker-chang-yong-ming-ling-hui-zong/"/>
     <id>https://moleworld.github.io/2021/04/28/docker-chang-yong-ming-ling-hui-zong/</id>
     <published>2021-04-28T15:36:29.000Z</published>
-    <updated>2021-05-02T10:57:11.144Z</updated>
+    <updated>2021-05-02T11:00:04.262Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h4 id=&quot;普通指令&quot;&gt;&lt;a href=&quot;#普通指令&quot; class=&quot;headerlink&quot; title=&quot;普通指令&quot;&gt;&lt;/a&gt;普通指令&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td</summary>
+    <summary type="html">&lt;h4 id=&quot;普通指令&quot;&gt;&lt;a href=&quot;#普通指令&quot; class=&quot;headerlink&quot; title=&quot;普通指令&quot;&gt;&lt;/a&gt;普通指令&lt;/h4&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
         
       
     
@@ -447,7 +472,7 @@
         
         
     <summary type="html">&lt;h4 id=&quot;容器卷技术&quot;&gt;&lt;a href=&quot;#容器卷技术&quot; class=&quot;headerlink&quot; title=&quot;容器卷技术&quot;&gt;&lt;/a&gt;容器卷技术&lt;/h4&gt;&lt;p&gt;容器卷技术的目的是为了持久化和同步操作！容器件也可以进行同步。&lt;/p&gt;
-&lt;figure</summary>
+&lt;pre</summary>
         
       
     
@@ -482,31 +507,6 @@
     
     
     <category term="序列化" scheme="https://moleworld.github.io/tag/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>集合</title>
-    <link href="https://moleworld.github.io/2021/04/20/ji-he/"/>
-    <id>https://moleworld.github.io/2021/04/20/ji-he/</id>
-    <published>2021-04-20T13:30:41.000Z</published>
-    <updated>2021-05-04T09:12:27.933Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;数组和集合的区别？&quot;&gt;&lt;a href=&quot;#数组和集合的区别？&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="java基础" scheme="https://moleworld.github.io/categories/java%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="基础" scheme="https://moleworld.github.io/tag/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

@@ -575,7 +575,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    444
+                    442
                 </div>
                 
 
@@ -602,7 +602,44 @@
 <li>select().paths()  可匹配的路径     </li>
 <li>build是固定结束格式</li>
 </ul>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2</span>  <span class="comment">//开启swagger2</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>{</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">(Environment environment)</span></span>{</span><br><span class="line">        <span class="comment">//读取application.yml读取的环境</span></span><br><span class="line">        Profiles profiles = Profiles.of(<span class="string">"dev"</span>,<span class="string">"test"</span>);</span><br><span class="line">        <span class="comment">//判断运行的环境是否是可读取的环境</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = environment.acceptsProfiles(profiles);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span>  <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">                .apiInfo(<span class="keyword">new</span> ApiInfo(<span class="string">"小婉Swagger"</span>,   <span class="comment">//title</span></span><br><span class="line">                                <span class="string">"当一个闲鱼"</span>,			<span class="comment">//description</span></span><br><span class="line">                                <span class="string">"v.1.0"</span>,			<span class="comment">//版本</span></span><br><span class="line">                                <span class="string">"47.100.69.105"</span>,    <span class="comment">//服务器地址</span></span><br><span class="line">                                <span class="keyword">new</span> Contact(</span><br><span class="line">                                        <span class="string">"小婉"</span>,</span><br><span class="line">                                        <span class="string">"47.100.69.105"</span>,</span><br><span class="line">                                        <span class="string">"wlkjava@163.com"</span></span><br><span class="line">                                ),     				<span class="comment">//个人介绍</span></span><br><span class="line">                                <span class="string">"Apache 2.0"</span>,</span><br><span class="line">                                <span class="string">"http://www.apache.org/licenses/LICENSE-2.0"</span>,</span><br><span class="line">                                <span class="keyword">new</span> ArrayList()</span><br><span class="line">                                )</span><br><span class="line">                        )</span><br><span class="line">                <span class="comment">//右上角的命名path</span></span><br><span class="line">                .groupName(<span class="string">"learn"</span>)</span><br><span class="line">                <span class="comment">//设置swagger是否启动</span></span><br><span class="line">                .enable(flag)</span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">//RequestHandlerSelectors.basePackage扫描包下的所有接口</span></span><br><span class="line">                <span class="comment">//RequestHandlerSelectors.any扫描所有接口    具体的可查看源码</span></span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.example.swagger.controller"</span>))</span><br><span class="line">                <span class="comment">//匹配所有符合的路径</span></span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Configuration
+@EnableSwagger2  //开启swagger2
+public class SwaggerConfig {
+    @Bean
+    public Docket docket(Environment environment){
+        //读取application.yml读取的环境
+        Profiles profiles = Profiles.of("dev","test");
+        //判断运行的环境是否是可读取的环境
+        boolean flag = environment.acceptsProfiles(profiles);
+        
+        return  new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(new ApiInfo("小婉Swagger",   //title
+                                "当一个闲鱼",			//description
+                                "v.1.0",			//版本
+                                "47.100.69.105",    //服务器地址
+                                new Contact(
+                                        "小婉",
+                                        "47.100.69.105",
+                                        "wlkjava@163.com"
+                                ),     				//个人介绍
+                                "Apache 2.0",
+                                "http://www.apache.org/licenses/LICENSE-2.0",
+                                new ArrayList()
+                                )
+                        )
+                //右上角的命名path
+                .groupName("learn")
+                //设置swagger是否启动
+                .enable(flag)
+                .select()
+                //RequestHandlerSelectors.basePackage扫描包下的所有接口
+                //RequestHandlerSelectors.any扫描所有接口    具体的可查看源码
+                .apis(RequestHandlerSelectors.basePackage("com.example.swagger.controller"))
+                //匹配所有符合的路径
+                .paths(PathSelectors.any())
+                .build();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h6 id="swagger的常用注解"><a href="#swagger的常用注解" class="headerlink" title="swagger的常用注解"></a>swagger的常用注解</h6><ul>
 <li>@ApiModel    用在实体类上的注解</li>
@@ -610,10 +647,22 @@
 <li>@ApiOperation                 用在方法上的注解</li>
 <li>@ApiParam                       用在入参上的注解</li>
 </ul>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@ApiModel(value = "用户信息表")</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ApiModelProperty(value = "用户名")</span></span><br><span class="line">    <span class="keyword">private</span> String userName;</span><br><span class="line">    <span class="meta">@ApiModelProperty(value = "密码")</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@Data
+@ApiModel(value = "用户信息表")
+public class User {
+
+    @ApiModelProperty(value = "用户名")
+    private String userName;
+    @ApiModelProperty(value = "密码")
+    private String password;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210123111636040.png" alt="image-20210123111636040"></p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation("测试")</span></span><br><span class="line"><span class="meta">@PostMapping(value = "/test")</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">(<span class="meta">@ApiParam(value ="用户名")</span> String  userName)</span></span>{</span><br><span class="line">    <span class="keyword">return</span> userName;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@ApiOperation("测试")
+@PostMapping(value = "/test")
+public String test(@ApiParam(value ="用户名") String  userName){
+    return userName;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 

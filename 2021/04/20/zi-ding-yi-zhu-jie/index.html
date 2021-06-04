@@ -575,7 +575,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    235
+                    234
                 </div>
                 
 
@@ -595,7 +595,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h6 id="Target-：用于描述注解的使用范围"><a href="#Target-：用于描述注解的使用范围" class="headerlink" title="@Target ：用于描述注解的使用范围"></a>@Target ：用于描述注解的使用范围</h6><h6 id="Retention：-表示需在该级别保存注释信息，用于描述生命周期，常用的有（SOURCE-lt-CLASS-lt-RUNTIME）"><a href="#Retention：-表示需在该级别保存注释信息，用于描述生命周期，常用的有（SOURCE-lt-CLASS-lt-RUNTIME）" class="headerlink" title="@Retention： 表示需在该级别保存注释信息，用于描述生命周期，常用的有（SOURCE<CLASS<RUNTIME）"></a>@Retention： 表示需在该级别保存注释信息，用于描述生命周期，常用的有（SOURCE&lt;CLASS&lt;RUNTIME）</h6><h6 id="Document-说明该注解被包含在javadoc中"><a href="#Document-说明该注解被包含在javadoc中" class="headerlink" title="@Document : 说明该注解被包含在javadoc中"></a>@Document : 说明该注解被包含在javadoc中</h6><h6 id="inherited：说明之类可以继承父类中的注解"><a href="#inherited：说明之类可以继承父类中的注解" class="headerlink" title="@inherited：说明之类可以继承父类中的注解"></a>@inherited：说明之类可以继承父类中的注解</h6><h6 id="注解参数的注意事项，如果注解的参数只有一个且为value时，可以省略value参数。"><a href="#注解参数的注意事项，如果注解的参数只有一个且为value时，可以省略value参数。" class="headerlink" title="注解参数的注意事项，如果注解的参数只有一个且为value时，可以省略value参数。"></a>注解参数的注意事项，如果注解的参数只有一个且为value时，可以省略value参数。</h6><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MyAnnotations(name="微录客",schools = {"北京大学","清华大学"})</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyAnnotation</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyAnnotations(name="微录客",schools = {"北京大学","清华大学"})</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>{</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target(value = {ElementType.METHOD,ElementType.TYPE})</span>       <span class="comment">//  描述在方法、包、类上等等</span></span><br><span class="line"><span class="meta">@Retention(value = RetentionPolicy.RUNTIME )</span>   <span class="comment">//表示该注释的生命周期为</span></span><br><span class="line"><span class="meta">@Documented</span>     <span class="comment">//该注解包含在文档中</span></span><br><span class="line"><span class="meta">@Inherited</span>      <span class="comment">//该注解可以被之类继承</span></span><br><span class="line"><span class="meta">@interface</span> MyAnnotations{</span><br><span class="line">    <span class="comment">//注解的参数 如果没有默认值必须在注解上加上该注解的参数，可以为String类型也可以为数组</span></span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span>  ""</span>;</span><br><span class="line">    String [] schools();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                <h6 id="Target-：用于描述注解的使用范围"><a href="#Target-：用于描述注解的使用范围" class="headerlink" title="@Target ：用于描述注解的使用范围"></a>@Target ：用于描述注解的使用范围</h6><h6 id="Retention：-表示需在该级别保存注释信息，用于描述生命周期，常用的有（SOURCE-lt-CLASS-lt-RUNTIME）"><a href="#Retention：-表示需在该级别保存注释信息，用于描述生命周期，常用的有（SOURCE-lt-CLASS-lt-RUNTIME）" class="headerlink" title="@Retention： 表示需在该级别保存注释信息，用于描述生命周期，常用的有（SOURCE<CLASS<RUNTIME）"></a>@Retention： 表示需在该级别保存注释信息，用于描述生命周期，常用的有（SOURCE&lt;CLASS&lt;RUNTIME）</h6><h6 id="Document-说明该注解被包含在javadoc中"><a href="#Document-说明该注解被包含在javadoc中" class="headerlink" title="@Document : 说明该注解被包含在javadoc中"></a>@Document : 说明该注解被包含在javadoc中</h6><h6 id="inherited：说明之类可以继承父类中的注解"><a href="#inherited：说明之类可以继承父类中的注解" class="headerlink" title="@inherited：说明之类可以继承父类中的注解"></a>@inherited：说明之类可以继承父类中的注解</h6><h6 id="注解参数的注意事项，如果注解的参数只有一个且为value时，可以省略value参数。"><a href="#注解参数的注意事项，如果注解的参数只有一个且为value时，可以省略value参数。" class="headerlink" title="注解参数的注意事项，如果注解的参数只有一个且为value时，可以省略value参数。"></a>注解参数的注意事项，如果注解的参数只有一个且为value时，可以省略value参数。</h6><pre class="line-numbers language-java" data-language="java"><code class="language-java">@MyAnnotations(name="微录客",schools = {"北京大学","清华大学"})
+public class MyAnnotation {
+
+    @MyAnnotations(name="微录客",schools = {"北京大学","清华大学"})
+    public void test(){
+
+    }
+}
+
+@Target(value = {ElementType.METHOD,ElementType.TYPE})       //  描述在方法、包、类上等等
+@Retention(value = RetentionPolicy.RUNTIME )   //表示该注释的生命周期为
+@Documented     //该注解包含在文档中
+@Inherited      //该注解可以被之类继承
+@interface MyAnnotations{
+    //注解的参数 如果没有默认值必须在注解上加上该注解的参数，可以为String类型也可以为数组
+    String name();
+    String value() default  "";
+    String [] schools();
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 

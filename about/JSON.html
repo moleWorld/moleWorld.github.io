@@ -553,7 +553,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-18
+                    2021-05-09
                 </div>
                 
 
@@ -562,7 +562,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    404
+                    405
                 </div>
                 
 
@@ -584,19 +584,101 @@
             <div id="articleContent">
                 <h2 id="JSON前后端转换"><a href="#JSON前后端转换" class="headerlink" title="JSON前后端转换"></a>JSON前后端转换</h2><blockquote>
 <h6 id="Html中js和JSON的相互转换"><a href="#Html中js和JSON的相互转换" class="headerlink" title="Html中js和JSON的相互转换"></a>Html中js和JSON的相互转换</h6></blockquote>
-<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var user ={</span><br><span class="line">    name:"小婉",</span><br><span class="line">    address:"驻马店",</span><br><span class="line">    age:1</span><br><span class="line">}</span><br><span class="line">console.log(user);</span><br><span class="line">var userJson = JSON.stringify(user);  //js转换成JSON</span><br><span class="line">console.log(userJson);</span><br><span class="line">var userJs = JSON.parse(userJson);  //JSON转换成js</span><br><span class="line">console.log(userJs);</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">var user ={
+    name:"小婉",
+    address:"驻马店",
+    age:1
+}
+console.log(user);
+var userJson = JSON.stringify(user);  //js转换成JSON
+console.log(userJson);
+var userJs = JSON.parse(userJson);  //JSON转换成js
+console.log(userJs);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <h6 id="java中把对象信息转换为JACKSON的json样式"><a href="#java中把对象信息转换为JACKSON的json样式" class="headerlink" title="java中把对象信息转换为JACKSON的json样式"></a>java中把对象信息转换为JACKSON的json样式</h6></blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FanController</span>&lt;<span class="title">T</span>&gt; </span>{</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  String <span class="title">ObjectMapperToStr</span><span class="params">(T t)</span> <span class="keyword">throws</span> JsonProcessingException </span>{</span><br><span class="line">        ObjectMapper mapper = <span class="keyword">new</span> ObjectMapper();  <span class="comment">//new ObjectMapper</span></span><br><span class="line">        String str = mapper.writeValueAsString(t); <span class="comment">//定义泛型信息转换成String类型返回给前端</span></span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class FanController&lt;T&gt; {
 
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonController</span> &lt;<span class="title">T</span>&gt;</span>{</span><br><span class="line">    <span class="meta">@RequestMapping("/json")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">jsonOne</span><span class="params">()</span> <span class="keyword">throws</span> JsonProcessingException </span>{</span><br><span class="line">        FanController&lt;List&lt;User&gt;&gt; fanController = <span class="keyword">new</span> FanController&lt;&gt;();</span><br><span class="line">        List&lt;User&gt; userList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        User user = <span class="keyword">new</span> User(<span class="string">"小婉"</span>,<span class="number">10</span>,<span class="string">"驻马店"</span>);</span><br><span class="line">        User user1 = <span class="keyword">new</span> User(<span class="string">"小婉"</span>,<span class="number">10</span>,<span class="string">"驻马店"</span>);</span><br><span class="line">        User user2 = <span class="keyword">new</span> User(<span class="string">"小婉"</span>,<span class="number">10</span>,<span class="string">"驻马店"</span>);</span><br><span class="line">        User user3 = <span class="keyword">new</span> User(<span class="string">"小婉"</span>,<span class="number">10</span>,<span class="string">"驻马店"</span>);</span><br><span class="line">        userList.add(user);</span><br><span class="line">        userList.add(user1);</span><br><span class="line">        userList.add(user2);</span><br><span class="line">        userList.add(user3);</span><br><span class="line">        userList.add(user3);</span><br><span class="line">        String str= fanController.ObjectMapperToStr(userList); <span class="comment">//调取方法转换为String字符串</span></span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+    public  String ObjectMapperToStr(T t) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();  //new ObjectMapper
+        String str = mapper.writeValueAsString(t); //定义泛型信息转换成String类型返回给前端
+        return str;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[{</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"小婉"</span>,</span><br><span class="line">            <span class="attr">"age"</span>: <span class="number">10</span>,</span><br><span class="line">            <span class="attr">"address"</span>: <span class="string">"驻马店"</span></span><br><span class="line">}, {</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"小婉"</span>,</span><br><span class="line">            <span class="attr">"age"</span>: <span class="number">10</span>,</span><br><span class="line">            <span class="attr">"address"</span>: <span class="string">"驻马店"</span></span><br><span class="line">}, {</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"小婉"</span>,</span><br><span class="line">            <span class="attr">"age"</span>: <span class="number">10</span>,</span><br><span class="line">            <span class="attr">"address"</span>: <span class="string">"驻马店"</span></span><br><span class="line">}, {</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"小婉"</span>,</span><br><span class="line">            <span class="attr">"age"</span>: <span class="number">10</span>,</span><br><span class="line">            <span class="attr">"address"</span>: <span class="string">"驻马店"</span></span><br><span class="line">}, {</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"小婉"</span>,</span><br><span class="line">            <span class="attr">"age"</span>: <span class="number">10</span>,</span><br><span class="line">            <span class="attr">"address"</span>: <span class="string">"驻马店"</span></span><br><span class="line">}]</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">@RestController
+public class JsonController &lt;T&gt;{
+    @RequestMapping("/json")
+    public String jsonOne() throws JsonProcessingException {
+        FanController&lt;List&lt;User&gt;&gt; fanController = new FanController&lt;&gt;();
+        List&lt;User&gt; userList = new ArrayList&lt;&gt;();
+        User user = new User("小婉",10,"驻马店");
+        User user1 = new User("小婉",10,"驻马店");
+        User user2 = new User("小婉",10,"驻马店");
+        User user3 = new User("小婉",10,"驻马店");
+        userList.add(user);
+        userList.add(user1);
+        userList.add(user2);
+        userList.add(user3);
+        userList.add(user3);
+        String str= fanController.ObjectMapperToStr(userList); //调取方法转换为String字符串
+        return str;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">[{
+    "name": "小婉",
+            "age": 10,
+            "address": "驻马店"
+}, {
+    "name": "小婉",
+            "age": 10,
+            "address": "驻马店"
+}, {
+    "name": "小婉",
+            "age": 10,
+            "address": "驻马店"
+}, {
+    "name": "小婉",
+            "age": 10,
+            "address": "驻马店"
+}, {
+    "name": "小婉",
+            "age": 10,
+            "address": "驻马店"
+}]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <h6 id="java把时间类型通过JACKSON转换为JSON类型"><a href="#java把时间类型通过JACKSON转换为JSON类型" class="headerlink" title="java把时间类型通过JACKSON转换为JSON类型"></a>java把时间类型通过JACKSON转换为JSON类型</h6></blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JsonUtil</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="comment">//重载dateToJson方法，以便参数的传递一个或多个</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">dateToJson</span><span class="params">(Date o)</span></span>{</span><br><span class="line">        <span class="keyword">return</span> dateToJson( o,<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 传递非yyyy-MM-dd HH:mm:ss类型的时间戳</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> o</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> dateFormat</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  String <span class="title">dateToJson</span><span class="params">(Date o,String dateFormat)</span></span>{</span><br><span class="line">        ObjectMapper objectMapper = <span class="keyword">new</span> ObjectMapper();</span><br><span class="line">        <span class="comment">//不让其返回时间戳，而是我们自定义的类型</span></span><br><span class="line">        objectMapper.configure(SerializationFeature.WRITE_DATE_KEYS_AS_TIMESTAMPS,<span class="keyword">false</span>);</span><br><span class="line">        <span class="comment">//自定义返回的时间类型</span></span><br><span class="line">        SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(dateFormat);</span><br><span class="line">        <span class="comment">// 把时间类型格式化到ObjectMapper中</span></span><br><span class="line">        objectMapper.setDateFormat(sdf);</span><br><span class="line">        <span class="keyword">try</span> {</span><br><span class="line">            <span class="keyword">return</span> objectMapper.writeValueAsString(o);</span><br><span class="line">        }<span class="keyword">catch</span> (Exception e){</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">public class JsonUtil {
+
+    //重载dateToJson方法，以便参数的传递一个或多个
+    public static String dateToJson(Date o){
+        return dateToJson( o,"yyyy-MM-dd HH:mm:ss");
+    }
+
+    /**
+     * 传递非yyyy-MM-dd HH:mm:ss类型的时间戳
+     * @param o
+     * @param dateFormat
+     * @return
+     */
+    public static  String dateToJson(Date o,String dateFormat){
+        ObjectMapper objectMapper = new ObjectMapper();
+        //不让其返回时间戳，而是我们自定义的类型
+        objectMapper.configure(SerializationFeature.WRITE_DATE_KEYS_AS_TIMESTAMPS,false);
+        //自定义返回的时间类型
+        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+        // 把时间类型格式化到ObjectMapper中
+        objectMapper.setDateFormat(sdf);
+        try {
+            return objectMapper.writeValueAsString(o);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -849,7 +931,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-09
                             </span>
                         <span class="publish-author">
                             
@@ -887,7 +969,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-09
                             </span>
                         <span class="publish-author">
                             

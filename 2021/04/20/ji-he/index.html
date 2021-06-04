@@ -607,7 +607,15 @@
 <blockquote>
 <p>对简单数据操作来说数组更方便快捷。</p>
 </blockquote>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组的三种创建方式</span></span><br><span class="line"><span class="keyword">int</span>[] createOne = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};</span><br><span class="line"><span class="keyword">int</span>[] createTwo = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};</span><br><span class="line"><span class="keyword">int</span>[] createThree = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="comment">//数组存储值方式，获取值方式</span></span><br><span class="line">createThree[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">System.out.println(createThree[<span class="number">0</span>]);</span><br><span class="line">createThree[<span class="number">0</span>] = <span class="number">2</span>;</span><br><span class="line">System.out.println(createThree[<span class="number">0</span>]);</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">//数组的三种创建方式
+int[] createOne = new int[]{1,2,3,4,5};
+int[] createTwo = {1,2,3,4,5};
+int[] createThree = new int[5];
+//数组存储值方式，获取值方式
+createThree[0] = 1;
+System.out.println(createThree[0]);
+createThree[0] = 2;
+System.out.println(createThree[0]);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="谈谈你对集合的理解"><a href="#谈谈你对集合的理解" class="headerlink" title="谈谈你对集合的理解"></a>谈谈你对集合的理解</h4><blockquote>
 <p>集合分为Collection和Map两个大的方向，Collection有包含了Set不重复集合、List可重复集合两种。</p>
@@ -621,9 +629,46 @@
 <p>HashSet的特点是无重复、无序，存储位置是通过特定的hash算法进行获得，存储方式时数组结构，如果两个元素hashCode()相等但equals()不相等时，存储的方式时在数组的基础上增加链表。如果两则均相等则表示重复，具体存储方式可了解hashMap的存储方式。</p>
 <p>TreeSet的特点是自然排序，无重复，存储机构是红黑树的形式，判断两个元素是否重复（重写了Comparable的CompareTo方法来判断返回值是否为0，如果0则表示重复）</p>
 <p>LinkedHashSet的特点是按插入顺序排序，无重复，判断是否重复的方式跟HashSet一致。</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常见的集合操作</span></span><br><span class="line">Set&lt;String&gt; setOne = <span class="keyword">new</span> LinkedHashSet&lt;String&gt;();</span><br><span class="line">Set&lt;String&gt; setTwo = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">Set&lt;String&gt; setThree = <span class="keyword">new</span> TreeSet&lt;String&gt;();</span><br><span class="line"><span class="comment">//添加元素</span></span><br><span class="line">setOne.add(<span class="string">"ea"</span>);</span><br><span class="line">setOne.add(<span class="string">"a"</span>);</span><br><span class="line">setOne.add(<span class="string">"dc"</span>);</span><br><span class="line">setOne.add(<span class="string">"nb"</span>);</span><br><span class="line">setOne.add(<span class="string">"md"</span>);</span><br><span class="line">setTwo.add(<span class="string">"ea"</span>);</span><br><span class="line">setTwo.add(<span class="string">"a"</span>);</span><br><span class="line">setTwo.add(<span class="string">"dc"</span>);</span><br><span class="line">setTwo.add(<span class="string">"nb"</span>);</span><br><span class="line">setTwo.add(<span class="string">"md"</span>);</span><br><span class="line">setThree.add(<span class="string">"ea"</span>);</span><br><span class="line">setThree.add(<span class="string">"a"</span>);</span><br><span class="line">setThree.add(<span class="string">"dc"</span>);</span><br><span class="line">setThree.add(<span class="string">"nb"</span>);</span><br><span class="line">setThree.add(<span class="string">"md"</span>);</span><br><span class="line"><span class="comment">//遍历元素</span></span><br><span class="line">setOne.forEach(set-&gt;System.out.print(set+<span class="string">"   "</span>));</span><br><span class="line">System.out.println(<span class="string">"LinkedHashSet的遍历结果"</span>);</span><br><span class="line">setTwo.forEach(set-&gt;System.out.print(set+<span class="string">"   "</span>));</span><br><span class="line">System.out.println(<span class="string">"HashSet的遍历结果"</span>);</span><br><span class="line">setThree.forEach(set-&gt;System.out.print(set+<span class="string">"   "</span>));</span><br><span class="line">System.out.println(<span class="string">"TreeSet的遍历结果"</span>);</span><br><span class="line"><span class="comment">//删除元素</span></span><br><span class="line">setOne.remove(<span class="string">"d"</span>);</span><br><span class="line"><span class="comment">//查看集合是否有值</span></span><br><span class="line">setOne.isEmpty();</span><br><span class="line"><span class="comment">//查看集合的个数</span></span><br><span class="line"> setOne.size();</span><br><span class="line"><span class="comment">//查看是否包含元素</span></span><br><span class="line">setOne.contains(<span class="string">"d"</span>);</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">//常见的集合操作
+Set&lt;String&gt; setOne = new LinkedHashSet&lt;String&gt;();
+Set&lt;String&gt; setTwo = new HashSet&lt;String&gt;();
+Set&lt;String&gt; setThree = new TreeSet&lt;String&gt;();
+//添加元素
+setOne.add("ea");
+setOne.add("a");
+setOne.add("dc");
+setOne.add("nb");
+setOne.add("md");
+setTwo.add("ea");
+setTwo.add("a");
+setTwo.add("dc");
+setTwo.add("nb");
+setTwo.add("md");
+setThree.add("ea");
+setThree.add("a");
+setThree.add("dc");
+setThree.add("nb");
+setThree.add("md");
+//遍历元素
+setOne.forEach(set-&gt;System.out.print(set+"   "));
+System.out.println("LinkedHashSet的遍历结果");
+setTwo.forEach(set-&gt;System.out.print(set+"   "));
+System.out.println("HashSet的遍历结果");
+setThree.forEach(set-&gt;System.out.print(set+"   "));
+System.out.println("TreeSet的遍历结果");
+//删除元素
+setOne.remove("d");
+//查看集合是否有值
+setOne.isEmpty();
+//查看集合的个数
+ setOne.size();
+//查看是否包含元素
+setOne.contains("d");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">这是上述三种集合遍历的结果，可看出三种集合的排序方式</span></span><br><span class="line">ea   a   dc   nb   md   LinkedHashSet的遍历结果</span><br><span class="line">a   nb   md   ea   dc   HashSet的遍历结果</span><br><span class="line">a   dc   ea   md   nb   TreeSet的遍历结果</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#这是上述三种集合遍历的结果，可看出三种集合的排序方式
+ea   a   dc   nb   md   LinkedHashSet的遍历结果
+a   nb   md   ea   dc   HashSet的遍历结果
+a   dc   ea   md   nb   TreeSet的遍历结果<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="List集合描述"><a href="#List集合描述" class="headerlink" title="List集合描述"></a>List集合描述</h4><blockquote>
 <p>List集合是存储有序的集合，且集合内的元素是可重复的。</p>
@@ -636,7 +681,33 @@
 <p>LinkedList底层实现方式时双向链表结构，方便插入、删除。</p>
 <p>由于ArrayList插入方式大部分都是尾插法，与LinkedList相比两则在数据插入时ArrayList的效率更高。</p>
 <p>再删除时，ArrayList删除的数据更靠后或数据量很小时移动的次数也会很少，两则的效率差不太多，故使用场景中ArrayList运用比较广泛。</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常见的集合操作</span></span><br><span class="line">List&lt;String&gt; listOne = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">List&lt;String&gt; listTwo = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">listOne.add(<span class="string">"aaa"</span>);</span><br><span class="line">listOne.add(<span class="string">"bbb"</span>);</span><br><span class="line">listOne.add(<span class="string">"ccc"</span>);</span><br><span class="line">listTwo.add(<span class="string">"aaa"</span>);</span><br><span class="line">listTwo.add(<span class="string">"bbb"</span>);</span><br><span class="line">listTwo.add(<span class="string">"ccc"</span>);</span><br><span class="line"><span class="comment">//遍历操作</span></span><br><span class="line">listOne.forEach(System.out::print);</span><br><span class="line"><span class="comment">//集合大小</span></span><br><span class="line">System.out.println(listOne.size());</span><br><span class="line"><span class="comment">//是否为空</span></span><br><span class="line">System.out.println(listOne.isEmpty());</span><br><span class="line"><span class="comment">//是否包含某个数据</span></span><br><span class="line">System.out.println(listOne.contains(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//通过下标获取元素</span></span><br><span class="line">System.out.println(listOne.get(<span class="number">0</span>));</span><br><span class="line"><span class="comment">//移除某个元素</span></span><br><span class="line">System.out.println(listOne.remove(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//替换某个元素</span></span><br><span class="line">System.out.println(listOne.set(<span class="number">1</span>,<span class="string">"aaaaaaa"</span>));</span><br><span class="line"><span class="comment">//截取集合</span></span><br><span class="line">System.out.println(listOne.subList(<span class="number">0</span>,<span class="number">1</span>));</span><br><span class="line"><span class="comment">//获取某个元素的下标</span></span><br><span class="line">System.out.println(listOne.indexOf(<span class="string">"bbb"</span>));</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">//常见的集合操作
+List&lt;String&gt; listOne = new ArrayList&lt;String&gt;();
+List&lt;String&gt; listTwo = new LinkedList&lt;&gt;();
+listOne.add("aaa");
+listOne.add("bbb");
+listOne.add("ccc");
+listTwo.add("aaa");
+listTwo.add("bbb");
+listTwo.add("ccc");
+//遍历操作
+listOne.forEach(System.out::print);
+//集合大小
+System.out.println(listOne.size());
+//是否为空
+System.out.println(listOne.isEmpty());
+//是否包含某个数据
+System.out.println(listOne.contains("aaa"));
+//通过下标获取元素
+System.out.println(listOne.get(0));
+//移除某个元素
+System.out.println(listOne.remove("aaa"));
+//替换某个元素
+System.out.println(listOne.set(1,"aaaaaaa"));
+//截取集合
+System.out.println(listOne.subList(0,1));
+//获取某个元素的下标
+System.out.println(listOne.indexOf("bbb"));<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="Map集合描述"><a href="#Map集合描述" class="headerlink" title="Map集合描述"></a>Map集合描述</h4><blockquote>
 <p>Map是一个key/value的键值对集合，key不可重复，value可重复的。</p>
@@ -648,7 +719,29 @@
 <p>HashTable和HashMap是线程安全的，效率较慢，故不经常用，且key/value都不允许为null。</p>
 <p>TreeMap的存储是根据比较器进行排序，跟TreeSet的数据结构层上一致，key不可以为null。</p>
 <p>LinkedHashMap是按存储的先后位置进行确定的，key/value都可为null。</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,String&gt;  mapOne = <span class="keyword">new</span> HashMap&lt;String,String&gt;();</span><br><span class="line"><span class="comment">//添加数据</span></span><br><span class="line">mapOne.put(<span class="string">"aaa"</span>,<span class="string">"aaaaaaaaaaa"</span>);</span><br><span class="line"><span class="comment">//遍历数据</span></span><br><span class="line">mapOne.forEach((str,str1)-&gt;{</span><br><span class="line">    System.out.println(str1);</span><br><span class="line">});</span><br><span class="line"><span class="comment">//根据key值获取value</span></span><br><span class="line">System.out.println(mapOne.get(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//判断集合是否为null</span></span><br><span class="line">System.out.println( mapOne.isEmpty());</span><br><span class="line"><span class="comment">//查看集合的大小</span></span><br><span class="line">System.out.println( mapOne.size());</span><br><span class="line"><span class="comment">//查看集合是否包含某个key值</span></span><br><span class="line">System.out.println( mapOne.containsKey(<span class="string">"aaa"</span>));</span><br><span class="line"><span class="comment">//查看集合是否包含某个value值</span></span><br><span class="line">System.out.println( mapOne.containsValue(<span class="string">"aaaaaaa"</span>));</span><br><span class="line"><span class="comment">//移除某个key值</span></span><br><span class="line">System.out.println( mapOne.remove(<span class="string">"aaaaaaa"</span>));</span><br><span class="line"><span class="comment">//替换某个key的value值</span></span><br><span class="line">System.out.println( mapOne.replace(<span class="string">"aaa"</span>,<span class="string">"bbbbbbb"</span>));</span><br><span class="line"><span class="comment">//清除value的值</span></span><br><span class="line">mapOne.clear();</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">Map&lt;String,String&gt;  mapOne = new HashMap&lt;String,String&gt;();
+//添加数据
+mapOne.put("aaa","aaaaaaaaaaa");
+//遍历数据
+mapOne.forEach((str,str1)-&gt;{
+    System.out.println(str1);
+});
+//根据key值获取value
+System.out.println(mapOne.get("aaa"));
+//判断集合是否为null
+System.out.println( mapOne.isEmpty());
+//查看集合的大小
+System.out.println( mapOne.size());
+//查看集合是否包含某个key值
+System.out.println( mapOne.containsKey("aaa"));
+//查看集合是否包含某个value值
+System.out.println( mapOne.containsValue("aaaaaaa"));
+//移除某个key值
+System.out.println( mapOne.remove("aaaaaaa"));
+//替换某个key的value值
+System.out.println( mapOne.replace("aaa","bbbbbbb"));
+//清除value的值
+mapOne.clear();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 

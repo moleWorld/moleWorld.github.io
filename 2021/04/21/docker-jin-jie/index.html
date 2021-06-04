@@ -575,7 +575,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    430
+                    435
                 </div>
                 
 
@@ -596,18 +596,53 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h4 id="容器卷技术"><a href="#容器卷技术" class="headerlink" title="容器卷技术"></a>容器卷技术</h4><p>容器卷技术的目的是为了持久化和同步操作！容器件也可以进行同步。</p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">容器与本地数据挂载</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 一、命令挂载</span></span><br><span class="line">docker run -it -v  linux文件目录:容器目录 容器id /bin/bash	#把linux目录和容器目录进行同步</span><br><span class="line"><span class="meta">#</span><span class="bash"> 二、dockerFile 挂载</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1、建立dockerFile文件  其中书写指令是必须都大写</span></span><br><span class="line">FROM centos		#要挂载的镜像</span><br><span class="line">VOLUME ["volume01","volume2"]	#要挂载的卷</span><br><span class="line">CMD echo "----end----"</span><br><span class="line">CMD /bin/bash</span><br><span class="line"><span class="meta">#</span><span class="bash"> 2、运行文件</span></span><br><span class="line">docker build -f 创建的dockerFile目录 -t 生成的名字</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">容器之间挂载 把两容器关联起来</span></span><br><span class="line">docker run -it --name 新建容器 --volume-from 要挂载的容器  moer/centos:1.0</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-SHELL" data-language="SHELL"><code class="language-SHELL">#容器与本地数据挂载
+# 一、命令挂载
+docker run -it -v  linux文件目录:容器目录 容器id /bin/bash	#把linux目录和容器目录进行同步
+# 二、dockerFile 挂载
+# 1、建立dockerFile文件  其中书写指令是必须都大写
+FROM centos		#要挂载的镜像
+VOLUME ["volume01","volume2"]	#要挂载的卷
+CMD echo "----end----"
+CMD /bin/bash
+# 2、运行文件
+docker build -f 创建的dockerFile目录 -t 生成的名字
+
+#容器之间挂载 把两容器关联起来
+docker run -it --name 新建容器 --volume-from 要挂载的容器  moer/centos:1.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="Dockerfile构建过程"><a href="#Dockerfile构建过程" class="headerlink" title="Dockerfile构建过程"></a>Dockerfile构建过程</h4><h6 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h6><p>1、每个指令必须的大写</p>
 <p>2、指令的执行顺序从上到下</p>
 <p>3、#表示注释</p>
 <p>4、每个指令都会提交一个镜像，层层提交。</p>
 <h4 id="DokcerFile的基础命令"><a href="#DokcerFile的基础命令" class="headerlink" title="DokcerFile的基础命令"></a>DokcerFile的基础命令</h4><p><img src="https://i.loli.net/2021/04/22/9BiAIRS7wEUqkPD.jpg" alt="docker命令.jpg"></p>
-<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">FROM 				#基础镜像</span><br><span class="line">MAINRAINER			#姓名+邮箱</span><br><span class="line">RUN					#运行命令</span><br><span class="line">ADD					#添加分层镜像</span><br><span class="line">WORKDIR				#工作目录</span><br><span class="line">VOLUME				#挂载卷</span><br><span class="line">EXPOSE				#暴露端口号</span><br><span class="line">CMD					#指定容器运行的适合要启动的命令，只有最后一个命令生效，不可追加</span><br><span class="line">ENTRYPOINT			#指定容器运行的适合要启动的命令，可以追加命令</span><br><span class="line">ENV					#构建的时候设置环境变量</span><br><span class="line">COPY				#把一个镜像拷贝进去类似ADD</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">FROM 				#基础镜像
+MAINRAINER			#姓名+邮箱
+RUN					#运行命令
+ADD					#添加分层镜像
+WORKDIR				#工作目录
+VOLUME				#挂载卷
+EXPOSE				#暴露端口号
+CMD					#指定容器运行的适合要启动的命令，只有最后一个命令生效，不可追加
+ENTRYPOINT			#指定容器运行的适合要启动的命令，可以追加命令
+ENV					#构建的时候设置环境变量
+COPY				#把一个镜像拷贝进去类似ADD<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="docker-网络"><a href="#docker-网络" class="headerlink" title="docker 网络"></a>docker 网络</h6><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker network ls   #查看所有的docker网络</span><br><span class="line">b6fbe2727cc1        bridge              bridge              local</span><br><span class="line">e8ea254fb069        host                host                local</span><br><span class="line">4956a8e7920a        none                null                local</span><br><span class="line"><span class="meta">#</span><span class="bash">其中bridge 是桥接模式（默认）		host是主机模式  none不配置网络</span></span><br></pre></td></tr></tbody></table></figure>
+<h6 id="docker-网络"><a href="#docker-网络" class="headerlink" title="docker 网络"></a>docker 网络</h6><pre class="line-numbers language-SHELL" data-language="SHELL"><code class="language-SHELL">docker network ls   #查看所有的docker网络
+b6fbe2727cc1        bridge              bridge              local
+e8ea254fb069        host                host                local
+4956a8e7920a        none                null                local
+#其中bridge 是桥接模式（默认）		host是主机模式  none不配置网络<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h6 id="springboot项目打包成Docker镜像"><a href="#springboot项目打包成Docker镜像" class="headerlink" title="springboot项目打包成Docker镜像"></a>springboot项目打包成Docker镜像</h6><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、编写成功Springboot项目</span><br><span class="line"></span><br><span class="line">2、达成jar包</span><br><span class="line"></span><br><span class="line">3、编写dockerFile进行发布</span><br><span class="line"></span><br><span class="line">4、构建镜像</span><br><span class="line"></span><br><span class="line">5、发布运行</span><br></pre></td></tr></tbody></table></figure>
+<h6 id="springboot项目打包成Docker镜像"><a href="#springboot项目打包成Docker镜像" class="headerlink" title="springboot项目打包成Docker镜像"></a>springboot项目打包成Docker镜像</h6><pre class="line-numbers language-none"><code class="language-none">1、编写成功Springboot项目
+
+2、达成jar包
+
+3、编写dockerFile进行发布
+
+4、构建镜像
+
+5、发布运行<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 

@@ -6,7 +6,7 @@
   <link href="https://moleworld.github.io/atom.xml" rel="self"/>
   
   <link href="https://moleworld.github.io/"/>
-  <updated>2021-05-30T12:18:25.224Z</updated>
+  <updated>2021-06-06T01:07:26.529Z</updated>
   <id>https://moleworld.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java8</title>
+    <link href="https://moleworld.github.io/2021/06/06/java8/"/>
+    <id>https://moleworld.github.io/2021/06/06/java8/</id>
+    <published>2021-06-05T23:21:00.000Z</published>
+    <updated>2021-06-06T01:07:26.529Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;一、接口里可以书写默认方法&quot;&gt;&lt;a href=&quot;#一、接口里可以书写默认方法&quot; class=&quot;headerlink&quot; title=&quot;一、接口里可以书写默认方法&quot;&gt;&lt;/a&gt;一、接口里可以书写默认方法&lt;/h3&gt;&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="java基础" scheme="https://moleworld.github.io/categories/java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+    <category term="java" scheme="https://moleworld.github.io/tag/java/"/>
+    
+  </entry>
   
   <entry>
     <title>Alibaba</title>
@@ -482,31 +507,6 @@
     
     
     <category term="docker" scheme="https://moleworld.github.io/tag/docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>序列化</title>
-    <link href="https://moleworld.github.io/2021/04/20/xu-lie-hua/"/>
-    <id>https://moleworld.github.io/2021/04/20/xu-lie-hua/</id>
-    <published>2021-04-20T13:31:40.000Z</published>
-    <updated>2021-04-20T13:42:50.083Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h4 id=&quot;java序列化和反序列化是什么？&quot;&gt;&lt;a href=&quot;#java序列化和反序列化是什么？&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="java基础" scheme="https://moleworld.github.io/categories/java%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="序列化" scheme="https://moleworld.github.io/tag/%E5%BA%8F%E5%88%97%E5%8C%96/"/>
     
   </entry>
   

@@ -668,21 +668,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-07
+                    2022-04-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    6 分
                 </div>
                 
 
@@ -708,16 +708,14 @@
 <p>组件介绍</p>
 </blockquote>
 <ul>
-<li><p>Nacos Discovery     服务注册发现</p>
-</li>
-<li><p>Nacos Config           动态配置文件</p>
-</li>
-<li><p>Ribbon                      客户端多项目之间负载均衡</p>
-</li>
-<li><p>OpenFeign               服务之间的调用，更契合SpringMVC</p>
-</li>
-<li><p>Sentinel                    流量管理工具，主要是流控、熔断</p>
-</li>
+<li>Nacos Discovery     服务注册发现</li>
+<li>Nacos Config           动态配置文件</li>
+<li>Ribbon                      客户端多项目之间负载均衡</li>
+<li>OpenFeign               服务之间的调用，更契合SpringMVC</li>
+<li>Sentinel                    流量管理工具，主要是流控、熔断</li>
+<li>seata                         分布式事务管理工具</li>
+<li>gateWay                   网关</li>
+<li>skyWalking              链路追踪</li>
 </ul>
 <h4 id="Nacos-Discovery"><a href="#Nacos-Discovery" class="headerlink" title="Nacos Discovery"></a>Nacos Discovery</h4><p>Nacos提供基于DNS和基于RPC的服务发现，即能被用来支持https/http的服务注册与发现，也支持RPC如dubbo的服务注册与发现。</p>
 <p>Nacos是一种去中心化的架构，属于CAP理论里的AP架构，支持最终一致性，在分布式服务发现与注册场景下具有很不错的性能。</p>
@@ -852,6 +850,53 @@
 <li>warn Up:  预热冷启动模式,例如某个接口一直不调用，突然需要大批量调用，就可以设置为warn Up模式让他慢慢进来防止数据库压垮，当系统中存在缓存后，直接从缓存中查询，防止了数据库瞬间的压力过大导致系统down且能达到系统能访问的最大流量。</li>
 <li>排队等待：适用于脉冲流量，简单来说就是脉底的时间充分利用起来执行超出的流量。</li>
 </ol>
+<h5 id="熔断降级"><a href="#熔断降级" class="headerlink" title="熔断降级"></a>熔断降级</h5><blockquote>
+<p>降级策略</p>
+</blockquote>
+<h6 id="慢调用"><a href="#慢调用" class="headerlink" title="慢调用"></a>慢调用</h6><p>介绍：单位时间内如果接口请求的时间超过最大RT，且请求次数不低于5次，比例小于0.1则进行熔断，熔断时长为30s。</p>
+<p><img src="https://img-blog.csdnimg.cn/b9e3e05113224d2bb4cd4dbecb06450e.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JieHlscWYxMjZjb20=,size_16,color_FFFFFF,t_70#" alt="在这里插入图片描述"></p>
+<ul>
+<li>最大RT：接口响应最大时长</li>
+<li>比例阈值：单位时间内请求次数比例</li>
+<li>熔断时长：熔断之后断开的时间</li>
+<li>最小请求数：请求接口的最少次数</li>
+<li>统计时长：单位时间</li>
+</ul>
+<h6 id="异常比例"><a href="#异常比例" class="headerlink" title="异常比例"></a>异常比例</h6><p>介绍：单位时间内请求次数大于5，比例小于0.1，则进行熔断，熔断时长为30s.</p>
+<p><img src="https://img-blog.csdnimg.cn/11625039c69d41e5b786b7d3977d785c.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JieHlscWYxMjZjb20=,size_16,color_FFFFFF,t_70#" alt="img"></p>
+<h6 id="异常数"><a href="#异常数" class="headerlink" title="异常数"></a>异常数</h6><p><img src="https://img-blog.csdnimg.cn/6cab44b6fbd9414dac5b9b302a2781ce.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JieHlscWYxMjZjb20=,size_16,color_FFFFFF,t_70#" alt="在这里插入图片描述"></p>
+<h5 id="热点规则"><a href="#热点规则" class="headerlink" title="热点规则"></a>热点规则</h5><p>针对的是某个接口某一个参数进行流量控制，即对改接口某个值进行一种特定的流控，其他值走原有的流控模式。</p>
+<p>常用场景：某个商品的秒杀、ip地址攻击等具有唯一性的瞬间流量场景。</p>
+<h4 id="senta"><a href="#senta" class="headerlink" title="senta"></a>senta</h4><p>分布式事务实现模式:</p>
+<h5 id="AT-auto-transcation"><a href="#AT-auto-transcation" class="headerlink" title="AT(auto transcation)"></a>AT(auto transcation)</h5><p>简介：AT模式采用的是把数据库执行前的数据存入before image,执行后的数据存入after image再进行加行级锁，如果程序执行完成正确则释放锁，错误则把after image的数据回滚到before image的状态。</p>
+<h5 id="TCC模式"><a href="#TCC模式" class="headerlink" title="TCC模式"></a>TCC模式</h5><p>简介：根据自己的业务场景实现一段业务逻辑Try、二段确认confirm、二段回滚cancel三个操作。</p>
+<p>和AT模式相比：侵入性更强，但不需要增加行级锁。</p>
+<p>消息队列实现</p>
+<h4 id="GateWay"><a href="#GateWay" class="headerlink" title="GateWay"></a>GateWay</h4><p>微服务网关的主要意义是指系统的统一入口，它封装了应用程序内部的实现结构，为客户端提供统一的服务，一些业务本身功能无关的公共逻辑一般都在这里实现，例如认证、鉴权、监控、路由转发等。</p>
+<blockquote>
+<p>专业名词</p>
+</blockquote>
+<ul>
+<li>路由id ：     唯一标识，表示路由到具体的那个服务</li>
+<li>路由uri ：   需要转发的地址</li>
+<li>路由断言predicates-path：跟路由id一个性质</li>
+<li>路由过滤filters-StripPrefix：由于判断路由断言时增加一个唯一标识，到达真正的服务需去除该路由id</li>
+</ul>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">spring:
+  profiles:
+    active: 8088
+  cloud:
+    gateway:
+      routes:
+        - id: order-route    # 路由的唯一标识，路由到具体的服务
+          uri: localhost:8080   #路由路径，标识具体到那个路径，后续改成nacos
+          predicates:
+            - Path=/order-server/**   #标识前缀带有order-server的都路由到这个服务
+            # http://localhost:8088/order-server/add/order
+          filters:
+            - StrixPrefix=1   #去除上一层的服务即order-server，真正转发的时候路径就变成了http://localhost:8080/add/order<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="skyWalking"><a href="#skyWalking" class="headerlink" title="skyWalking"></a>skyWalking</h4><p>目的：主要为了解决微服务中出现问题时更快的定位。</p>
 
                 
             </div>
@@ -1717,7 +1762,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.8k</span>&nbsp;字
+                class="white-color">51.7k</span>&nbsp;字
             
             
             

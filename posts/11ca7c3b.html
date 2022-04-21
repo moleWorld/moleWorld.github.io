@@ -711,73 +711,73 @@
 <li><p>导入到linux系统中，并进行解压</p>
 </li>
 <li><p>配置环境变量</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#编辑此文件
-vim /etc/profile
-#在该文件最底部插入，只需要保证java_home的值跟自己的目录对照就可以，其他保持不变
-export JAVA_HOME=/usr/local/jdk1.8.0_181  #jdk安装目录
-export JRE_HOME=${JAVA_HOME}/jre
-export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib:$CLASSPATH
-export JAVA_PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin
-export PATH=$PATH:${JAVA_PATH}
-#环境变量有效
-source /etc/profile
-#测试是否成功
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#编辑此文件</span>
+<span class="token function">vim</span> /etc/profile
+<span class="token comment">#在该文件最底部插入，只需要保证java_home的值跟自己的目录对照就可以，其他保持不变</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_HOME</span><span class="token operator">=</span>/usr/local/jdk1.8.0_181  <span class="token comment">#jdk安装目录</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JRE_HOME</span><span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/jre
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CLASSPATH</span><span class="token operator">=</span>.:<span class="token variable">${JAVA_HOME}</span>/lib:<span class="token variable">${JRE_HOME}</span>/lib:<span class="token variable">$CLASSPATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">JAVA_PATH</span><span class="token operator">=</span><span class="token variable">${JAVA_HOME}</span>/bin:<span class="token variable">${JRE_HOME}</span>/bin
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">${JAVA_PATH}</span>
+<span class="token comment">#环境变量有效</span>
+<span class="token builtin class-name">source</span> /etc/profile
+<span class="token comment">#测试是否成功</span>
 java -version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 </li>
 </ul>
-<h5 id="下载nacos"><a href="#下载nacos" class="headerlink" title="下载nacos"></a>下载nacos</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#创建文件夹
-mkdir nacos
-# 进入文件夹
-cd nacos
-#下载压缩包 https://pd.zwc365.com为加速地址
-wget https://pd.zwc365.com/seturl/https://github.com/alibaba/nacos/releases/download/2.0.3/nacos-server-2.0.3.tar.gz
-# 解压文件夹，并重命名文件夹,生成3个nacos文件夹分别为nacos8849、nacos8850、nacos8851
-tar zxvf nacos-server-2.0.3.tar.gz
-mv nacos nacos8849<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="下载nacos"><a href="#下载nacos" class="headerlink" title="下载nacos"></a>下载nacos</h5><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment">#创建文件夹</span>
+<span class="token function">mkdir</span> nacos
+<span class="token comment"># 进入文件夹</span>
+<span class="token builtin class-name">cd</span> nacos
+<span class="token comment">#下载压缩包 https://pd.zwc365.com为加速地址</span>
+<span class="token function">wget</span> https://pd.zwc365.com/seturl/https://github.com/alibaba/nacos/releases/download/2.0.3/nacos-server-2.0.3.tar.gz
+<span class="token comment"># 解压文件夹，并重命名文件夹,生成3个nacos文件夹分别为nacos8849、nacos8850、nacos8851</span>
+<span class="token function">tar</span> zxvf nacos-server-2.0.3.tar.gz
+<span class="token function">mv</span> nacos nacos8849<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="修改nacos配置"><a href="#修改nacos配置" class="headerlink" title="修改nacos配置"></a>修改nacos配置</h5><ul>
 <li>#修改nacos的默认数据库为mysql，application.properties</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">server.port=8849 # 修改端口号
-spring.datasource.platform=mysql
-db.num=1
-db.url.0=jdbc:mysql://127.0.0.1:3310/nacos?characterEncoding=utf8&amp;connectTimeout=1000&amp;socketTimeout=3000&amp;autoReconnect=true&amp;useUnicode=true&amp;useSSL=false&amp;serverTimezone=UTC
-db.user.0=root
-db.password.0=wlk161536<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">server.port<span class="token operator">=</span><span class="token number">8849</span> <span class="token comment"># 修改端口号</span>
+spring.datasource.platform<span class="token operator">=</span>mysql
+db.num<span class="token operator">=</span><span class="token number">1</span>
+db.url.0<span class="token operator">=</span>jdbc:mysql://127.0.0.1:3310/nacos?characterEncoding<span class="token operator">=</span>utf8<span class="token operator">&amp;</span><span class="token assign-left variable">connectTimeout</span><span class="token operator">=</span><span class="token number">1000</span><span class="token operator">&amp;</span><span class="token assign-left variable">socketTimeout</span><span class="token operator">=</span><span class="token number">3000</span><span class="token operator">&amp;</span><span class="token assign-left variable">autoReconnect</span><span class="token operator">=</span>true<span class="token operator">&amp;</span><span class="token assign-left variable">useUnicode</span><span class="token operator">=</span>true<span class="token operator">&amp;</span><span class="token assign-left variable">useSSL</span><span class="token operator">=</span>false<span class="token operator">&amp;</span><span class="token assign-left variable">serverTimezone</span><span class="token operator">=</span>UTC
+db.user.0<span class="token operator">=</span>root
+db.password.0<span class="token operator">=</span>wlk161536<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>#集群nacos，修改cluster.conf文件 #example 配置三个nacos的IP地址加端口号</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">122.112.148.42:8849
-122.112.148.42:8850
-122.112.148.42:8851<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token number">122.112</span>.148.42:8849
+<span class="token number">122.112</span>.148.42:8850
+<span class="token number">122.112</span>.148.42:8851<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li>#修改启动文件，防止内存溢出startup.sh，修改集群的内存跟单机一样</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx512m -Xmn256m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token assign-left variable">JAVA_OPT</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${JAVA_OPT}</span> -server -Xms512m -Xmx512m -Xmn256m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>启动nacos</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./startup.sh
-#关闭则运行shutdown.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token comment">#关闭则运行shutdown.sh</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h5 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h5><ul>
 <li>安装nginx的过程就忽略了</li>
 <li>配置nginx.conf文件</li>
 </ul>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">upstream clusterNacos{
-	server 122.112.148.42:8849;
-	server 122.112.148.42:8850;
-	server 122.112.148.42:8851;
-}
-server{
-	listener   8847;
-	server_name localhost;
-	location /nacos/ {
-		proxy_pass http://clusterNacos/nacos;
-	}
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">upstream clusterNacos<span class="token punctuation">{</span>
+	server <span class="token number">122.112</span>.148.42:8849<span class="token punctuation">;</span>
+	server <span class="token number">122.112</span>.148.42:8850<span class="token punctuation">;</span>
+	server <span class="token number">122.112</span>.148.42:8851<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+server<span class="token punctuation">{</span>
+	listener   <span class="token number">8847</span><span class="token punctuation">;</span>
+	server_name localhost<span class="token punctuation">;</span>
+	location /nacos/ <span class="token punctuation">{</span>
+		proxy_pass http://clusterNacos/nacos<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
                 
@@ -1320,13 +1320,13 @@ new Valine({
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/98a729ec.html">
+                <a href="/posts/b04a945b.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928012804.jpg" class="responsive-img" alt="精句">
+                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015537.jpg" class="responsive-img" alt="springSecurity">
                         
-                        <span class="card-title">精句</span>
+                        <span class="card-title">springSecurity</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1337,14 +1337,14 @@ new Valine({
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%84%9F%E6%82%9F/" class="post-category">
-                                    感悟
+                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    框架
                                 </a>
                             
                             
@@ -1354,8 +1354,8 @@ new Valine({
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
-                        <span class="chip bg-color">生活</span>
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
                 </div>
@@ -1644,7 +1644,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.8k</span>&nbsp;字
+                class="white-color">51.7k</span>&nbsp;字
             
             
             

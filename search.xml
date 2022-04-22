@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>idea的常用快捷键</title>
-      <link href="posts/b5ebccd2.html"/>
-      <url>posts/b5ebccd2.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="CTRL"><a href="#CTRL" class="headerlink" title="CTRL+"></a>CTRL+</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Ctrl + F</td><td>在当前文件进行文本查找 （必备）</td></tr><tr><td>Ctrl + R</td><td>在当前文件进行文本替换 （必备）</td></tr><tr><td>Ctrl + Z</td><td>撤销 （必备）</td></tr><tr><td>Ctrl + Y</td><td>删除光标所在行 或 删除选中的行 （必备）</td></tr><tr><td>Ctrl + X</td><td>剪切光标所在行 或 剪切选择内容</td></tr><tr><td>Ctrl + C</td><td>复制光标所在行 或 复制选择内容</td></tr><tr><td>Ctrl + D</td><td><strong>复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面 （必备）</strong></td></tr><tr><td>Ctrl + W</td><td><strong>递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围 （必备）</strong></td></tr><tr><td>Ctrl + E</td><td>显示最近打开的文件记录列表</td></tr><tr><td>Ctrl  N</td><td>根据输入的 类名 查找类文件</td></tr><tr><td>Ctrl + G</td><td>查找当前文件中某一行的信息</td></tr><tr><td>Ctrl + J</td><td><strong>插入自定义的模板</strong></td></tr><tr><td>Ctrl + P</td><td>用于提示当前的方法需要哪些参数</td></tr><tr><td>Ctrl + Q</td><td>光标所在的变量 / 类名 / 方法名的路径</td></tr><tr><td>Ctrl + B</td><td>进入光标所在的方法/变量的接口或是定义出，等效于 Ctrl + 左键单击</td></tr><tr><td>Ctrl + O</td><td>选择可重写的方法</td></tr><tr><td>Ctrl + I</td><td>选择可继承的方法</td></tr><tr><td>Ctrl + +</td><td>展开代码</td></tr><tr><td>Ctrl +  -</td><td>折叠代码</td></tr><tr><td>Ctrl + /</td><td>注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号 （必备）</td></tr><tr><td>Ctrl + [</td><td>移动光标到当前所在代码的花括号开始位置</td></tr><tr><td>Ctrl + ]</td><td>移动光标到当前所在代码的花括号结束位置</td></tr><tr><td>Ctrl + F3</td><td>调转到所选中的词的下一个引用位置</td></tr><tr><td>Ctrl + F4</td><td>关闭当前编辑文件</td></tr><tr><td>Ctrl + F8</td><td>在 Debug 模式下，设置光标当前行为断点，如果当前已经是断点则去掉断点</td></tr><tr><td>Ctrl + F9</td><td>执行 Make Project 操作</td></tr><tr><td>Ctrl + F12</td><td>弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选</td></tr><tr><td>Ctrl + Tab</td><td>编辑窗口切换，如果在切换的过程又加按上delete，则是关闭对应选中的窗口</td></tr></tbody></table><h4 id="ALT"><a href="#ALT" class="headerlink" title="ALT+"></a>ALT+</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Alt + Insert</td><td>代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等</td></tr><tr><td>Alt + F3</td><td>选中文本，逐个往下查找相同文本，并高亮显示</td></tr><tr><td>Alt + F7</td><td>查找光标所在的方法 / 变量 / 类被调用的地方</td></tr><tr><td>Alt + F8</td><td>在 Debug 的状态下，选中对象，弹出可输入计算表达式调试框，查看该输入内容的调试结果</td></tr><tr><td>Alt + 左方向键</td><td>按左方向切换当前已打开的文件视图</td></tr><tr><td>Alt + 右方向键</td><td>按右方向切换当前已打开的文件视图</td></tr><tr><td>Alt + 前方向键</td><td>当前光标跳转到当前文件的前一个方法名位置</td></tr><tr><td>Alt + 后方向键</td><td>当前光标跳转到当前文件的后一个方法名位置</td></tr></tbody></table><h4 id="SHIFT"><a href="#SHIFT" class="headerlink" title="SHIFT+"></a>SHIFT+</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Shift + F4</td><td>对当前打开的文件，使用新Windows窗口打开，旧窗口保留</td></tr><tr><td>Shift + F7</td><td>在 Debug 模式下，智能步入。断点所在行上有多个方法调用，会弹出进入哪个方法</td></tr><tr><td>Shift + F8</td><td>在 Debug 模式下，跳出，表现出来的效果跟 F9 一样</td></tr><tr><td>Shift + Tab</td><td>取消缩进</td></tr><tr><td>Shift + 左键单击</td><td>在打开的文件名上按此快捷键，可以关闭当前打开文件</td></tr><tr><td>Shift + 滚轮前后滚动</td><td>当前文件的横向滚动轴滚动</td></tr></tbody></table><h4 id="CTRL-ALT"><a href="#CTRL-ALT" class="headerlink" title="CTRL+ALT"></a>CTRL+ALT</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Ctrl + Alt + L</td><td>格式化代码，可以对当前文件和整个包目录使用 （必备）</td></tr><tr><td>Ctrl + Alt + B</td><td>在某个调用的方法名上使用会跳到具体的实现处，可以跳过接口）</td></tr><tr><td>Ctrl + Alt + I</td><td>光标所在行 或 选中部分进行自动代码缩进，有点类似格式化</td></tr><tr><td>Ctrl + Alt + V</td><td>快速引进变量</td></tr><tr><td>Ctrl + Alt + S</td><td>打开 IntelliJ IDEA 系统设置</td></tr><tr><td>Ctrl + Alt + F11</td><td>切换全屏模式</td></tr><tr><td>Ctrl + Alt + Enter</td><td>光标所在行上空出一行，光标定位到新行</td></tr><tr><td>Ctrl + Alt + 左方向键</td><td>退回到上一个操作的地方 （必备）（注意与其他软件快捷键冲突）</td></tr><tr><td>Ctrl + Alt + 右方向键</td><td>前进到上一个操作的地方 （必备）（注意与其他软件快捷键冲突）</td></tr><tr><td>Ctrl + Alt + 前方向键</td><td>在查找模式下，跳到上个查找的文件</td></tr><tr><td>Ctrl + Alt + 后方向键</td><td>在查找模式下，跳到下个查找的文件</td></tr></tbody></table><h4 id="CTRL-SHIFT"><a href="#CTRL-SHIFT" class="headerlink" title="CTRL+SHIFT"></a>CTRL+SHIFT</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Ctrl + Shift + R</td><td>根据输入内容查找或替换对应内容，范围为整个项目 或 指定目录内文件 （必备）</td></tr><tr><td>Ctrl + Shift + J</td><td>自动将下一行合并到当前行末尾 （必备）</td></tr><tr><td>Ctrl + Shift + Z</td><td>取消撤销 （必备）</td></tr><tr><td>Ctrl + Shift + W</td><td>递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围 （必备）</td></tr><tr><td>Ctrl + Shift + U</td><td>对选中的代码进行大 / 小写轮流转换 （必备）</td></tr><tr><td>Ctrl + Shift + C</td><td>复制当前文件磁盘路径到剪贴板</td></tr><tr><td>Ctrl + Shift + +</td><td>展开所有代码</td></tr><tr><td>Ctrl + Shift + -</td><td>折叠所有代码</td></tr><tr><td>Ctrl + Shift + F7</td><td>高亮显示所有该选中文本，按Esc高亮消失</td></tr><tr><td>Ctrl + Shift + F12</td><td>编辑器最大化</td></tr><tr><td>Ctrl + Shift + Enter</td><td>自动结束代码，行末自动添加分号 （必备）</td></tr><tr><td>Ctrl + Shift + Backspace</td><td>退回到上次修改的地方</td></tr><tr><td>Ctrl + Shift + 左/右方向键</td><td>在代码上选中区域调试，在文件上结构宽度调试</td></tr><tr><td>Ctrl + Shift + 后方向键</td><td>在代码上上下文件换位，在文件上选中文件</td></tr></tbody></table><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>F2</td><td>跳转到下一个高亮错误 或 警告位置 （必备）</td></tr><tr><td>F3</td><td>在查找模式下，定位到下一个匹配处</td></tr><tr><td>F4</td><td>编辑源</td></tr><tr><td>F7</td><td>在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</td></tr><tr><td>F8</td><td>在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</td></tr><tr><td>Tab</td><td>缩进</td></tr><tr><td>连按两次Shift</td><td>弹出 Search Everywhere 弹出层</td></tr></tbody></table><p>​    </p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> idea </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>小技巧</title>
       <link href="posts/a40d665e.html"/>
       <url>posts/a40d665e.html</url>
@@ -846,6 +821,31 @@
         <tags>
             
             <tag> spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>idea的常用快捷键</title>
+      <link href="posts/b5ebccd2.html"/>
+      <url>posts/b5ebccd2.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h4 id="CTRL"><a href="#CTRL" class="headerlink" title="CTRL+"></a>CTRL+</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Ctrl + F</td><td>在当前文件进行文本查找 （必备）</td></tr><tr><td>Ctrl + R</td><td>在当前文件进行文本替换 （必备）</td></tr><tr><td>Ctrl + Z</td><td>撤销 （必备）</td></tr><tr><td>Ctrl + Y</td><td>删除光标所在行 或 删除选中的行 （必备）</td></tr><tr><td>Ctrl + X</td><td>剪切光标所在行 或 剪切选择内容</td></tr><tr><td>Ctrl + C</td><td>复制光标所在行 或 复制选择内容</td></tr><tr><td>Ctrl + D</td><td><strong>复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面 （必备）</strong></td></tr><tr><td>Ctrl + W</td><td><strong>递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围 （必备）</strong></td></tr><tr><td>Ctrl + E</td><td>显示最近打开的文件记录列表</td></tr><tr><td>Ctrl  N</td><td>根据输入的 类名 查找类文件</td></tr><tr><td>Ctrl + G</td><td>查找当前文件中某一行的信息</td></tr><tr><td>Ctrl + J</td><td><strong>插入自定义的模板</strong></td></tr><tr><td>Ctrl + P</td><td>用于提示当前的方法需要哪些参数</td></tr><tr><td>Ctrl + Q</td><td>光标所在的变量 / 类名 / 方法名的路径</td></tr><tr><td>Ctrl + B</td><td>进入光标所在的方法/变量的接口或是定义出，等效于 Ctrl + 左键单击</td></tr><tr><td>Ctrl + O</td><td>选择可重写的方法</td></tr><tr><td>Ctrl + I</td><td>选择可继承的方法</td></tr><tr><td>Ctrl + +</td><td>展开代码</td></tr><tr><td>Ctrl +  -</td><td>折叠代码</td></tr><tr><td>Ctrl + /</td><td>注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号 （必备）</td></tr><tr><td>Ctrl + [</td><td>移动光标到当前所在代码的花括号开始位置</td></tr><tr><td>Ctrl + ]</td><td>移动光标到当前所在代码的花括号结束位置</td></tr><tr><td>Ctrl + F3</td><td>调转到所选中的词的下一个引用位置</td></tr><tr><td>Ctrl + F4</td><td>关闭当前编辑文件</td></tr><tr><td>Ctrl + F8</td><td>在 Debug 模式下，设置光标当前行为断点，如果当前已经是断点则去掉断点</td></tr><tr><td>Ctrl + F9</td><td>执行 Make Project 操作</td></tr><tr><td>Ctrl + F12</td><td>弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选</td></tr><tr><td>Ctrl + Tab</td><td>编辑窗口切换，如果在切换的过程又加按上delete，则是关闭对应选中的窗口</td></tr></tbody></table><h4 id="ALT"><a href="#ALT" class="headerlink" title="ALT+"></a>ALT+</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Alt + Insert</td><td>代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等</td></tr><tr><td>Alt + F3</td><td>选中文本，逐个往下查找相同文本，并高亮显示</td></tr><tr><td>Alt + F7</td><td>查找光标所在的方法 / 变量 / 类被调用的地方</td></tr><tr><td>Alt + F8</td><td>在 Debug 的状态下，选中对象，弹出可输入计算表达式调试框，查看该输入内容的调试结果</td></tr><tr><td>Alt + 左方向键</td><td>按左方向切换当前已打开的文件视图</td></tr><tr><td>Alt + 右方向键</td><td>按右方向切换当前已打开的文件视图</td></tr><tr><td>Alt + 前方向键</td><td>当前光标跳转到当前文件的前一个方法名位置</td></tr><tr><td>Alt + 后方向键</td><td>当前光标跳转到当前文件的后一个方法名位置</td></tr></tbody></table><h4 id="SHIFT"><a href="#SHIFT" class="headerlink" title="SHIFT+"></a>SHIFT+</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Shift + F4</td><td>对当前打开的文件，使用新Windows窗口打开，旧窗口保留</td></tr><tr><td>Shift + F7</td><td>在 Debug 模式下，智能步入。断点所在行上有多个方法调用，会弹出进入哪个方法</td></tr><tr><td>Shift + F8</td><td>在 Debug 模式下，跳出，表现出来的效果跟 F9 一样</td></tr><tr><td>Shift + Tab</td><td>取消缩进</td></tr><tr><td>Shift + 左键单击</td><td>在打开的文件名上按此快捷键，可以关闭当前打开文件</td></tr><tr><td>Shift + 滚轮前后滚动</td><td>当前文件的横向滚动轴滚动</td></tr></tbody></table><h4 id="CTRL-ALT"><a href="#CTRL-ALT" class="headerlink" title="CTRL+ALT"></a>CTRL+ALT</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Ctrl + Alt + L</td><td>格式化代码，可以对当前文件和整个包目录使用 （必备）</td></tr><tr><td>Ctrl + Alt + B</td><td>在某个调用的方法名上使用会跳到具体的实现处，可以跳过接口）</td></tr><tr><td>Ctrl + Alt + I</td><td>光标所在行 或 选中部分进行自动代码缩进，有点类似格式化</td></tr><tr><td>Ctrl + Alt + V</td><td>快速引进变量</td></tr><tr><td>Ctrl + Alt + S</td><td>打开 IntelliJ IDEA 系统设置</td></tr><tr><td>Ctrl + Alt + F11</td><td>切换全屏模式</td></tr><tr><td>Ctrl + Alt + Enter</td><td>光标所在行上空出一行，光标定位到新行</td></tr><tr><td>Ctrl + Alt + 左方向键</td><td>退回到上一个操作的地方 （必备）（注意与其他软件快捷键冲突）</td></tr><tr><td>Ctrl + Alt + 右方向键</td><td>前进到上一个操作的地方 （必备）（注意与其他软件快捷键冲突）</td></tr><tr><td>Ctrl + Alt + 前方向键</td><td>在查找模式下，跳到上个查找的文件</td></tr><tr><td>Ctrl + Alt + 后方向键</td><td>在查找模式下，跳到下个查找的文件</td></tr></tbody></table><h4 id="CTRL-SHIFT"><a href="#CTRL-SHIFT" class="headerlink" title="CTRL+SHIFT"></a>CTRL+SHIFT</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>Ctrl + Shift + R</td><td>根据输入内容查找或替换对应内容，范围为整个项目 或 指定目录内文件 （必备）</td></tr><tr><td>Ctrl + Shift + J</td><td>自动将下一行合并到当前行末尾 （必备）</td></tr><tr><td>Ctrl + Shift + Z</td><td>取消撤销 （必备）</td></tr><tr><td>Ctrl + Shift + W</td><td>递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围 （必备）</td></tr><tr><td>Ctrl + Shift + U</td><td>对选中的代码进行大 / 小写轮流转换 （必备）</td></tr><tr><td>Ctrl + Shift + C</td><td>复制当前文件磁盘路径到剪贴板</td></tr><tr><td>Ctrl + Shift + +</td><td>展开所有代码</td></tr><tr><td>Ctrl + Shift + -</td><td>折叠所有代码</td></tr><tr><td>Ctrl + Shift + F7</td><td>高亮显示所有该选中文本，按Esc高亮消失</td></tr><tr><td>Ctrl + Shift + F12</td><td>编辑器最大化</td></tr><tr><td>Ctrl + Shift + Enter</td><td>自动结束代码，行末自动添加分号 （必备）</td></tr><tr><td>Ctrl + Shift + Backspace</td><td>退回到上次修改的地方</td></tr><tr><td>Ctrl + Shift + 左/右方向键</td><td>在代码上选中区域调试，在文件上结构宽度调试</td></tr><tr><td>Ctrl + Shift + 后方向键</td><td>在代码上上下文件换位，在文件上选中文件</td></tr></tbody></table><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><table><thead><tr><th>快捷键</th><th>介绍</th></tr></thead><tbody><tr><td>F2</td><td>跳转到下一个高亮错误 或 警告位置 （必备）</td></tr><tr><td>F3</td><td>在查找模式下，定位到下一个匹配处</td></tr><tr><td>F4</td><td>编辑源</td></tr><tr><td>F7</td><td>在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则进入当前方法体内，如果该方法体还有方法，则不会进入该内嵌的方法中</td></tr><tr><td>F8</td><td>在 Debug 模式下，进入下一步，如果当前行断点是一个方法，则不进入当前方法体内</td></tr><tr><td>Tab</td><td>缩进</td></tr><tr><td>连按两次Shift</td><td>弹出 Search Everywhere 弹出层</td></tr></tbody></table><p>​    </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> idea </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="http://www.luckyzmj.cn/atom.xml" rel="self"/>
   
   <link href="http://www.luckyzmj.cn/"/>
-  <updated>2022-04-21T01:41:22.824Z</updated>
+  <updated>2022-04-07T07:08:36.491Z</updated>
   <id>http://www.luckyzmj.cn/</id>
   
   <author>
@@ -15,30 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>小技巧</title>
-    <link href="http://www.luckyzmj.cn/posts/a40d665e.html"/>
-    <id>http://www.luckyzmj.cn/posts/a40d665e.html</id>
-    <published>2022-04-15T10:05:37.000Z</published>
-    <updated>2022-04-21T01:41:22.824Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="idea中autowired修饰的方法报红"><a href="#idea中autowired修饰的方法报红" class="headerlink" title="idea中autowired修饰的方法报红"></a>idea中autowired修饰的方法报红</h3><p>点击file-&gt;settings -&gt; Editor-&gt;Inspections</p><p>如图：输入spring core</p><p>点击Autowring for Bean Class将级别由之前的error改成warning</p><p>如果需要去除@Autowired的波浪线，直接把code改为warning即可</p><p><img src="https://img-blog.csdnimg.cn/d836eecab1194a90abad579a354785a7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC9566h5Y-r5oiR5peg5ZCN5LmL6L6I,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
-      
-    
-    
-    
-    <category term="java基础" scheme="http://www.luckyzmj.cn/categories/java%E5%9F%BA%E7%A1%80/"/>
-    
-    
-    <category term="知识点自贴" scheme="http://www.luckyzmj.cn/tags/%E7%9F%A5%E8%AF%86%E7%82%B9%E8%87%AA%E8%B4%B4/"/>
-    
-  </entry>
   
   <entry>
     <title>精句</title>
@@ -493,6 +469,30 @@
     
     
     <category term="java基础" scheme="http://www.luckyzmj.cn/tags/java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux基础命令</title>
+    <link href="http://www.luckyzmj.cn/posts/6463939c.html"/>
+    <id>http://www.luckyzmj.cn/posts/6463939c.html</id>
+    <published>2022-03-26T12:03:20.000Z</published>
+    <updated>2022-04-07T07:08:36.498Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 查看版本信息</span><span class="token function">uname</span> -r<span class="token comment"># 查看系统版本</span><span class="token function">cat</span> /etc/os-release<span class="token comment">#centos7的查看关闭开启防火墙命令</span>firewall-cmd --state<span class="token comment">#查看防火墙状态</span>systemctl stop firewalld.service<span class="token comment">#停止防火墙</span>systemctl disable firewalld.service <span class="token comment">#开机自启</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h6 id="文件处理命令"><a href="#文件处理命令" class="headerlink" title="文件处理命令"></a>文件处理命令</h6><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 显示目录文件</span><span class="token function">ls</span> <span class="token comment"># 显示带隐藏的目录文件</span><span class="token function">ls</span> -a<span class="token comment"># 创建目录</span><span class="token function">mkdir</span> 目录名<span class="token comment"># 创建文件</span><span class="token function">touch</span> 文件名<span class="token comment"># 切换目录</span><span class="token builtin class-name">cd</span>  /目录<span class="token comment"># 返回上一级目录</span><span class="token builtin class-name">cd</span> <span class="token punctuation">..</span><span class="token comment"># 显示当前目录</span><span class="token builtin class-name">pwd</span><span class="token comment"># 删除空目录</span><span class="token function">rmdir</span> /目录<span class="token comment"># 复制目录或者文件</span><span class="token function">cp</span> -rp /源文件或者目录 /目标目录<span class="token comment"># 剪切文件或目录</span><span class="token function">mv</span> /源文件或者目录 /目标目录<span class="token comment"># 删除文件或目录</span><span class="token function">rm</span> -rf /目录或文件<span class="token comment"># 查询文件信息</span><span class="token function">cat</span> 文件名  <span class="token function">tail</span> -f 文件名  <span class="token comment">#实时查询信息</span><span class="token function">tail</span> -n <span class="token number">1000</span> 文件名 <span class="token comment">#倒叙查询1000行信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h6 id="权限管理命令"><a href="#权限管理命令" class="headerlink" title="权限管理命令"></a>权限管理命令</h6><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">chmod</span> 参数 文件名<span class="token comment">#更改文件的读写执行权限  参数有-r -w -x 读 写 执行 u所有人 g所属组 例如：chown U+x 123.log</span><span class="token function">chown</span> 用户 文件名<span class="token comment">#更改某个文件用户权限用户必须是真实存在的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h6 id="文件查询命令"><a href="#文件查询命令" class="headerlink" title="文件查询命令"></a>文件查询命令</h6><pre class="line-numbers language-SHELL" data-language="SHELL"><code class="language-SHELL">find /目录或文件 -name *init*#查询含有init的文件 *可以匹配任意个字符find /目录或文件 -name *init？？？#一个？只能匹配一个字符<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h6 id="用户管理命令"><a href="#用户管理命令" class="headerlink" title="用户管理命令"></a>用户管理命令</h6><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">whoami</span> <span class="token comment">#查看当前用户</span><span class="token function">useradd</span> -m 账号<span class="token comment">#新建一个账号</span><span class="token function">passwd</span> 账号<span class="token comment">#给此账号输入密码</span><span class="token function">userdel</span> -r 账号 <span class="token comment">#删除账号信息</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h6 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h6><pre class="line-numbers language-SHELL" data-language="SHELL"><code class="language-SHELL">cal -1 5 2020  #查看2020年5月份的日历wc -lc 文件名 &gt;要创建的文件# 统计某个文件的行数和列数要书写到某个文件wget 远程地址#下载某个文件从远程地址中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    <category term="linux" scheme="http://www.luckyzmj.cn/categories/linux/"/>
+    
+    
+    <category term="linux" scheme="http://www.luckyzmj.cn/tags/linux/"/>
     
   </entry>
   

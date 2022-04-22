@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>小技巧</title>
-      <link href="posts/a40d665e.html"/>
-      <url>posts/a40d665e.html</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="idea中autowired修饰的方法报红"><a href="#idea中autowired修饰的方法报红" class="headerlink" title="idea中autowired修饰的方法报红"></a>idea中autowired修饰的方法报红</h3><p>点击file-&gt;settings -&gt; Editor-&gt;Inspections</p><p>如图：输入spring core</p><p>点击Autowring for Bean Class将级别由之前的error改成warning</p><p>如果需要去除@Autowired的波浪线，直接把code改为warning即可</p><p><img src="https://img-blog.csdnimg.cn/d836eecab1194a90abad579a354785a7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC9566h5Y-r5oiR5peg5ZCN5LmL6L6I,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> java基础 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 知识点自贴 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>精句</title>
       <link href="posts/98a729ec.html"/>
       <url>posts/98a729ec.html</url>
@@ -821,6 +796,31 @@
         <tags>
             
             <tag> spring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>小技巧</title>
+      <link href="posts/a40d665e.html"/>
+      <url>posts/a40d665e.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h3 id="idea中autowired修饰的方法报红"><a href="#idea中autowired修饰的方法报红" class="headerlink" title="idea中autowired修饰的方法报红"></a>idea中autowired修饰的方法报红</h3><p>点击file-&gt;settings -&gt; Editor-&gt;Inspections</p><p>如图：输入spring core</p><p>点击Autowring for Bean Class将级别由之前的error改成warning</p><p>如果需要去除@Autowired的波浪线，直接把code改为warning即可</p><p><img src="https://img-blog.csdnimg.cn/d836eecab1194a90abad579a354785a7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bC9566h5Y-r5oiR5peg5ZCN5LmL6L6I,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> java基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 知识点自贴 </tag>
             
         </tags>
       

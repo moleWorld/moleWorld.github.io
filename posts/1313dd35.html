@@ -40,9 +40,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
 </head>
 
 
@@ -668,14 +668,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-07
+                    2022-07-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    680
+                    692
                 </div>
                 
 
@@ -770,6 +770,7 @@ OK
 <h4 id="redis的原理"><a href="#redis的原理" class="headerlink" title="redis的原理"></a>redis的原理</h4><p>redis是单线程的，redis是基于内存操作的，CPU不是redis的性能瓶颈，redis的性能瓶颈是由内存和网络带宽决定的。</p>
 <p>redis是用c语言编写的，每秒大概100000QPS，性能不比Memcache差。</p>
 <p>由于redis的数据都存储在内存中，所以单线程操作更加快速。多线程操作会存在CPU之间的切换消耗资源。对于内存系统，没有CPU切换效率最高。</p>
+<p>基于非阻塞IO多路复用机制</p>
 
                 
             </div>
@@ -1635,7 +1636,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.7k</span>&nbsp;字
+                class="white-color">54.7k</span>&nbsp;字
             
             
             

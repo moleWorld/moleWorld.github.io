@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mybatis简单介绍, luckyzmj 计算机 网络安全 渗透测试">
+    <meta name="keywords" content="分布式有关, luckyzmj 计算机 网络安全 渗透测试">
     <meta name="description" content="本科 | 计算机科学与技术 | 网络安全">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mybatis简单介绍 | 摩尔的世界</title>
+    <title>分布式有关 | 摩尔的世界</title>
 
     <link rel="icon" type="image/jpeg" href="https://s1.ax1x.com/2020/05/17/YR20js.jpg">
 
@@ -510,12 +510,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015238.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928021129.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mybatis简单介绍</h1>
+                    <h1 class="description center-align post-title">分布式有关</h1>
                 </div>
             </div>
         </div>
@@ -636,8 +636,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/mybatis/">
-                                <span class="chip bg-color">mybatis</span>
+                            <a href="/tags/springCloud/">
+                                <span class="chip bg-color">springCloud</span>
                             </a>
                         
                     </div>
@@ -648,8 +648,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
-                                中间件
+                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
+                                框架
                             </a>
                         
                     </div>
@@ -661,28 +661,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-27
+                    2022-07-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-26
+                    2022-07-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    871
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    7 分
                 </div>
                 
 
@@ -700,51 +700,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="mybatis的中文官网地址"><a href="#mybatis的中文官网地址" class="headerlink" title="mybatis的中文官网地址"></a>mybatis的中文官网地址</h4><p><a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-3/zh/">https://mybatis.org/mybatis-3/zh/</a></p>
-<h4 id="mybatis的主要核心部件"><a href="#mybatis的主要核心部件" class="headerlink" title="mybatis的主要核心部件"></a>mybatis的主要核心部件</h4><ul>
-<li>SqlSession    表示和数据库交互的会话，完成必要的数据库增删改查功能</li>
-<li>Executor       执行器，是mybatis的核心，负责sql语句的执行，缓存的查询</li>
-<li>StatementHandler    封装了JDBC Statement操作，负责对JDBC statement的操作，如设置参数，或将结果集转换成List</li>
-<li>ParameterHandler    负责对用户传递的参数转换成JDBC Statement所需要的参数</li>
-<li>ResultSetHandler      负责将jdbc返回的结果集转换成List集合</li>
-<li>TypeHandler              负责将java的数据类型和jdbc数据类型之间的转换</li>
-<li>Configuration             配置mybatis的信息</li>
-<li>SqlSource                    负责用户传递的paramterObject,动态的生成SQL语句，将信息封装到BoundSql中</li>
-<li>BoundSql                    表示动态生成SQL语句以及相应的参数信息</li>
-</ul>
-<h4 id="mybatis-工作流程"><a href="#mybatis-工作流程" class="headerlink" title="mybatis 工作流程"></a>mybatis 工作流程</h4><ol>
-<li>读取mybatis的配置信息，可以是xml的格式，也可以是基于Configuration的对象。</li>
-<li>实例化SqlSessionFactoryBuilder,并通过build配置文件生成SqlSessionFactory实例</li>
-<li>创建一个SqlSession会话，用于实现CRUD。</li>
-<li>创建会话时也会创建一个新的Executor执行器，用于执行SQL或者查询缓存</li>
-<li>执行完成，返回结果并关闭SqlSession会话。</li>
+                <h4 id="CAP定理"><a href="#CAP定理" class="headerlink" title="CAP定理"></a>CAP定理</h4><p>CAP定理告诉我们，分布式系统不可能同时满足一致性（C：Consistency）、可用性（A：Availability）和分区容错性（P：Partition Tolerance），最多只能同时满足其中两项。</p>
+<p>一、一致性（C：Consistency）</p>
+<p>一致性指的是多个数据副本是否能保持一致的特性，在一致性的条件下，系统在执行数据更新操作之后能够从一致性状态转移到另一个一致性状态。</p>
+<p>对系统的一个数据更新成功之后，如果所有用户都能够读取到最新的值，该系统就被认为具有强一致性。</p>
+<p>二、可用性（A：Availability）</p>
+<p>可用性指分布式系统在面对各种异常时可以提供正常服务的能力，可以用系统可用时间占总时间的比值来衡量，4 个 9 的可用性表示系统 99.99% 的时间是可用的。</p>
+<p>在可用性条件下，要求系统提供的服务一直处于可用的状态，对于用户的每一个操作请求总是能够在有限的时间内返回结果。</p>
+<p>三、分区容错性（P：Partition Tolerance）</p>
+<p>网络分区指分布式系统中的节点被划分为多个区域，每个区域内部可以通信，但是区域之间无法通信。</p>
+<p>在分区容错性条件下，分布式系统在遇到任何网络分区故障的时候，仍然需要能对外提供一致性和可用性的服务，除非是整个网络环境都发生了故障。</p>
+<h4 id="BASE理论"><a href="#BASE理论" class="headerlink" title="BASE理论"></a>BASE理论</h4><p>BASE 是基本可用（Basically Available）、软状态（Soft State）和最终一致性（Eventually Consistent）三个短语的缩写。</p>
+<p>BASE 理论是对 CAP 中一致性和可用性权衡的结果，它的核心思想是：即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到最终一致性。</p>
+<ol>
+<li>基本可用：指分布式系统在出现故障的时候，保证核心可用，允许损失部分可用性。例如，电商在做促销时，为了保证购物系统的稳定性，部分消费者可能会被引导到一个降级的页面。</li>
+<li>软状态：指允许系统中的数据存在中间状态，并认为该中间状态不会影响系统整体可用性，即允许系统不同节点的数据副本之间进行同步的过程存在时延。</li>
+<li>最终一致性：强调的是系统中所有的数据副本，在经过一段时间的同步后，最终能达到一致的状态。ACID 要求强一致性，通常运用在传统的数据库系统上。而 BASE 要求最终一致性，通过牺牲强一致性来达到可用性，通常运用在大型分布式系统中。</li>
 </ol>
-<h4 id="mybatis的缓存"><a href="#mybatis的缓存" class="headerlink" title="mybatis的缓存"></a>mybatis的缓存</h4><h5 id="一级缓存SqlSession"><a href="#一级缓存SqlSession" class="headerlink" title="一级缓存SqlSession"></a>一级缓存SqlSession</h5><p>mybatis的一级缓存是默认开启的，是SqlSession级别的，即拿到这个链接到结束连接的过程中缓存是有效的。其特点有以下：</p>
-<ul>
-<li>映射语句文件中的所有 select 语句的结果将会被缓存。</li>
-<li>映射语句文件中的所有 insert、update 和 delete 语句会刷新缓存。</li>
-<li>缓存会使用最近最少使用算法（LRU, Least Recently Used）算法来清除不需要的缓存。</li>
-<li>缓存不会定时进行刷新（也就是说，没有刷新间隔）。</li>
-<li>缓存会保存列表或对象（无论查询方法返回哪种）的 1024 个引用。</li>
-<li>缓存会被视为读/写缓存，这意味着获取到的对象并不是共享的，可以安全地被调用者修改，而不干扰其他调用者或线程所做的潜在修改。</li>
+<h4 id="分布式id生成方案"><a href="#分布式id生成方案" class="headerlink" title="分布式id生成方案"></a>分布式id生成方案</h4><ul>
+<li>数据库自增，适合非分库分表</li>
+<li>UUID，缺点是生成的结果比较长，对数据库索引有影响</li>
+<li>雪花算法：依赖机器时钟，如果机器时钟回拨，会导致重复ID生成</li>
 </ul>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--可以设置缓存算法，刷新间隔、引用大小、只读表示等 --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>cache</span>
-  <span class="token attr-name">eviction</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>FIFO<span class="token punctuation">"</span></span>
-  <span class="token attr-name">flushInterval</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60000<span class="token punctuation">"</span></span>
-  <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>512<span class="token punctuation">"</span></span>
-  <span class="token attr-name">readOnly</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="二级缓存nameSpace"><a href="#二级缓存nameSpace" class="headerlink" title="二级缓存nameSpace"></a>二级缓存nameSpace</h5><p>mybatis的二级缓存也叫全局缓存，由于一级缓存的作用域只在sqlSession中（太窄了），所以诞生了二级缓存，它是基于nameSpace级别的缓存，相当于一个nameSpace对应一个二级缓存。mybatis的二级缓存需要手动开启。</p>
-<p>二级缓存的工作机制：</p>
-<ul>
-<li>当一个会话查询到一条数据时首先会存储到一级缓存中</li>
-<li>如果当前会话关闭，则一级缓存不存在了，则会把一级缓存的信息过渡到二级缓存</li>
-<li>当我们再次在此nameSPace空间内查询时则会从二级缓存中获得内容</li>
-<li>不同的nameSpace有不同的缓存集合</li>
-</ul>
-<h5 id="自定义缓存"><a href="#自定义缓存" class="headerlink" title="自定义缓存"></a>自定义缓存</h5><p>自定义缓存只需实现Cache就可以了！具体可查看官方文档！</p>
-<h5 id="mybatis的插件运行原理"><a href="#mybatis的插件运行原理" class="headerlink" title="mybatis的插件运行原理"></a>mybatis的插件运行原理</h5><p>mybatis只支持针对PatamterHandler、resultHandler、StatementHandler、Executor这4中接口的插件，mybatis使用JDK的动态代理，为需要拦截的接口生成代理对象已实现接口的方法拦截功能，每当执行这4中接口对象的方法时，就会进入拦截方法，InvocationHandler的invoke()方法，拦截指定需要拦截的方法。</p>
+<h4 id="redis解决分布式锁"><a href="#redis解决分布式锁" class="headerlink" title="redis解决分布式锁"></a>redis解决分布式锁</h4><p>使用setnx实现分布式锁，原因是单线程处理网络请求，不需要考虑并发性</p>
+<p>setnx时没有设置超时时间宕机了会产生死锁问题</p>
+<p>setnx设置了时间，如果超时会主动释放可能会产生并发问题。</p>
+<h4 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h4><h5 id="2PC（两阶段提交）"><a href="#2PC（两阶段提交）" class="headerlink" title="2PC（两阶段提交）"></a>2PC（两阶段提交）</h5><p>两阶段提交就是将事务提交拆成了准备阶段和提交阶段这两个阶段。</p>
+<p>XA是X/Open CAE Specification (Distributed Transaction Processing)模型中定义的TM（Transaction Manager）与RM（Resource Manager）之间进行通信的接口。</p>
+<p>在XA规范中，数据库充当RM角色，应用需要充当TM的角色，即生成全局的txId，调用XAResource接口，把多个本地事务协调为全局统一的分布式事务。</p>
+<h5 id="3PC（三阶段提交）"><a href="#3PC（三阶段提交）" class="headerlink" title="3PC（三阶段提交）"></a>3PC（三阶段提交）</h5><p>3PC是将2PC的准备阶段又细分成了CanCommit和PreCommit两个阶段。新增的CanCommit是一个询问阶段，让参与者根据条件判断该事务是否能顺利完成（比如扣减库存，参与者判断库存是否足够）。</p>
+<p>3PC解决了2PC的单点问题，怎么做的呢？如果协调者在PreCommit阶段开始了之后发生宕机，参与者没有收到DoCommit的消息，3PC默认的策略是将事务提交而不是回滚事务或者继续等待，这就避免了协调者的单点问题。</p>
+<p>性能上，如果在事务能够正常提交的场景中，因为3PC多了一个询问阶段，所以性能反而会更差。如果事务需要回滚的场景中，三阶段的性能通常要好一些。</p>
+<p>一致性问题并没有得到解决，在事务需要回滚的场景下，如果因为网络问题参与者一直没有收到协调者的的Abort回滚指令，这些参与者将会错误的提交事务，仍有数据不一致的问题。</p>
+<h5 id="TCC"><a href="#TCC" class="headerlink" title="TCC"></a>TCC</h5><p>其实就是采用的补偿机制，其核心思想是：针对每个操作，都要注册一个与其对应的确认和补偿（撤销）操作。TCC模型是把锁的粒度完全交给业务处理。它分为三个阶段：</p>
+<p>Try 阶段：主要是对业务系统做检测及资源预留<br>Confirm 阶段：主要是对业务系统做确认提交，Try阶段执行成功并开始执行 Confirm阶段时，默认 Confirm阶段是不会出错的。即：只要Try成功，Confirm一定成功。<br>Cancel 阶段：主要是在业务执行错误，需要回滚的状态下执行的业务取消，预留资源释放</p>
+<h5 id="SAGA-事务"><a href="#SAGA-事务" class="headerlink" title="SAGA 事务"></a>SAGA 事务</h5><p>把大事务拆分成若干个子事务，每个子事务都可以被看作原子行为。我们需要对每个子事务设计对应的补偿动作。如果各个子事务都能提交成功，那么事务就可以顺利完成，否则我们就要采取以下两种恢复策略之一：</p>
+<p>正向恢复：如果某个子事务提交失败，则一直对该事务进行重试，直至成功为止，这种适用于事务最终都要成功的场景。<br>反向恢复：如果某个子事务提交失败，则对该子事务及其之前所有的子事务进行补偿操作。<br>与TCC相比，SAGA不需要为资源设计冻结状态和撤销冻结的操作，补偿操作往往要比冻结操作容易实现的多。<br>缺点：</p>
+<p>SAGA必须保证所有子事务都能提交或者补偿，但是SAGA系统本身也可能会崩溃，所以它必须设计成与数据库类似的日志机制。<br>需要保证正向、反向恢复过程能严谨执行。<br>SAGA是基于数据补偿来代替回滚的思路，也可以应用在其他事务方案上。比如阿里的 Seata 框架的 AT事务模式就是这样的一种应用。</p>
+<h5 id="AT事务"><a href="#AT事务" class="headerlink" title="AT事务"></a>AT事务</h5><p>AT事务也是参照两阶段提交协议来实现的，针对两阶段提交涉及到的资源必须都等到最慢的事务完成后才能统一释放的问题，AT事务也设计了对应的解决方案。它在业务数据提交时，自动拦截所有的SQL，分别保存SQL对数据修改前后的快照，这就相当于记录了重做和回滚日志。</p>
+<p>如果分布式事务成功了，那我们后续只需清理每个数据源中对应的日志数据即可。如果分布式事务需要回滚，就要根据日志数据自动产生用于补偿的逆向SQL。</p>
+<p>基于这种补偿方式，分布式事务中所涉及的每一个数据源都可以单独提交，然后立刻释放资源，相比两阶段提交，极大的提升了系统的吞吐量。但是它和我们使用的事务消息一样，牺牲了隔离性。</p>
 
                 
             </div>
@@ -771,7 +766,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://www.luckyzmj.cn/posts/bac22b86.html">http://www.luckyzmj.cn/posts/bac22b86.html</a>
+                    <a href="http://www.luckyzmj.cn/posts/10ad900d.html">http://www.luckyzmj.cn/posts/10ad900d.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -809,8 +804,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/mybatis/">
-                                    <span class="chip bg-color">mybatis</span>
+                                <a href="/tags/springCloud/">
+                                    <span class="chip bg-color">springCloud</span>
                                 </a>
                             
                         </div>
@@ -1282,17 +1277,18 @@ new Valine({
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/5ae6092.html">
+                <a href="/posts/10ad900d.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015537.jpg" class="responsive-img" alt="docker基础">
+                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928021129.jpg" class="responsive-img" alt="分布式有关">
                         
-                        <span class="card-title">docker基础</span>
+                        <span class="card-title">分布式有关</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1302,26 +1298,27 @@ new Valine({
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-category">
-                                    中间件
+                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    框架
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/docker/">
-                        <span class="chip bg-color">docker</span>
+                    <a href="/tags/springCloud/">
+                        <span class="chip bg-color">springCloud</span>
                     </a>
                     
                 </div>
@@ -1335,13 +1332,13 @@ new Valine({
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/dc93815f.html">
+                <a href="/posts/98a729ec.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928020939.jpg" class="responsive-img" alt="闲杂时间0326">
+                        <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928012804.jpg" class="responsive-img" alt="精句">
                         
-                        <span class="card-title">闲杂时间0326</span>
+                        <span class="card-title">精句</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1352,14 +1349,14 @@ new Valine({
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    java基础
+                            <a href="/categories/%E6%84%9F%E6%82%9F/" class="post-category">
+                                    感悟
                                 </a>
                             
                             
@@ -1369,8 +1366,8 @@ new Valine({
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">java基础</span>
+                    <a href="/tags/%E7%94%9F%E6%B4%BB/">
+                        <span class="chip bg-color">生活</span>
                     </a>
                     
                 </div>

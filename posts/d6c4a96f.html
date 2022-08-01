@@ -40,9 +40,9 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="摩尔的世界" type="application/atom+xml">
 </head>
 
 
@@ -668,21 +668,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-07
+                    2022-07-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    10 分
                 </div>
                 
 
@@ -944,6 +944,27 @@ sentinel monitor myredis <span class="token number">47.100</span>.3.247 <span cl
 <li>哨兵模式的扩容非常麻烦</li>
 <li>配置相对来说比较麻烦</li>
 </ol>
+<h3 id="redis的过期策略删除模式"><a href="#redis的过期策略删除模式" class="headerlink" title="redis的过期策略删除模式"></a>redis的过期策略删除模式</h3><ol>
+<li>惰性删除：放任键过期不管，但是每次从键空间中获取键时，都检查取得的键是否过期，如果过期的话，就删除该键;如果没有过期，就返回该键。</li>
+<li>定期删除：每隔一段时间程序就对数据库进行一次检查，删除里面的过期键。至于要删除多少过期键，以及要检查多少个数据库，则由算法决定</li>
+<li>定时删除：在设置键的过期时间的同时，创建一个定时器timer).让定时器在键的过期时间来临时，立即执行对键的删除操作。</li>
+</ol>
+<h3 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h3><p>缓存雪崩是指缓存同一时间大面积失效，后面的请求都会落在数据库上，造成数据库短时间内承受大量的数据请求而崩掉。</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>缓存数据的过期时间设置随机，防止同一时间大量数据过期的现象发生：一般针对的是大量的热点key设置的过期时间在差不多的时间。</li>
+<li>缓存预热：一般针对的是redis宕机之后重启，需要先对热点数据进行提前缓存。</li>
+<li>互斥锁：当我们访问数据库的时候加锁，防止大批量的访问。</li>
+</ul>
+<h3 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h3><p>缓存穿透是指缓存和数据库都没有的数据，且一直进行访问，导致大量的请求落在数据库上造成崩掉。一般都是黑客攻击才会产生。</p>
+<h4 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>接口层增加校验：如黑客攻击时直接从源头上拦截</li>
+<li>布隆过滤器，如果不存在这个数据则会被bitMap拦截掉。</li>
+</ul>
+<h3 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h3><p>缓存击穿是指缓存中没有但是数据库中存在的数据，缓存击穿针对的是单个数据，缓存雪崩值得是多个数据同时访问。</p>
+<h4 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
+<li>设计热点数据永不过期</li>
+<li>互斥锁</li>
+</ul>
 
                 
             </div>
@@ -1809,7 +1830,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.7k</span>&nbsp;字
+                class="white-color">54.7k</span>&nbsp;字
             
             
             
